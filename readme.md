@@ -79,3 +79,11 @@ Irá fazer o clone do repositorio localmente, adicionar uma pasta com **SEU_NOME
 [Notion Primeiro Bimestre](https://maze-leaf-ed4.notion.site/Primeiro-Bimestre-POO-e42695e61eae4f4eaa1dac08f595d136?pvs=4)
 
 [Notion Segundo Bimestre](https://maze-leaf-ed4.notion.site/Segundo-Bimestre-POO-na-pr-tica-ef00f12ee66440b5a8cce44162a208d7?pvs=4)
+
+---
+
+### Vídeos de auxílo📹
+
+[Instalação Git e integração VS Code](https://www.youtube.com/watch?v=SXukHfaV-1o)
+[Como fazer um fork e contribuir em um projeto](https://www.youtube.com/watch?v=DBiBWZ0dOww)
+
