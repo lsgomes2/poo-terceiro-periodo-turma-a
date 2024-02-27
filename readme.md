@@ -38,7 +38,7 @@ BUSCAR POR Gerenciador de Credenciais no windows e remover o acesso dado ao GIT
 
 1º - Clicar na opção **Fork**
 
-![Fork_PT_01]([https://github.com/Sandrolaxx/eng-soft-arch-quarto-periodo-turma-b/assets/61207420/1eccb15a-f3ad-4355-ab16-f1b0fb244cbd](https://github.com/Sandrolaxx/frostNext/assets/61207420/a4287c9d-fa38-4182-bcde-faddf5fd0eaa)
+![Fork_PT_01](https://github.com/Sandrolaxx/frostNext/assets/61207420/a4287c9d-fa38-4182-bcde-faddf5fd0eaa)
 
 2º - Ao realizar o fork o segundo passo será criar o repositório no seu GitHub
 
