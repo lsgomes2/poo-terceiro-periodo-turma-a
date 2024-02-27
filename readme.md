@@ -85,5 +85,6 @@ Irá fazer o clone do repositorio localmente, adicionar uma pasta com **SEU_NOME
 ### Vídeos de auxílo📹
 
 [Instalação Git e integração VS Code](https://www.youtube.com/watch?v=SXukHfaV-1o)
+
 [Como fazer um fork e contribuir em um projeto](https://www.youtube.com/watch?v=DBiBWZ0dOww)
 
