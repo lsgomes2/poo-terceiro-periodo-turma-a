@@ -44,7 +44,7 @@ public class ATIVIDADE_1 {
                     break;
 
                 default:
-                    System.out.println("\nOpção inválida!");
+                    System.out.println("nOpção inválida!");
                     break;
             }
         }
