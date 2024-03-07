@@ -1,4 +1,4 @@
-package firsttwoweeks.exercise_1;
+package firsttwomonths.exercise_1;
 
 import java.util.Scanner;
 
