@@ -46,6 +46,7 @@ public class ATIVIDADE_1 {
                 default:
                     System.out.println("nOpção inválida!");
                     break;
+                    
             }
         }
 
