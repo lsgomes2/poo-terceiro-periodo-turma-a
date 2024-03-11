@@ -27,16 +27,15 @@ public class Lista1 {
 
                 float valorTotal;
 
-                if (qntdPlanta <= 0 || valorPlanta <=0) {
+                if (qntdPlanta <= 0 || valorPlanta <= 0) {
                     System.out.println("Valor inválido");
                     System.out.println();
-                    
-                }
-                else{
+
+                } else {
                     valorTotal = qntdPlanta * valorPlanta;
 
-                System.out.println("O valor a ser pago é " + valorTotal + " reais");
-                System.out.println();
+                    System.out.println("O valor a ser pago é " + valorTotal + " reais");
+                    System.out.println();
                 }
             }
 
@@ -48,15 +47,22 @@ public class Lista1 {
                 System.out.println("Insira o valor total da compra: ");
                 float totalTroco = scanner.nextFloat();
 
-                if (pagCliente < totalTroco) {
-                    System.out.println("O valor do pagamento do cliente é insuficiente!");
+                if (totalTroco < 0 || pagCliente < 0) {
+                    System.out.println("Valor inválido");
                     System.out.println();
-                    
+
                 }
 
-                else{ float trocoCompra = pagCliente - totalTroco;
-                System.out.println("O troco é de " + trocoCompra + " reais");
-                System.out.println();
+                else if (pagCliente < totalTroco) {
+                    System.out.println("O valor do pagamento do cliente é insuficiente!");
+                    System.out.println();
+
+                }
+
+                else {
+                    float trocoCompra = pagCliente - totalTroco;
+                    System.out.println("O troco é de " + trocoCompra + " reais");
+                    System.out.println();
                 }
             }
 
