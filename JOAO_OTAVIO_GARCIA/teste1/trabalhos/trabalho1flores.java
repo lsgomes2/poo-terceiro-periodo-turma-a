@@ -111,7 +111,7 @@ public class trabalho1flores {
                 break;
             
             case 2:
-                System.out.println("\nSAINDO DO PROGRAMA");
+                System.out.println("saindo do sistema");
                 f3=false;
                 scanner.close();
                 
