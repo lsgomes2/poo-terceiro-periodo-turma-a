@@ -1,15 +1,16 @@
+package primeirobi.ListasExc;
+
 import java.util.Scanner;
-public class calculadorajava {
 
+public class Calculadora {
     
-
-    public static void main(String[] args) {
+ public static void main(String[] args) {
 
         System.out.println("Selecionea sua opção");
         Scanner scanner = new Scanner(System.in);
 
         int opcao;
-        
+
         do {
 
             menuopcoes();
