@@ -1,7 +1,7 @@
-package JOAO_BECKER.primeirobi.loja;
+package JOAO_BECKER.primeirobi.Floricultura1;
 import java.util.Scanner;
 
-public class exercicio {
+public class Floricultura {
 
     public static void main(String[] args){
         try (Scanner leitor = new Scanner(System.in)) {
