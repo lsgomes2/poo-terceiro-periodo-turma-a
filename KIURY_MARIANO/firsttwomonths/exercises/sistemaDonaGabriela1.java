@@ -1,8 +1,8 @@
-package firsttwomonths.exercise_1;
+package firsttwomonths.exercises;
 
 import java.util.Scanner;
 
-public class donagabrielinha {
+public class sistemaDonaGabriela1 {
     
     public static int validating(String text) {                                       // Função criada para validar se a String recebida é somente 1 digito numérico.
 
@@ -21,6 +21,7 @@ public class donagabrielinha {
     }
 
     
+    @SuppressWarnings("resource")
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
