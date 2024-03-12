@@ -1,8 +1,8 @@
-package PRIMEIROBIMESTRE;
+package PRIMEIRO_BIMESTRE;
 
 import java.util.Scanner;
 
-public class lista1 {
+public class Lista1 {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.println("Quantas plantas o cliente comprou? ");
@@ -10,8 +10,8 @@ public class lista1 {
         String[] plants = new String[qttBought];
         float[] price = new float[qttBought];
         for(int i = 0; i < qttBought; i++){
-           System.out.println("Qual o nome da planta " + (i+1) + "?");
-           plants[i] = sc.next();
+            System.out.println("Qual o nome da planta " + (i+1) + "?");
+            plants[i] = sc.next();
            System.out.println("Qual o preço da " + plants[i] + "?");
            price[i] = sc.nextFloat();
         }
