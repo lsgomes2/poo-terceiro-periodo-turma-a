@@ -34,9 +34,14 @@ public class calculadora {
     @SuppressWarnings("resource")
     public static void main(String[] args) throws InterruptedException {
 
-        int quantidade_vendida = 0;
-        float valor_vendas = 0;
-        float descontos_aplicados = 0;
+        // Criação de Arquivos!
+        //Barquivo.criaArquivos("KAUA_MATHEUS/primeiro_bimestre/arquivoCompras.txt", "123\n");
+
+        // Deletar Arquivos!
+        //Barquivo.apagaArquivo("KAUA_MATHEUS/primeiro_bimestre/arquivoCompras.txt");
+
+        // Ler Arquivos!!
+        //Barquivo.lerTexto("KAUA_MATHEUS/primeiro_bimestre/arquivoCompras.txt");
 
 
         // Criação de um Scanner
@@ -61,7 +66,6 @@ public class calculadora {
                     int quantidade_produto;
                     System.out.println("Digite a quantidade da planta: ");
                     quantidade_produto = Integer.parseInt(scanner.nextLine());
-                    quantidade_vendida += quantidade_produto;
 
                     // Preço do produto
                     System.out.println("Qual é o Preço unitário da planta? ");
@@ -102,7 +106,20 @@ public class calculadora {
                     break;
 
                 case 3:
+                    System.out.println("Tem certeza que deseja apagar a lista de itens comprados? Sim - [1] / Não - [0]");
+                    int confirmar = Integer.parseInt(scanner.nextLine());
+                    if(confirmar == 1){
+                        apagar("KAUA_MATHEUS/primeiro_bimestre/arquivoCompras.txt");
+                    }
+                    else{
+                        System.out.println("\u001B[31mNada foi apagado\u001B[m");
+                        break;
+                    }
+                
+
+                case 4:
                     break;
+
                 default:
                     System.out.println("O valor digitado é inválido!");
                     break;
@@ -110,7 +127,7 @@ public class calculadora {
             Thread.sleep(1000);
 
 
-        } while(opção != 3);
+        } while(opção != 4);
 
     }
 
@@ -119,11 +136,15 @@ public class calculadora {
             System.out.println("\n===Menu===");
             System.out.println("1 - Calcular Preço Total\n");
             System.out.println("2 - Calcular Troco\n");
-            System.out.println("3 - Sair: ");
+            System.out.println("3 - Apagar Histórico do Estoque: \n");
+            System.out.println("4 - Fechar do Aplicativo: ");
 
             Scanner scanner = new Scanner(System.in);
             return Integer.parseInt(scanner.nextLine());
 
         }
     
-}
+        public static void apagar(String caminho_Arquivo){
+            Barquivo.apagaArquivo(caminho_Arquivo);
+        }
+    }
