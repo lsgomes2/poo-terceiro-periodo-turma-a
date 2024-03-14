@@ -65,7 +65,7 @@ public class listadois {
                     break;
                 case 3:
                     // Registrar venda
-                    System.out.println("Registrando venda...");
+                    System.out.println("Registrando venda.");
                     break;
                 case 4:
                     System.out.println("Saindo do programa.");
