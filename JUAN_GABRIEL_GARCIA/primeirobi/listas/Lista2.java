@@ -116,9 +116,9 @@ public class Lista2 {
 
                     for (int i = 0; i < tamanho; i++) {
 
-                        System.out.println("\n" + (i + 1) + "ª COMPRA: \n Quantidade de plantas vendidadas - "
-                                + vetor_plantas[i] + "\n Valor total da venda - " + vetor_venda[i]
-                                + "\n Desconto aplicado - R$:" + vetor_desconto[i] + "\n");
+                        System.out.println("\n" + (i + 1) + "ª COMPRA: \n Quantidade de plantas vendidadas: "
+                                + vetor_plantas[i] + "\n Valor total da venda: " + vetor_venda[i]
+                                + "\n Desconto aplicado: R$:" + vetor_desconto[i] + "\n");
                     }
                     break;
 
