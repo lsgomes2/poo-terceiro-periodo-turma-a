@@ -94,6 +94,7 @@ public class Lista2 {
                 break;
 
                 case 4:
+                System.out.println("Saindo do programa.");
         
                     break;
 
