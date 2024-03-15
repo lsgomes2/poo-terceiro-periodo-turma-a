@@ -1,4 +1,4 @@
-package primeiro_bimestre;
+package primeiro_bimestre.listas;
 
 import java.util.Scanner;
 
