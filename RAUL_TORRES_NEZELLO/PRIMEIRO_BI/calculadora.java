@@ -17,7 +17,7 @@ public class calculadora {
                 
                 int tot = val * qnt;
                 if(qnt>10){
-                    tot = (int) (tot - (0.1 * (double) tot));
+                    tot = (int) (tot - (0.05 * (double) tot));
                 }
                 vetor[contador] = tot;
 
