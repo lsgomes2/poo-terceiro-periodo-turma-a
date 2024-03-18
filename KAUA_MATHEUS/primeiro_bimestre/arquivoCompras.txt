@@ -1,0 +1,4 @@
+Qnt: 10 -- Preço: R$2.0 -- Desconto Total: R$0,00
+Qnt: 20 -- Preço: R$1.5 -- Desconto Total: R$1,50
+Qnt: 70 -- Preço: R$33.0 -- Desconto Total: R$115,50
+Qnt: 100 -- Preço: R$2.0 -- Desconto Total: R$10,00
