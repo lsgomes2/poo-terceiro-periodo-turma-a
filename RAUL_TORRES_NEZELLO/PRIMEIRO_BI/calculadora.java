@@ -6,8 +6,11 @@ public class calculadora {
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
             int maisproduto;
-            int[] vetor = new int[100];
+            int[] vetortotal  = new int[100];
+            double[] vetordesconto  = new double[100];
+            int[] vetorquantidade  = new int[100];
             int contador=0;
+
             do {
                 System.out.println("Quantidade da planta:");
                 int qnt = scanner.nextInt();
@@ -17,9 +20,12 @@ public class calculadora {
                 
                 int tot = val * qnt;
                 if(qnt>10){
-                    tot = (int) (tot - (0.05 * (double) tot));
+                    double desconto = 0.05 * (double) tot;
+                    tot = (int) (tot - desconto);
+                    vetordesconto [contador] = desconto;
                 }
-                vetor[contador] = tot;
+                vetortotal [contador] = tot;
+                vetorquantidade [contador] = qnt;
 
                 System.out.println("Valor recebido:");
                 int receba = scanner.nextInt();
@@ -27,7 +33,7 @@ public class calculadora {
                 int verifi = 0;
                 contador++;
                 while(verifi == 0){
-                System.out.println("Menu\n [1]Preço total\n [2]Troco\n [3]Registro de vendas\n [4]Sair");
+                System.out.println("\nMenu\n [1]Preço total\n [2]Troco\n [3]Registro de vendas\n [4]Sair");
                 int menu = scanner.nextInt();
                 switch (menu) {
                     case 1:
@@ -44,7 +50,7 @@ public class calculadora {
                     case 3:
                     for(int i=0;i<contador;i++){
                        int n=i+ 1; 
-                        System.out.println("Compra "+n+": "+vetor[i]);
+                        System.out.println("\nCompra "+n+":\nValor total: "+vetortotal[i]+ "\nQuantidade comprada: "+vetorquantidade[i]+"\nDesconto aplicado: "+vetordesconto[i]);
                 
                     }
     
