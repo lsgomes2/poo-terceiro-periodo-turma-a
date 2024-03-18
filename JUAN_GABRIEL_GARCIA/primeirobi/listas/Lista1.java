@@ -1,8 +1,8 @@
-package primeirobi;
+package primeirobi.listas;
 
 import java.util.Scanner;
 
-public class activitie1 {
+public class Lista1 {
     
     public static void main(String[] args) {
         
