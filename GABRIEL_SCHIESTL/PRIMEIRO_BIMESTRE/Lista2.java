@@ -8,10 +8,10 @@ public class Lista2 {
         double finalDiscount = 0;
         Scanner sc = new Scanner(System.in);
         int storage = getStorage(sc);
-        int[] differentPlantsRegister = new int[storage];
-        float[] priceRegister = new float[storage];
-        double[] discountRegister = new double[storage];
-        float[] qttTotaleRegister = new float[storage];
+        int[] differentPlantsRegister = new int[100];
+        float[] priceRegister = new float[100];
+        double[] discountRegister = new double[100];
+        float[] qttTotaleRegister = new float[100];
         String[] plants = new String[storage];
         float[] price = new float[storage];
         initializeArrays(sc, storage, plants, price);
