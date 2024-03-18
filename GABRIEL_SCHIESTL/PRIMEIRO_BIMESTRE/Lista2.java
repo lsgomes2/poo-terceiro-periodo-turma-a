@@ -5,11 +5,12 @@ import java.util.Scanner;
 public class Lista2 {
     public static void main(String[] args) {
         int line = 0;
+        double finalDiscount = 0;
         Scanner sc = new Scanner(System.in);
         int storage = getStorage(sc);
         int[] differentPlantsRegister = new int[storage];
         float[] priceRegister = new float[storage];
-        float[] discountRegister = new float[storage];
+        double[] discountRegister = new double[storage];
         float[] qttTotaleRegister = new float[storage];
         String[] plants = new String[storage];
         float[] price = new float[storage];
@@ -21,7 +22,7 @@ public class Lista2 {
             switch (choosenOption) {
                 case 1:
                     line = calculateTotalPrice(sc, line, differentPlantsRegister, priceRegister, discountRegister,
-                            qttTotaleRegister, plants, price);
+                            qttTotaleRegister, plants, price, finalDiscount);
                     break;
                 case 2:
                     calculateChange(sc);
@@ -68,7 +69,8 @@ public class Lista2 {
     }
 
     public static int calculateTotalPrice(Scanner sc, int line, int[] differentPlantsRegister, float[] priceRegister,
-            float[] discountRegister, float[] qttTotaleRegister, String[] plants, float[] price) {
+            double[] discountRegister, float[] qttTotaleRegister, String[] plants, 
+            float[] price, double finalDiscount) {
         System.out.print("Quantas plantas o cliente comprou ao total? ");
         int qttBought = sc.nextInt();
         boolean discount = qttBought >= 10;
@@ -104,13 +106,14 @@ public class Lista2 {
             }
         }
         if (discount) {
+            finalDiscount = finalPrice * 0.05;
             finalPrice *= 0.95;
         }
         String format = finalPrice == 1.0f ? "real" : "reais";
         System.out.println("O valor final vendido foi de: " + finalPrice + " " + format);
 
         priceRegister[line] = finalPrice;
-        discountRegister[line] = discount ? 1 : 0;
+        discountRegister[line] = finalDiscount;
         return ++line;
     }
 
@@ -146,7 +149,7 @@ public class Lista2 {
     }
 
     public static void registerSale(int[] differentPlantsRegister, float[] priceRegister,
-            float[] discountRegister, float[] qttTotaleRegister) {
+            double[] discountRegister, float[] qttTotaleRegister) {
         for (int i = 0; i < priceRegister.length; i++) {
             if (priceRegister[i] != 0) {
                 System.out.println("Na venda " + (i + 1) + " temos:");
@@ -156,8 +159,12 @@ public class Lista2 {
                 System.out.println("Sendo de " + differentPlantsRegister[i] + formatDifferent);
                 String formatPrice = priceRegister[i] == 1 ? " real" : " reais";
                 System.out.println("Com um total vendido de: " + priceRegister[i] + formatPrice);
-                String discountBool = discountRegister[i] == 1 ? "Houve desconto de 5%" : "Não houve desconto";
-                System.out.println(discountBool);
+                String discountFormat = discountRegister[i] == 1 ? " real" : " reais";
+                if (discountRegister[i] != 0) {
+                    System.out.println("Desconto de " + discountRegister[i] + " " + discountFormat);
+                } else {
+                    System.out.println("Não houve desconto");
+                }
             }
         }
     }
