@@ -62,6 +62,9 @@ public class Floricultura2 {
         int quantidade = scanner.nextInt();
         System.out.print("Digite o valor da venda: ");
         double valorVenda = scanner.nextDouble();
-        System.out.println("Venda registrada: " + quantidade + " produtos vendidos por R$ " + valorVenda);
+        double valorTotal = quantidade * valorVenda;
+        if (quantidade > 10)
+        valorTotal *= 0.95;
+        System.out.println("Venda registrada: " + quantidade + " produtos vendidos por R$ " + valorTotal);
     }
 }
