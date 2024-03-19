@@ -1,9 +1,10 @@
+package atividades1B;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class atv2 {
+public class Atv2 {
     private static List<Sale> sales = new ArrayList<>();
 
     public static void main(String[] args) {
