@@ -1,12 +1,5 @@
 package KAUA_MATHEUS.primeiro_bimestre;
 import java.util.Scanner;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.lang.Thread;
 
 public class calculadora {
@@ -25,16 +18,19 @@ public class calculadora {
         //Barquivo.lerTexto("KAUA_MATHEUS/primeiro_bimestre/arquivoCompras.txt");
 
 
+        int option;
+        float[][] matrizDiaMes = new float[30][12];
+
         // Criação de um Scanner
         Scanner scanner = new Scanner(System.in);
 
-        int opção;
+        
         do {
 
             // Menu de Opções
-            opção = MostraMenu();
+            option = MostraMenu();
 
-            switch (opção) {
+            switch (option) {
 
                 // Cálculo de venda
                 case 1:
@@ -62,7 +58,7 @@ public class calculadora {
 
                     // Criação de arquivo txt contendo o conteúdo
 
-                    criaArquivos("KAUA_MATHEUS/primeiro_bimestre/arquivoCompras.txt", "Qnt: " + 
+                    Barquivo.criaArquivos("KAUA_MATHEUS/primeiro_bimestre/arquivoCompras.txt", "Qnt: " + 
                     quantidade_produto + " -- Preço: R$" + 
                     preço_produto + " -- Desconto Total: " +
                     String.format("R$%.2f", (desc)) + "\n");
@@ -96,31 +92,53 @@ public class calculadora {
 
                 // Mostra Lista
                 case 3:
-                    
-                        int sair = 0;
-                        
-                        lerTexto("KAUA_MATHEUS/primeiro_bimestre/arquivoCompras.txt");
-                        while (sair != 1) {
-                            System.out.println("[1] - Sair");
-                            sair = Integer.parseInt(scanner.nextLine());
-                        }
-                        break;
+    
+                    int sair = 0;
+
+                    Barquivo.lerTexto("KAUA_MATHEUS/primeiro_bimestre/arquivoCompras.txt");
+                    while (sair != 1) {
+                        System.out.println("[1] - Sair");
+                        sair = Integer.parseInt(scanner.nextLine());
+                    }
+                    break;
                 
                 // Apaga o Arquivo Txt
                 case 4:
                     System.out.println("Tem certeza que deseja apagar a lista de itens comprados? Sim - [1] / Não - [0]");
                     int confirmar = Integer.parseInt(scanner.nextLine());
                     if(confirmar == 1){
-                        apagar("KAUA_MATHEUS/primeiro_bimestre/arquivoCompras.txt");
+                        Barquivo.apagar("KAUA_MATHEUS/primeiro_bimestre/arquivoCompras.txt");
                     }
                     else{
                         System.out.println("\u001B[31mNada foi apagado\u001B[m");
                     }
                     break;
                 
-                // Sair do Sistema
                 case 5:
-                    System.exit(0);
+                    // Inserir faturamento
+                    
+                    System.out.println("Digite o mês que deseja adicionar: ");
+                    int mes = Integer.parseInt(scanner.nextLine());
+
+                    System.out.println("Digite o dia que deseja adicionar: ");
+                    int dia = Integer.parseInt(scanner.nextLine());
+
+                    System.out.println("Digite o saldo total levantado nesse dia: ");
+                    matrizDiaMes[mes][dia] = Integer.parseInt(scanner.nextLine());
+                    break;
+
+                case 6:
+                    // Ver faturamento
+                    System.out.println("Digite o mês para consultar: ");
+                    mes = Integer.parseInt(scanner.nextLine());
+
+                    System.out.println("Digite o dia para consultar: ");
+                    dia = Integer.parseInt(scanner.nextLine());
+
+                    System.out.format("O valor total no dia foi: %.2f \n", matrizDiaMes[mes][dia]);
+                    break;
+
+                case 7:
                     break;
 
                 // Loop de entrada
@@ -133,7 +151,7 @@ public class calculadora {
             Thread.sleep(1000);
 
 
-        } while(opção != 3);
+        } while(option != 7);
 
     }
 
@@ -144,76 +162,17 @@ public class calculadora {
             System.out.println("2 - Cálculo de troco\n");
             System.out.println("3 - Visualizar Histórico de Compra\n");
             System.out.println("4 - Apagar Histórico de Compra \n");
-            System.out.println("5 - Fechar do Aplicativo ");
-            
+            System.out.println("5 - Adicionar caixa \n");
+            System.out.println("6 - Visualizar caixa \n");
+            System.out.println("7 - Fechar do Aplicativo ");
 
+            // Criação de Scanner
             Scanner scanner = new Scanner(System.in);
-            return Integer.parseInt(scanner.nextLine());
 
+            // Entrada do valor de option
+            int option = Integer.parseInt(scanner.nextLine());
+
+            return option;
         }
-    
-        public static void apagar(String caminho_Arquivo){
-            apagaArquivo(caminho_Arquivo);
-        }
-
-
-        public static void lerTexto(String pCaminhoArquivo){
-
-        int contador_linha = 0;
-
-        try(
-
-            BufferedReader buffReader = new BufferedReader(new FileReader(pCaminhoArquivo))
-        ){
-                String linha = "";
-
-                while(true){
-                    if(linha != null){
-                        System.out.println(linha);
-                        contador_linha += 1;
-                    }else{
-                        break;
-                    }
-                    linha = buffReader.readLine();
-                }
-                if(contador_linha > 0){
-                    System.out.println(contador_linha - 1);
-                }
-                else{
-                    System.out.println(0);
-                }
-                
-            }catch (IOException e){
-                e.printStackTrace();
-            }
-
-    }
-
-    public static void criaArquivos(String pCaminhoArquivo, String pTextoAEscrever){
-        try(
-
-            FileWriter criadorDeArquivos = new FileWriter(pCaminhoArquivo, true);
-            BufferedWriter buffer = new BufferedWriter(criadorDeArquivos);
-            PrintWriter escritorDeArquivos = new PrintWriter(buffer);
-        
-        ){
-            escritorDeArquivos.append(pTextoAEscrever);
-        }catch(IOException e){
-            e.printStackTrace();
-        }
-    }
-
-    public static void apagaArquivo(String pCaminhoArquivo){
-
-        File file = new File(pCaminhoArquivo);
-
-        if(file.delete()){
-            System.out.format("\u001B[31mO arquivo foi apagado com sucesso! \u001B[m");   
-        }
-
-        else{
-            System.out.println("\u001B[31mErro ao tentar apagar arquivo! \u001B[m");
-        }
-    }
 
     }
