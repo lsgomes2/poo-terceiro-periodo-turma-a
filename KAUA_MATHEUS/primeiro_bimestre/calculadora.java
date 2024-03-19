@@ -123,8 +123,14 @@ public class calculadora {
                     System.out.println("Digite o dia que deseja adicionar: ");
                     int dia = Integer.parseInt(scanner.nextLine());
 
-                    System.out.println("Digite o saldo total levantado nesse dia: ");
-                    matrizDiaMes[mes][dia] = Integer.parseInt(scanner.nextLine());
+                    
+                    try{
+                        System.out.println("Digite o saldo total levantado nesse dia: ");
+                        matrizDiaMes[dia-1][mes-1] = Integer.parseInt(scanner.nextLine());
+                    } catch (ArrayIndexOutOfBoundsException e){
+                        System.out.println("\n\u001B[31mOs valores digitados para consulta estão errados.\u001B[m\n");
+                    }
+                    
                     break;
 
                 case 6:
@@ -135,7 +141,14 @@ public class calculadora {
                     System.out.println("Digite o dia para consultar: ");
                     dia = Integer.parseInt(scanner.nextLine());
 
-                    System.out.format("O valor total no dia foi: %.2f \n", matrizDiaMes[mes][dia]);
+
+                    
+                    try{
+                        System.out.format("O valor total no dia foi: %.2f \n", matrizDiaMes[dia-1][mes-1]);    
+                    } catch (ArrayIndexOutOfBoundsException e){
+                        System.out.println("\n\u001B[31mOs valores digitados para consulta estão errados.\u001B[m\n");
+                    }
+                    
                     break;
 
                 case 7:
@@ -157,14 +170,14 @@ public class calculadora {
 
     // Mostra menu
         public static int MostraMenu(){
-            System.out.println("\n===Menu===");
-            System.out.println("1 - Entrada de Compra\n");
+            System.out.println("\n===Menu===\n");
+            System.out.println("1 - Entrada de Compra   ");
             System.out.println("2 - Cálculo de troco\n");
-            System.out.println("3 - Visualizar Histórico de Compra\n");
+            System.out.println("3 - Visualizar Histórico de Compra  ");
             System.out.println("4 - Apagar Histórico de Compra \n");
-            System.out.println("5 - Adicionar caixa \n");
+            System.out.println("5 - Adicionar caixa ");
             System.out.println("6 - Visualizar caixa \n");
-            System.out.println("7 - Fechar do Aplicativo ");
+            System.out.println("7 - Fechar do Aplicativo \n");
 
             // Criação de Scanner
             Scanner scanner = new Scanner(System.in);
