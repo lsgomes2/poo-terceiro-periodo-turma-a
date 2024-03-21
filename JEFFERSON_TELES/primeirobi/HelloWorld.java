@@ -3,9 +3,7 @@ package primeirobi;
 import java.util.Scanner;
 
 public class HelloWorld {
-    /**
-     * @param args
-     */
+   
     public static void main(String[] args){
        Scanner scanner = new Scanner(System.in);
        
