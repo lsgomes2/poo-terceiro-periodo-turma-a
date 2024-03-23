@@ -1,4 +1,4 @@
-package primeirobi.list1;
+package primeirobi.lists;
 
 import java.util.Scanner;
 

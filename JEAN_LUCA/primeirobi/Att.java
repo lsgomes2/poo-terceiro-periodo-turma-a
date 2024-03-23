@@ -2,7 +2,7 @@ package primeirobi;
 
 import java.util.Scanner;
 
-public class hello {
+public class Att {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -40,9 +40,9 @@ public class hello {
     }
 
     private static void calcularTroco(Scanner scanner) {
-        System.out.println("digite o valor recebido pelo cliente: R$  ");
+        System.out.println("digite o valor recebido pelo cliente:  ");
         float valorRecebido = scanner.nextFloat();
-        System.out.println("digite o valor total da compra: R$");
+        System.out.println("digite o valor total da compra: ");
         float valorTotal = scanner.nextFloat();
         float troco = valorRecebido - valorTotal;
         if (troco < 0) {
