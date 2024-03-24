@@ -1,7 +1,7 @@
-
+package atividades1B;
 import java.util.Scanner;
 
-public class primeirob {
+public class Atv1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choice;
