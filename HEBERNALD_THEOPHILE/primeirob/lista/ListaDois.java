@@ -22,10 +22,10 @@ public class ListaDois {
                     registVenda(scanner);
                     break;
                 case 3:
-                    System.out.println("Obrigado por usar a calculadora da Dona Gabrielinha");
+                    System.out.println("Obrigado por usar a calculadora da Dona Gabrielinha!");
                     break;
                 default:
-                    System.out.println("Opção inválida.Escolha uma opção válida");
+                    System.out.println("Opção inválida. Por favor, escolha uma opção válida.");
             }
         } while (escolha != 3);
 
