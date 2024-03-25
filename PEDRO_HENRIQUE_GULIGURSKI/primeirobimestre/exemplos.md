@@ -1,21 +1,3 @@
-Titulos
-
-# Title H1
-## Title H2
-### Title H3
-
-**negrito** *italico*
-
-Lista:
-* Item 1
-* Item 2
-
-CLick [aqui](https://youtube.com)
-
-![imagem]
-
-
-
 ## Paradigmas de Programação
 Conjunto de **regras, principios e conceitos de design** que definem a maneira como o codigo do programa é escrito e organizado.
 Está ligado ao estilo de escrita e organização do código num geral. 
