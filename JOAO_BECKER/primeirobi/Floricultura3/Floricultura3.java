@@ -6,11 +6,7 @@ public class Floricultura3 {
        public static void main(String[] args){
         try (Scanner leitor = new Scanner(System.in)) {
             boolean loja=false;
-            int contador=0;
-            int[] plantasVendidas = new int[20];
-            float[] valorVenda = new float[20];
-            boolean[] descontoPlanta = new boolean[20];
-            int [][] vendasMes = new int [12][31];
+            float [][] vendasMes = new float [13][32];
             while (loja==false) {
                 System.out.println("[1] - Calcular Preço Total \n[2] - Calcular Troco\n[3] - Registro De Vendas\n[4] - Sair ");
                 short verificar;
@@ -20,23 +16,33 @@ public class Floricultura3 {
                     case 1:
                         float valorUnitario=0;
                         int unidade=0;
+                        int dia=0;
+                        int mes=0;
+                        boolean testeMes=false;
                         float valorTotal=0;
+                        while(testeMes==false){
+                        System.out.println("Mês (em numeros):");
+                        mes = leitor.nextInt();
+                        System.out.println("Dia do mes:");
+                        dia = leitor.nextInt();
+                        if((mes==2 && dia>=29)||((mes%2 == 0 && mes<8) && dia>30)||(mes>12 || dia>31)||((mes%2 != 0 && mes>7) && dia>30)||(mes==0 || dia==0)){
+                            System.out.println("data invalida tente novamente");
+                            testeMes=false;
+                        }else{
+                            testeMes=true;
+                        }
+                        }
                         System.out.println("Insira quantidade de plantas:");
                         unidade = leitor.nextInt();
-                        plantasVendidas[contador] = unidade;
                         System.out.println("Insira valor da unidade da planta:");
                         valorUnitario = leitor.nextFloat();
                         if(unidade<=10){
                             valorTotal=unidade*valorUnitario;
-                            descontoPlanta[contador] = false;
                         }else{
                             valorTotal=(unidade*valorUnitario)*0.95f;
-                            descontoPlanta[contador] = true;
                         }
-                        
-                        valorVenda[contador] = valorTotal;
-                        contador++;
                         System.out.println("Preço total: R$"+valorTotal);
+                        vendasMes[mes][dia]+=valorTotal;
                         System.out.println("-----------------------------------------------");
                         break;
                     case 2:
@@ -56,17 +62,22 @@ public class Floricultura3 {
                         System.out.println("-----------------------------------------------");
                         break;
                     case 3:
-                        for(int i=0;i<contador;i++){
-                            System.out.println("Planta["+(i+1)+"]");
-                            System.out.println("Quantidade de plantas vendidas:"+plantasVendidas[i]+"");
-                            System.out.println("Valor da venda: R$"+valorVenda[i]+"");
-                            if(descontoPlanta[i]==true){
-                                System.out.println("O desconto de 5% foi aplicado");
+                        testeMes=false;
+                        mes=0;
+                        dia=0;
+                        while(testeMes==false){
+                            System.out.println("\nInsira mês para vizualizar vendas:");
+                            mes= leitor.nextInt();
+                            System.out.println("\nInsira dia do mês para vizualizar vendas:");
+                            dia= leitor.nextInt();
+                            if((mes==2 && dia>=29)||((mes%2 == 0 && mes<8) && dia>30)||(mes>12 || dia>31)||((mes%2 != 0 && mes>7) && dia>30)||(mes==0 || dia==0)){
+                                System.out.println("data invalida tente novamente");
+                                testeMes=false;
                             }else{
-                                System.out.println("O desconto de 5% não foi aplicado");
+                                testeMes=true;
                             }
-                            System.out.println("\n");
                         }
+                        System.out.println("\nO valor de vendas do mês "+mes+"  no dia "+dia+" foi de: R$"+vendasMes[mes][dia]+"\n");
                         System.out.println("-----------------------------------------------");
                         break;
                     case 4:
