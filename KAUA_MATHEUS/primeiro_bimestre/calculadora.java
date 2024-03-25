@@ -2,37 +2,11 @@ package KAUA_MATHEUS.primeiro_bimestre;
 import java.util.Scanner;
 import java.lang.Thread;
 
-/**
- Dona Gabrielinha ficou muito feliz com o software desenvolvido, porém, na utilização ela observou que poderia melhorar mais o sistema para lhe 
-ajudar em pontos que ela não tinha se atentado no início.
-
-Ela te contatou novamente e pediu as seguintes alterações no sistema:
-
-1. Desconto Especial:
-    Quando um cliente compra mais de 10 plantas, Dona Gabrielinha oferece um desconto especial de 5% no valor total da compra.
-   
-    Entrada: Receber dois valores, primeiro a quantidade da referida planta, segundo a valor o preço da mesma.
-    Saída: Retornar caso a quantidade informada for maior que 10 realizar o desconto.
-   
-2. Registro de Vendas:
-    Dona Gabrielinha deseja manter um registro das vendas, incluindo a quantidade de plantas vendidas, o valor venda e os descontos aplicados.
-   
-    Entrada: Venda realizada sistema
-    Saída: Armazenamento desses dados no sistema.
-
-3. Adicionar ao menu existente função 2 e aprimorar cálculo do valor a pagar com a função 1.
-
-Espero que nessa atividade leve em conta convenções de nomenclatura, para fazer um código mais limpo e compreensivo.
-
-INFORMAÇÕES IMPORTANTES
-* A ENTREGA CONSISTE NO LINK DO PULL REQUEST DO SEU GIT.
-* APÓS ADICIONADO O LINK, MARCAR ATIVIDADE COMO ENTREGUE!
-* NÃO SERÁ ACEITO ENTREGA APÓS A DATA!
- */
-
 public class calculadora {
-    @SuppressWarnings("resource")
+    @SuppressWarnings({ "resource"})
     public static void main(String[] args) throws InterruptedException {
+
+        // String caminho_Arquivo = "KAUA_MATHEUS/primeiro_bimestre/arquivoCompras.txt";
 
         // Criação de Arquivos!
         //Barquivo.criaArquivos("KAUA_MATHEUS/primeiro_bimestre/arquivoCompras.txt", "123\n");
@@ -44,23 +18,22 @@ public class calculadora {
         //Barquivo.lerTexto("KAUA_MATHEUS/primeiro_bimestre/arquivoCompras.txt");
 
 
+        int option;
+        float[][] matrizDiaMes = new float[30][12];
+
         // Criação de um Scanner
         Scanner scanner = new Scanner(System.in);
 
-        int opção;
+        
         do {
-            // Menu de Opções
-            opção = MostraMenu();
 
-            switch (opção) {
+            // Menu de Opções
+            option = MostraMenu();
+
+            switch (option) {
+
+                // Cálculo de venda
                 case 1:
-                    /*
-                    Calculo Preço Total:
-                    Dona Gabrielinha deseja calcular o preço total da venda de um item, considerando a quantidade de uma planta vendida vezes seu preço unitário.
-            
-                    Entrada: Receber dois valores, primeiro a quantidade da referida planta, segundo a valor o preço da mesma.
-                    Saída: Retornar o resultado do cálculo.
-                    */ 
 
                     // Quantidade de Produto
                     int quantidade_produto;
@@ -72,79 +45,147 @@ public class calculadora {
                     float preço_produto = Float.parseFloat(scanner.nextLine());
 
                     float valor_final = preço_produto * quantidade_produto;
+                    float desc = valor_final;
 
                     if(quantidade_produto > 10){
                         valor_final *= 0.95;
-                        System.out.format("\u001B[31mO valor total da compra é %.2f\n\u001B[m", valor_final * 0.95);
+                        System.out.format("\u001B[31mO valor total da compra é %.2f\n\u001B[m", valor_final);
                     } else{
                         System.out.format("\u001B[31mO valor total da compra é %.2f\n\u001B[m", valor_final);
                     }
-                        
-                    
-                    break;
-                case 2:
-                    /*
-                    * 2. Cálculo de Troco:
-                    A calculadora deve calcular o troco a ser dado ao cliente, considerando o valor pago.
 
-                    Entrada: Receber dois valores, primeiro o valor recebido pelo cliente, segundo o valor total da compra.
-                    Saída: Retornar o resultado do cálculo.
-                    */
+                    desc = desc - valor_final;
+
+                    // Criação de arquivo txt contendo o conteúdo
+
+                    Barquivo.criaArquivos("KAUA_MATHEUS/primeiro_bimestre/arquivoCompras.txt", "Qnt: " + 
+                    quantidade_produto + " -- Preço: R$" + 
+                    preço_produto + " -- Desconto Total: " +
+                    String.format("R$%.2f", (desc)) + "\n");
+
+                    break;
+                    
+                // Cálculo de troco
+                case 2:
+
+                    // Entrada de valor
 
                     System.out.println("Valor Recebido: ");
                     float valor_recebido = Float.parseFloat(scanner.nextLine());
-                    System.out.println("Valor da Compra: ");
-                    float  valor_pago = Float.parseFloat(scanner.nextLine());
 
-                    float troco_final = valor_recebido - valor_pago;
-                    while (troco_final < 0){
+                    // Total da compra
+                    System.out.println("Valor total da compra: ");
+                    float valor_total = Float.parseFloat(scanner.nextLine());
+
+
+                    float troco_final = valor_recebido - valor_total;
+                    
+                    while (0 > troco_final){
                         System.out.println("valor pago insuficiente! ");
                         System.out.println("\u001B[31mDigite novamente um pagamento válido: \u001B[m");
                         valor_recebido = Float.parseFloat(scanner.nextLine());
-                        System.out.format("\u001B[32mO troco é: %.2f\n\u001B[m", troco_final = valor_recebido - valor_pago);
+                        troco_final = valor_recebido - valor_total;
                     }
+                    System.out.format("\u001B[32mO troco é: %.2f\n\u001B[m", troco_final);
+
                     break;
 
+                // Mostra Lista
                 case 3:
+    
+                    int sair = 0;
+
+                    Barquivo.lerTexto("KAUA_MATHEUS/primeiro_bimestre/arquivoCompras.txt");
+                    while (sair != 1) {
+                        System.out.println("[1] - Sair");
+                        sair = Integer.parseInt(scanner.nextLine());
+                    }
+                    break;
+                
+                // Apaga o Arquivo Txt
+                case 4:
                     System.out.println("Tem certeza que deseja apagar a lista de itens comprados? Sim - [1] / Não - [0]");
                     int confirmar = Integer.parseInt(scanner.nextLine());
                     if(confirmar == 1){
-                        apagar("KAUA_MATHEUS/primeiro_bimestre/arquivoCompras.txt");
+                        Barquivo.apagar("KAUA_MATHEUS/primeiro_bimestre/arquivoCompras.txt");
                     }
                     else{
                         System.out.println("\u001B[31mNada foi apagado\u001B[m");
-                        break;
                     }
+                    break;
                 
+                case 5:
+                    // Inserir faturamento
+                    
+                    System.out.println("Digite o mês que deseja adicionar: ");
+                    int mes = Integer.parseInt(scanner.nextLine());
 
-                case 4:
+                    System.out.println("Digite o dia que deseja adicionar: ");
+                    int dia = Integer.parseInt(scanner.nextLine());
+
+                    
+                    try{
+                        System.out.println("Digite o saldo total levantado nesse dia: ");
+                        matrizDiaMes[dia-1][mes-1] = Integer.parseInt(scanner.nextLine());
+                    } catch (ArrayIndexOutOfBoundsException e){
+                        System.out.println("\n\u001B[31mOs valores digitados para consulta estão errados.\u001B[m\n");
+                    }
+                    
                     break;
 
+                case 6:
+                    // Ver faturamento
+                    System.out.println("Digite o mês para consultar: ");
+                    mes = Integer.parseInt(scanner.nextLine());
+
+                    System.out.println("Digite o dia para consultar: ");
+                    dia = Integer.parseInt(scanner.nextLine());
+
+
+                    
+                    try{
+                        System.out.format("O valor total no dia foi: %.2f \n", matrizDiaMes[dia-1][mes-1]);    
+                    } catch (ArrayIndexOutOfBoundsException e){
+                        System.out.println("\n\u001B[31mOs valores digitados para consulta estão errados.\u001B[m\n");
+                    }
+                    
+                    break;
+
+                case 7:
+                    break;
+
+                // Loop de entrada
                 default:
                     System.out.println("O valor digitado é inválido!");
                     break;
             }
+
+            // Delay
             Thread.sleep(1000);
 
 
-        } while(opção != 4);
+        } while(option != 7);
 
     }
 
     // Mostra menu
         public static int MostraMenu(){
-            System.out.println("\n===Menu===");
-            System.out.println("1 - Calcular Preço Total\n");
-            System.out.println("2 - Calcular Troco\n");
-            System.out.println("3 - Apagar Histórico do Estoque: \n");
-            System.out.println("4 - Fechar do Aplicativo: ");
+            System.out.println("\n===Menu===\n");
+            System.out.println("1 - Entrada de Compra   ");
+            System.out.println("2 - Cálculo de troco\n");
+            System.out.println("3 - Visualizar Histórico de Compra  ");
+            System.out.println("4 - Apagar Histórico de Compra \n");
+            System.out.println("5 - Adicionar caixa ");
+            System.out.println("6 - Visualizar caixa \n");
+            System.out.println("7 - Fechar do Aplicativo \n");
 
+            // Criação de Scanner
             Scanner scanner = new Scanner(System.in);
-            return Integer.parseInt(scanner.nextLine());
 
+            // Entrada do valor de option
+            int option = Integer.parseInt(scanner.nextLine());
+
+            return option;
         }
-    
-        public static void apagar(String caminho_Arquivo){
-            Barquivo.apagaArquivo(caminho_Arquivo);
-        }
+
     }

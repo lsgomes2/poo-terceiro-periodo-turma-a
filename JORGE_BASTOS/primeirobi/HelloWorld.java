@@ -3,63 +3,71 @@ import java.util.Scanner;
 
 public class HelloWorld {
 
-    public static void main(String[] args) throws Exception {
+
+    public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            boolean opcao = false;
+            int x;
+            do {
+                System.out.println("\nMenu:\n");
+                System.out.println("1 Calcular Preço");
+                System.out.println("2 Calcular Troco");
+                System.out.println("3 Registro de Vendas");
+                System.out.println("4 Sair");
+                System.out.print("Escolha uma opção: ");
+                x = scanner.nextInt();
+                switch (x) {
+                    case 1:
+                        calcPreco();
+                        break;
+                    case 2:
+                        calcTroco();
+                        break;
+                    case 3:
+                        registVenda();
+                        break;
+                    case 4:
+                        opcao = true;
+                        break;
+                    default:
+                        System.out.println("Opção inválida.");
+                }
+            } while (!opcao);
+        }
+    }
+    public static void calcPreco() {
         Scanner scanner = new Scanner(System.in);
-        int escolha;
-
-        do {
-            exibirMenu();
-            escolha = scanner.nextInt();
-
-            switch (escolha) {
-                case 1:
-                    calcularPrecoTotal(scanner);
-                    break;
-                case 2:
-                    calcularTroco(scanner);
-                    break;
-                case 3:
-                    System.out.println("Obrigado por usar a calculadora!");
-                    break;
-                default:
-                    System.out.println("Opção inválida. Escolha uma opção válida.");
-            }
-        } while (escolha != 3);
-
-        scanner.close();
-    }
-
-    public static void exibirMenu() {
-        System.out.println("\n==== Menu ====");
-        System.out.println("[1] - Calcular Preço Total");
-        System.out.println("[2] - Calcular Troco");
-        System.out.println("[3] - Sair");
-        System.out.print("Escolha uma opção: ");
-    }
-
-    public static void calcularPrecoTotal(Scanner scanner) {
-        System.out.print("Digite a quantidade da planta que foi vendida: ");
+        System.out.print("Digite a quantidade do produto: ");
         int quantidade = scanner.nextInt();
-
-        System.out.print("Digite o preço unitário da planta: ");
-        double precoUnitario = scanner.nextDouble();
-
-        double precoTotal = quantidade * precoUnitario;
-        System.out.println("Preço total da venda: R$" + precoTotal);
+        System.out.print("Digite o preço do produto: ");
+        double preco = scanner.nextDouble();
+        double precoTot = quantidade * preco;
+        if (quantidade > 10) 
+        precoTot *= 0.95;
+        System.out.println("O preço total é: R$ " + precoTot);
     }
-
-    public static void calcularTroco(Scanner scanner) {
-        System.out.print("Digite o valor total da compra: R$");
-        double valorTotal = scanner.nextDouble();
-
-        System.out.print("Digite o valor recebido pelo cliente: R$");
-        double valorRecebido = scanner.nextDouble();
-
-        double troco = valorRecebido - valorTotal;
-        if (troco >= 0) {
-            System.out.println("Troco a ser dado ao cliente: R$" + troco);
+    public static void calcTroco() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite o valor recebido pelo cliente: ");
+        double valRecebido = scanner.nextDouble();
+        System.out.print("Digite o valor total da compra: ");
+        double valTotal = scanner.nextDouble();
+        double troco = valRecebido - valTotal;
+        if (troco < 0) {
+            System.out.println("Valor recebido insuficiente.");
         } else {
-            System.out.println("O valor recebido é insuficiente para pagar a compra.");;
-        }
-    }
+            System.out.println("O troco a ser dado ao cliente é: R$ " + troco);
+        }
+    }
+    public static void registVenda() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite a quantidade de produtos vendidos: ");
+        int quantidade = scanner.nextInt();
+        System.out.print("Digite o valor da venda: ");
+        double valorVenda = scanner.nextDouble();
+        double valorTotal = quantidade * valorVenda;
+        if (quantidade > 10)
+        valorTotal *= 0.95;
+        System.out.println("Venda registrada: " + quantidade + " produtos vendidos por R$ " + valorTotal);
+    }
 }
