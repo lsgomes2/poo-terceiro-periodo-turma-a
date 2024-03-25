@@ -7,8 +7,8 @@ public class trabalho2flores {
         boolean f3 = true;
 
         float vetor[] = new float[50000];
-        
-        int i=-1;
+
+        int i = -1;
 
         while (f3) {
 
@@ -55,7 +55,7 @@ public class trabalho2flores {
                                 Valortotal = Valor + Valortotal;
 
                             }
-                            if (Quantplant>=10) {
+                            if (Quantplant >= 10) {
 
                                 Valortotal *= 0.95;
 
@@ -70,22 +70,23 @@ public class trabalho2flores {
 
                             while (f2) {
 
-                                i= i+1;
+                                i = i + 1;
 
                                 vetor[i] = Valortotal;
 
                                 System.out.println("_______________________________________\n");
                                 System.out.println("|           SISTEMA DE VENDA          |\n");
                                 System.out.println("|             Gabrielinha             |\n");
-                                System.out.println("|"+Desc+"                                      |");
+                                System.out.println("|" + Desc + "                                      |");
                                 System.out.println("|Valor da compra: " + Valortotal + "                 |\n");
                                 System.out.println("|valor do pagamento: " + Pagamento + "              |\n");
-                                System.out.println("|troco: " + (Pagamento - Valortotal) + "                         |\n");
+                                System.out.println(
+                                        "|troco: " + (Pagamento - Valortotal) + "                         |\n");
                                 System.out.println("|escolha uma das seguinte opreações:  |\n");
                                 System.out.println("|(1)Fazer outra venda                 |\n");
                                 System.out.println("|(2)sair da venda                     |\n");
                                 System.out.println("|_____________________________________|\n");
-                                Desc="";
+                                Desc = "";
 
                                 int n = scanner.nextInt();
                                 switch (n) {
@@ -126,7 +127,7 @@ public class trabalho2flores {
 
                 case 2:
 
-                    boolean f5=true;
+                    boolean f5 = true;
 
                     int y = 0;
                     while (f5) {
@@ -135,7 +136,7 @@ public class trabalho2flores {
                         } else {
                             System.out.println("Histórico de compra " + (y + 1) + " = " + vetor[y]);
                         }
-                        y++; 
+                        y++;
                     }
 
                     break;

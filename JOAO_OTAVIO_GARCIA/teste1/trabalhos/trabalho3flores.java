@@ -8,8 +8,8 @@ public class trabalho3flores {
 
         float Vetor[] = new float[50000];
         float Calendario[][] = new float[12][30];
-        
-        int i=-1;
+
+        int i = -1;
 
         int Mes;
 
@@ -61,7 +61,7 @@ public class trabalho3flores {
                                 Valortotal = Valor + Valortotal;
 
                             }
-                            if (Quantplant>=10) {
+                            if (Quantplant >= 10) {
 
                                 Valortotal *= 0.95;
 
@@ -73,35 +73,36 @@ public class trabalho3flores {
                             float Pagamento = scanner.nextFloat();
 
                             System.out.println("digita o dia da compra(em números)");
-                            Dia= scanner.nextInt();
-                            Dia= Dia-1;
+                            Dia = scanner.nextInt();
+                            Dia = Dia - 1;
 
                             System.out.println("digita o mes da compra(em números)");
-                            Mes= scanner.nextInt();
-                            Mes= Mes-1;
+                            Mes = scanner.nextInt();
+                            Mes = Mes - 1;
 
-                            Calendario[Mes][Dia]= Calendario[Mes][Dia]+Valortotal;
+                            Calendario[Mes][Dia] = Calendario[Mes][Dia] + Valortotal;
 
                             boolean f2 = true;
 
                             while (f2) {
 
-                                i= i+1;
+                                i = i + 1;
 
                                 Vetor[i] = Valortotal;
 
                                 System.out.println("_______________________________________\n");
                                 System.out.println("|           SISTEMA DE VENDA          |\n");
                                 System.out.println("|             Gabrielinha             |\n");
-                                System.out.println("|"+Desc+"                                      |");
+                                System.out.println("|" + Desc + "                                      |");
                                 System.out.println("|Valor da compra: " + Valortotal + "                 |\n");
                                 System.out.println("|valor do pagamento: " + Pagamento + "              |\n");
-                                System.out.println("|troco: " + (Pagamento - Valortotal) + "                         |\n");
+                                System.out.println(
+                                        "|troco: " + (Pagamento - Valortotal) + "                         |\n");
                                 System.out.println("|escolha uma das seguinte opreações:  |\n");
                                 System.out.println("|(1)Fazer outra venda                 |\n");
                                 System.out.println("|(2)sair da venda                     |\n");
                                 System.out.println("|_____________________________________|\n");
-                                Desc="";
+                                Desc = "";
 
                                 int n = scanner.nextInt();
                                 switch (n) {
@@ -133,11 +134,9 @@ public class trabalho3flores {
 
                     break;
 
-               
-
                 case 2:
 
-                    boolean f5=true;
+                    boolean f5 = true;
 
                     int y = 0;
                     while (f5) {
@@ -146,36 +145,33 @@ public class trabalho3flores {
                         } else {
                             System.out.println("Histórico de compra " + (y + 1) + " = " + Vetor[y]);
                         }
-                        y++; 
+                        y++;
                     }
 
                     break;
 
                 case 3:
 
-                int Dia2=0;
-                int Mes2=0;
+                    int Dia2 = 0;
+                    int Mes2 = 0;
 
-                System.out.println("digita o dia(em números)");
-                Dia2= scanner.nextInt();
-                Dia2= Dia2-1;
+                    System.out.println("digita o dia(em números)");
+                    Dia2 = scanner.nextInt();
+                    Dia2 = Dia2 - 1;
 
-                System.out.println("digita o mes(em números)");
-                Mes2= scanner.nextInt();
-                Mes2= Mes2-1;
+                    System.out.println("digita o mes(em números)");
+                    Mes2 = scanner.nextInt();
+                    Mes2 = Mes2 - 1;
 
-                if (Calendario[Mes2][Dia2]==0.0) {
+                    if (Calendario[Mes2][Dia2] == 0.0) {
 
-                    System.out.println("Sem vendas no dia");
-                    
-                }
-                else{
-                    System.out.println("Total de vendas no dia:"+Calendario[Mes2][Dia2]);
-                }
+                        System.out.println("Sem vendas no dia");
 
+                    } else {
+                        System.out.println("Total de vendas no dia:" + Calendario[Mes2][Dia2]);
+                    }
 
-                break;    
-
+                    break;
 
                 case 4:
                     System.out.println("saindo do sistema");
