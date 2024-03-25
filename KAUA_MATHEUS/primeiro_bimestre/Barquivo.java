@@ -1,13 +1,22 @@
 package KAUA_MATHEUS.primeiro_bimestre;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
-/**
- * Barquivo
- */
 public class Barquivo {
+    // Funções de manipulação de txt
 
-    public static void lerTexto(String pCaminhoArquivo){
+        public static void apagar(String caminho_Arquivo){
+            apagaArquivo(caminho_Arquivo);
+        }
+
+
+        public static void lerTexto(String pCaminhoArquivo){
 
         int contador_linha = 0;
 
@@ -47,7 +56,9 @@ public class Barquivo {
             PrintWriter escritorDeArquivos = new PrintWriter(buffer);
         
         ){
+
             escritorDeArquivos.append(pTextoAEscrever);
+
         }catch(IOException e){
             e.printStackTrace();
         }
@@ -65,7 +76,4 @@ public class Barquivo {
             System.out.println("\u001B[31mErro ao tentar apagar arquivo! \u001B[m");
         }
     }
-
 }
-
-

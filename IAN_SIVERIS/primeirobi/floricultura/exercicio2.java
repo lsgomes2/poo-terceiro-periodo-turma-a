@@ -1,7 +1,7 @@
-package primeirobi;
+package IAN_SIVERIS.primeirobi.floricultura;
 import java.util.Scanner;
 
-public class HelloWorld {
+public class exercicio2 {
 
 
     public static void main(String[] args) {
