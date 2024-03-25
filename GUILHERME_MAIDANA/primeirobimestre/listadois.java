@@ -1,7 +1,8 @@
 package primeirobimestre;
+
 import java.util.Scanner;
 
-public class primeiralista {
+public class listadois {
 
     // Função para calcular o total da compra
     public static int calcularTotal(int[] vetorTotal) {
@@ -44,26 +45,37 @@ public class primeiralista {
             if (vetorX[i] >= 10) {
                 vetorTotal[i] = (int) (vetorTotal[i] * 0.95); // Aplicar desconto de 5%
             }
-        
-
-        System.out.println("Entre com uma opção. 1 para calcular o total da compra, 2 para calcular seu troco, 3 para sair");
-        menu = scanner.nextInt();
-
-        switch (menu) {
-            case 1:
-                System.out.println("O total da sua compra é: " + calcularTotal(vetorTotal));
-                break;
-            case 2:
-                System.out.println("O troco é: " + calcularTroco(vetorTotal, vetorZ));
-                break;
-            case 3:
-                System.out.println("Saindo do programa.");
-                break;
-            default:
-                System.out.println("Opção inválida.");
-                break;
         }
-    }
+
+        do {
+            System.out.println("Entre com uma opção:");
+            System.out.println("1 - Calcular o total da compra");
+            System.out.println("2 - Calcular seu troco");
+            System.out.println("3 - Registrar venda");
+            System.out.println("4 - Sair");
+
+            menu = scanner.nextInt();
+
+            switch (menu) {
+                case 1:
+                    System.out.println("O total da sua compra é: " + calcularTotal(vetorTotal));
+                    break;
+                case 2:
+                    System.out.println("O troco é: " + calcularTroco(vetorTotal, vetorZ));
+                    break;
+                case 3:
+                    // Registrar venda
+                    System.out.println("Registrando venda.");
+                    break;
+                case 4:
+                    System.out.println("Saindo do programa.");
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+                    break;
+            }
+        } while (menu != 4);
+
         scanner.close();
     }
 }

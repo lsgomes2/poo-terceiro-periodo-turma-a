@@ -21,7 +21,7 @@ public class calculadora {
 
         while (sair == false) {
             System.out.println("--------------------------------");
-            System.out.println("Menu: \n[1] - Calcular preço total\n[2] - Calcular troco\n[3] - Sair");
+            System.out.println("Menu: \n[1] - Calcular preço total\n[2] - Calcular troco\n[3] - Sair" );
             System.out.println("--------------------------------");
             switch (input.nextInt()) {
                 case 1:  
@@ -46,5 +46,6 @@ public class calculadora {
                     break;
             }
         }
+        input.close();
     }
 }
