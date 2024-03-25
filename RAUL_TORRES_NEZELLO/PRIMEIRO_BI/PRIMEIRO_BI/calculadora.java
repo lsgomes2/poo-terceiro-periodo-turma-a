@@ -50,6 +50,9 @@ public class calculadora {
                         if(receba<tot){
                             System.out.println("Valor faltando:"+(tot - receba));
                         }
+                        if(receba==tot){
+                            System.out.println("Nenhum desconto a ser dado");
+                        }
                         break;
                     case 3:
                     for(int i=0;i<contador;i++){
