@@ -69,17 +69,62 @@ public class CalculadoraDeVendas3 {
     }
 
     private static void registrarVenda() {
-        // Implemente a lógica para registrar uma venda aqui, seguindo a estrutura anterior.
-        // Certifique-se de validar as entradas do usuário.
+        System.out.print("Digite o dia da venda: ");
+        int dia = scanner.nextInt();
+
+        System.out.print("Digite o mês da venda: ");
+        int mes = scanner.nextInt();
+
+        System.out.print("Digite o valor da venda: ");
+        double valor = scanner.nextDouble();
+
+        Venda venda = new Venda(dia, mes, valor);
+        registrosDeVendas.add(venda);
+
+        vendasPorDia.merge(dia, valor, Double::sum);
+        vendasPorMes.merge(mes, valor, Double::sum);
     }
 
     private static void exibirRegistrosDeVendas() {
-        // Implemente a lógica para exibir os registros de vendas aqui.
+        if (registrosDeVendas.isEmpty()) {
+            System.out.println("Nenhuma venda registrada.");
+            return;
+        }
+
+        for (Venda venda : registrosDeVendas) {
+            System.out.printf("Dia: %d, Mês: %d, Valor: %.2f\n", venda.getDia(), venda.getMes(), venda.getValor());
+        }
     }
 
     private static void exibirQuantidadeTotalDeVendasPorDiaEMes() {
-        // Implemente a lógica para exibir as vendas totais por dia e mês aqui.
+        System.out.println("Total de vendas por dia:");
+        vendasPorDia.forEach((dia, total) -> System.out.printf("Dia %d: %.2f\n", dia, total));
+
+        System.out.println("Total de vendas por mês:");
+        vendasPorMes.forEach((mes, total) -> System.out.printf("Mês %d: %.2f\n", mes, total));
     }
 
-    // Implemente a classe Venda e qualquer outra funcionalidade necessária aqui.
+    static class Venda {
+        int dia;
+        int mes;
+        double valor;
+
+        public Venda(int dia, int mes, double valor) {
+            this.dia = dia;
+            this.mes = mes;
+            this.valor = valor;
+        }
+
+        public int getDia() {
+            return dia;
+        }
+
+        public int getMes() {
+            return mes;
+        }
+
+        public double getValor() {
+            return valor;
+        }
+    }
 }
