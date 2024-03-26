@@ -2,13 +2,17 @@ package primeirobimestre;
 
 import java.util.Scanner;
 
-public class DonaGabrielinha {
-    private static double descontoEspecial = 0.05;
-    private static double[][] vendasPorDiaEMes = new double[12][30]; 
+public class Calculadora {
+    private static double descontoEspecial = 0.05; 
+    private static int[] quantidades = new int[100]; 
+    private static double[] valores = new double[100];
+    private static double[] descontos = new double[100]; 
+    private static int totalVendas = 0;
 
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int opcao;
+        
         do {
             exibirMenu();
             opcao = scanner.nextInt();
@@ -24,18 +28,12 @@ public class DonaGabrielinha {
                     calcularTroco(scanner);
                     break;
                 case 4:
-                    exibirRegistroDeVendas();
-                    break;
-                case 5:
-                    buscarVendasPorDiaEMes(scanner);
-                    break;
-                case 6:
                     System.out.println("Saindo...");
                     break;
                 default:
                     System.out.println("Opção inválida! Escolha novamente.");
             }
-        } while (opcao != 6);
+        } while (opcao != 4);
 
         scanner.close();
     }
@@ -45,9 +43,7 @@ public class DonaGabrielinha {
         System.out.println("[1] - Calcular Preço Total");
         System.out.println("[2] - Registrar Venda");
         System.out.println("[3] - Calcular Troco");
-        System.out.println("[4] - Exibir Registro de Vendas");
-        System.out.println("[5] - Buscar Vendas por Dia e Mês");
-        System.out.println("[6] - Sair");
+        System.out.println("[4] - Sair");
     }
 
     public static void calcularPrecoTotal(Scanner scanner) {
@@ -67,19 +63,24 @@ public class DonaGabrielinha {
     }
 
     public static void registrarVenda(Scanner scanner) {
-        System.out.println("Digite o número do mês (1-12):");
-        int mes = scanner.nextInt();
-        System.out.println("Digite o número do dia (1-30):");
-        int dia = scanner.nextInt();
+        System.out.println("Digite a quantidade de plantas vendidas:");
+        int quantidade = scanner.nextInt();
         System.out.println("Digite o valor total da venda:");
         double valorVenda = scanner.nextDouble();
 
-        if (mes >= 1 && mes <= 12 && dia >= 1 && dia <= 30) {
-            vendasPorDiaEMes[mes - 1][dia - 1] += valorVenda;
-            System.out.println("Venda registrada para o dia " + dia + " do mês " + mes + ".");
-        } else {
-            System.out.println("Data inválida!");
+        double desconto = 0.0; 
+
+        if (quantidade > 10) {
+            desconto = valorVenda * descontoEspecial;
         }
+
+        quantidades[totalVendas] = quantidade;
+        valores[totalVendas] = valorVenda;
+        descontos[totalVendas] = desconto;
+
+        totalVendas++;
+
+        System.out.println("Venda registrada: " + quantidade + " Plantas vendidas por: R$" + valorVenda + " Descontos: R$" + desconto);
     }
 
     public static void calcularTroco(Scanner scanner) {
@@ -94,27 +95,8 @@ public class DonaGabrielinha {
 
     public static void exibirRegistroDeVendas() {
         System.out.println("Registro de Vendas:");
-        for (int mes = 0; mes < 12; mes++) {
-            for (int dia = 0; dia < 30; dia++) {
-                double vendasDiaEMes = vendasPorDiaEMes[mes][dia];
-                if (vendasDiaEMes > 0) {
-                    System.out.println("Mês " + (mes + 1) + ", Dia " + (dia + 1) + ": R$" + vendasDiaEMes);
-                }
-            }
-        }
-    }
-
-    public static void buscarVendasPorDiaEMes(Scanner scanner) {
-        System.out.println("Digite o número do mês (1-12):");
-        int mes = scanner.nextInt();
-        System.out.println("Digite o número do dia (1-30):");
-        int dia = scanner.nextInt();
-
-        if (mes >= 1 && mes <= 12 && dia >= 1 && dia <= 30) {
-            double vendasDiaEMes = vendasPorDiaEMes[mes - 1][dia - 1];
-            System.out.println("Vendas para o dia " + dia + " do mês " + mes + ": R$" + vendasDiaEMes);
-        } else {
-            System.out.println("Data inválida!");
+        for (int i = 0; i < totalVendas; i++) {
+            System.out.println("Quantidade: " + quantidades[i] + ", Valor: R$" + valores[i] + ", Desconto: " + descontos[i]);
         }
     }
 }
