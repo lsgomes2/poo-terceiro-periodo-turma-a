@@ -60,5 +60,9 @@ Exemplos:
 * **Paradigmas Imperativos:**
     * *Foco em como executar*
     * *Definir um fluxo de controle que altera o estado do programa*
+    * *Procedural, Estruturado e POO*
 
 * **Paradigmas Declarativos:**
+    * *Foco em o que executar*
+    * *Logica definida, mas não em um fluxo de controle detalhado*
+    * *Funcional e Lógico*
