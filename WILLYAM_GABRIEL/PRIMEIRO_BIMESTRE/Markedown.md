@@ -1,24 +1,3 @@
-Títulos
-
-# Título H1
-## Título H2
-### Títulos H3
-
-Negrito e Itálico:
-
-**Negrito** e *Itálico*
-
-Lista:
-
-* Item 1
-* Item 2
-
-Click [aqui](*https://github.com/WillGabrielc137/poo-terceiro-periodo-turma-a*)
-
-[imagem](https://www.google.com/search?q=gripen&tbm=isch&ved=2ahUKEwj5lLmWvZCFAxXmg2EGHQBNC8sQ2-cCegQIABAA&oq=gripen&gs_lp=EgNpbWciBmdyaXBlbjINEAAYgAQYigUYQxixAzIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEiuFFDjBlj1EXAAeACQAQCYAZEBoAG4BqoBAzAuN7gBA8gBAPgBAYoCC2d3cy13aXotaW1nqAIAwgIIEAAYgAQYsQPCAgoQABiABBiKBRhDwgIEEAAYA8ICCxAAGIAEGLEDGIMBwgIOEAAYgAQYigUYsQMYgwGIBgE&sclient=img&ei=vvwBZvm9EOaHhuMPgJqt2Aw&bih=945&biw=1920&prmd=ivsnmbtz&rlz=1C1GCEA_enBR1096BR1096#imgrc=P6Uo_2012pyh8M)
-
->Exemplo
-
 # Markedown
 ## O que é ?
  É uma linguagem de marcação simples, feita para criar textos de maneira eficiente e rapida, geralmente usada na web. Com o Markdown, é possivel de maneira facil e rapída, marcações e textos, utilizando formatoções simples como **negrito**, *itálico*, a junção dos dois ***Negrito-Itálico***, listas, links, imagens etc.
@@ -68,3 +47,12 @@ Os pilares do POO podem ser:
 
 ## Vantagens
 O POO permit5e a reutilização de classes e objetos já criados, otimizando o código e permitindo uma melhor identação, isso permite que, além de facilitar o trabalho do programador, de se localizar no código, permite modificações, sem gerar erros em outras partes do código.
+
+### Conclusão
+
+## Paradigmas Imperativos:
+Tem como foco, executar o fluxo de controle que altera o estado do programa.
+
+## Paradigmas Declarativos:
+Tem como foco, o resultado final e não o fluxo de controle detalhado.
+
