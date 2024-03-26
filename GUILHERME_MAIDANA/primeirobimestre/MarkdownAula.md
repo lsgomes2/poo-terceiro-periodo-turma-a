@@ -59,14 +59,13 @@ Criada por Alan Kay na década de 1970, se concentra na criação de objetos que
 * Polimorfismo: Trata-se da capacidade de um objeto se passar por outro compatível.
 * Encapsulamento: Gerenciamento do acesso a atributos e métodos.
 * Abstração: Representação de conceitos essenciais do mundo real.
-
----
 ### Benefícios
 * Reutilização de código: A POO permite aproveitar classes e objetos já existentes.
 * Modularidade: A POO incentiva a divisão do código em módulos independentes.
 * Flexibilidade e escalabilidade: A POO oferece flexibilidade no design do software, permitindo adicionar novas funcionalidades e modificar o comportamento dos objetos sem afetar outras partes do sistema.
 * Organização e coesão do código: Ao adotar a POO, o código se torna mais organizado e coeso. Através da encapsulação e abstração, a lógica de programação é estruturada de maneira clara e compreensível.
 
+---
 ## Java
 * Multiparadigma
 * Procedural
