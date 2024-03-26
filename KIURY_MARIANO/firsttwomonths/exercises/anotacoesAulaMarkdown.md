@@ -2,7 +2,7 @@
 
 ## ☢️ O que é um paradigma? ☢️
 
-![Imagem referência paradigma](images/MUDE-SUAS-CREN%C3%87AS-2.jpg)
+![Imagem referência paradigma](images/paradigmaImage.jpg)
 
 
 O paradigma é basicamente uma maneira específica de **ver e entender** o mundo ao nosso redor. É como uma lente pela qual interpretamos e organizamos nossas experiências, ideias e conhecimentos. É o conjunto de regras, principios, conceitos de design que definem como você vai resolver um problema, ou ainda o conjuto de regras que norteia nosso desenvolvimento.
@@ -10,58 +10,75 @@ O paradigma é basicamente uma maneira específica de **ver e entender** o mundo
 
 ![Paradigmas da Programação](images/paradigmasProgramacao.png)
 
+---
+
 ## ⚠️ Paradigma imperativo ⚠️
 
     Dirigido por comando, voce deve dizer para o computador o passo a passo para atingir o resultado esperado, para chegar na solução.
 
-**FOCO EM COMO EXECUTAR!**
+                    ** FOCO EM COMO EXECUTAR! **
         
+![Paradigma Imperativo](images/paradigmaImperativo.jpg)
+
 ## *Tipos:*
 
-### programação orientada a objetos - 
+### Programação Orientada a Objetos 
 
-Também imperativo - Criado por Alan Kay, viram que apenas com estruturarada e procedimental não resolviamos sistemas complexos, precisavamaos de algo que fornecesse mais abstração.
+Criado por Alan Kay, viram que apenas com a linguagem estruturarada e procedimental não eram ainda resolvidos sistemas complexos, precisavamaos de algo que fornecesse mais abstração.
 
-pilares:   
-- Herança - classe herda de outra
-- Poliformismo
-- Objetio se comporta de varias formas
-                Encapsulamnto - proteger os atributos
-                poder de abstração - trazer todos esses conveitos pra maquina, representação na essencia
+ 🗝️ Pilares:   
+- Herança - Classe herda de outra;
+- Poliformismo - Objeto se comporta de várias formas;
+- Encapsulamnto - proteger os atributos;
+- Abstração - Trazer todos esses conceitos para a máquina, representação na essência.
 
-    benefícios: Reutilização de código
-                Modulariedade
-                Flexibilidade e escabilidade: mais fácil representear quando você tem um arepresentação do mundo real no sistema.
-                Organização e coesão de código
+![POO Pilares](images/pooPilares.jpg)
 
-### - programação estruturada 
+*Benefícios:*
+- Reutilização de código;
+- Modulariedade;
+- Flexibilidade e escabilidade: mais fácil representear quando você tem uma representação do mundo real no sistema;
+- Organização e coesão de código.
 
-- Fazer blocos condicionais, estuturas de loop, pequenas estruturas, blocos de fluxo, melhorar legibilidade e reutilização
+### Programação Estruturada 
+
+Fazer blocos condicionais, estuturas de loop, **pequenas estruturas**, **blocos de fluxo**, melhorar legibilidade e reutilização de código.
         
-### programação pracedural 
+### Programação Procedural 
 
-- dividir sua solução em procedimentos reutilizaveis, métodos e funções, quebrar o código
-            
-    
+Dividir sua solução em **procedimentos reutilizaveis**, métodos e funções, quebrar o código em partes.
+
+---
+
 ## 🎯 Paradigma Declarativo 🎯
 
-, mais preocupados do resultado do que como vai ser feito, tem grande auxilio da linguagem, você não se importa como vai ser utilizado.
+    Maior atenção aos resultados do que como vai será executado, tem grande auxilio da linguagem, você não se importa como vai ser utilizado. 
+    "Os fins justificam os meios".
 
-**FOCO EM EXECUTAR!**
+                        **FOCO EM EXECUTAR!**
 
-exemplos:
-         PRogramção funcional - foco em imutabilidade, manter o estado, utilização de muita função mantemática, lambda
-            programação lógica - com ele são definidos as regras e fatos e tudo que ela fara com base nesses dados e fatos que vocÊ alimentou, inferindo, muito utilizado em IA, pensanod extremamente nor resultado.
+![Paradigma Declarativo](images/paradigmaDeclarativo.jpg)
 
+## *Tipos:*
 
-colocar exemplos de códigos
+### Programação Funcional 
 
+Foco em **imutabilidade**, manter o estado, utilização de muitas funções mantemáticas, utiliza o recurso 'lambda'.
 
+### Programação Lógica
 
-JAva
-    Multiparadigma
-    procedural
-    estruturada
-    poo
-    programação concorrente
-    funcional (apartir do java 8)
+Onde são definidos as regras e fatos de tudo que será executado, com base nesses dados e fatos que foram alimentados.
+Muito utilizado em IA, infere pensando exatamente no resultado.
+
+---
+
+# JAVA
+
+![Java Imagem](images/java.jpg)
+    
+    - Multiparadigma
+    - Procedural
+    - Estruturada
+    - POO
+    - Programação concorrente
+    - Funcional (apartir do java 8)
