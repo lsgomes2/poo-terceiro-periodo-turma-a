@@ -6,7 +6,8 @@ public class calculadora {
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
             int maisproduto;
-            double[] vetortotal  = new double[100];
+            int[][] matriz= new int[11][29];
+            int[] vetortotal  = new int[100];
             double[] vetordesconto  = new double[100];
             int[] vetorquantidade  = new int[100];
             double[][] matrizdata = new double[12][30];
@@ -37,7 +38,7 @@ public class calculadora {
                 int verifi = 0;
                 contador++;
                 while(verifi == 0){
-                System.out.println("\nMenu\n [1]Preço total\n [2]Troco\n [3]Registro de vendas\n [4]Salvar vendas\n [5]Buscar vendas pelo dia e mes\n [6]Sair");
+                System.out.println("\nMenu\n [1]Preço total\n [2]Troco\n [3]Registro de vendas\n [4]Salvar quantidade total de venda\n [5]Sair");
                 int menu = scanner.nextInt();
                 switch (menu) {
                     case 1:
