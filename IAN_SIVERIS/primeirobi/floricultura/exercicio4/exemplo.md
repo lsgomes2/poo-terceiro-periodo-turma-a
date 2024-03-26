@@ -1,32 +1,9 @@
-Titulos:
 
-# Titulo principal
-## Subtitulo 
-### sub-titulo 
+## Paradigmas: 
+### Imperativa estruturada:
 
-negrito e italico:
-
-**Negrito** ou __Negrito__
-
-*Italico* ou _italico_
-
-[GitHub](https://github.com/Ian-Siveris/poo-terceiro-periodo-turma-a)
-
-![Imagem](https://i0.wp.com/blog.bioparquedorio.com.br/wp-content/uploads/2020/11/Abu_filhote_macaco-prego-do-peito-amarelo-BioParquedoRio.jpg?resize=1200%2C1200&ssl=1)
-
-```Codigo```
-
-```java
-public static void main(string[] args) {
-    System.out.println("HelloWorld");
-}
-
-```
-
-# Paradigmas: 
-## Imperativa estruturada:
 ### Visa otimizar o codigo utilizando blocos de fluxo de controle do programa, bloco de tomadas de decisao (**If,If then,Else**) e as as interacoes (_For,While,Loops_) e funcoes. Exemplos: __Cobol,PHP,Perl,Go__
-
+#
 ## Imperativa Procedual:
 ### E um paradigma baseado em procedimentos, eles sao uma lista de instrucoes para dizer ao computador o que fazer passo a passo. Exemplos: _C,C++,Java e Pascal_.
 
@@ -43,8 +20,36 @@ public static void main(string[] args) {
 - 
 # exemplo Declarativo: 
 - _Cha,Mate leao, Quente._
+##
 
+# _POO:_
+### Criada na decada de 70 por ***Alan Kay***, a POO se baseia na criacao de objetos, permitindo o encapsulamento de dados e areutilizacao de codigos 
+### Linguagens que sao orientadas a objetos: _PHP,Java,C#,JS,Python e Ruby_.
 
+## Pilares POO: 
+- _Heranca: Criacao de novas classes com base em classes existentes_
+- _Polimorfismo: Trata da habilidade de um objeto se passar por outro_
+- _Encapsulamento: Gerenciamento do acesso a atibutos e metodos_
+- _Abstracao: Representacao de conceitos essenciais do mundo real_
+
+## Beneficios: 
+- _Reutilizacao de codigos: Permite reutilizar codigo_
+- _Modularidade: Incentiva a divisao de codigo_
+- _Flexibilidade e escalabilidade oferece flexibilidade no design_
+- _Organizacao_ O codigo se torna mais organizado e coezo_
+
+# Java:
+- _Multiparadigama_
+- _Procedual_
+- _Estruturado_
+- _POO_
+- _Programacao concorrente_
+- _Funcional_
+
+# Conclusao:
+## Paradigma Imperativo:
+- _Foco em como executar_
+- _Foco em que executar_
 
 
 
