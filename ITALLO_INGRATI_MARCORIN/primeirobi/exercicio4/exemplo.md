@@ -1,11 +1,14 @@
-# **Paradigmas da programação**
+# **Aluno:** Itallo Ingrati Marcorin.
+# **Data:** 25/03/2024.
+---
+## Paradigmas da programação
 
-Definido como um conjunto de regras e principios, conceitos de design, programa organizado, seu estilo de código.
+- Definido como um conjunto de regras e principios, conceitos de design, programa organizado, seu estilo de código.
 
 ---
-# **Paradigma imperativo**
+## Paradigma imperativo
 
-É dirigido por comando. Como uma receita de bolo, ira direcionar a execução do programa com uma sequencia de funções para serem executadas, ou seja é um conjunto de execuções e cada declaração orienta o que deve ser feito.
+- É dirigido por comando. Como uma receita de bolo, ira direcionar a execução do programa com uma sequencia de funções para serem executadas, ou seja é um conjunto de execuções e cada declaração orienta o que deve ser feito.
 
 ---
 ## Exemplos imperativa
@@ -48,5 +51,20 @@ Definido como um conjunto de regras e principios, conceitos de design, programa 
 
 
   - Benefícios;
-    -  
+    -  Reutilização de código: A POO permite aproveitar classes e objetos ja existentes.
+
+    - Modularidade: A POO incentiva a divisão do código em módulos independentes.
+
+    - Flexibilidades e escebilidade: A POO oferece flexibilidade no design do software, permitindo adicionar novas funcionalidade e modificar o comportamento dos objetos sem afetar partes do sistema.
+
+    - Organização e coesão de código: Ao adotar o POO, o código se torna mais organizado e coeso, atravez da encapsulação e abstração, a lógica de programação é estruturada de maneira clara e compreensível.
+
 ---
+## Java
+
+- Paradigmas Imperativos:
+  - Foco em **como** executar, define o fluxo de controle que altera o estado do programa.
+
+- Paradigmas Declarativos:
+  - Foco em **o que** executar, define a lógica do programa, mas não em um fluxo de controle detalhado.
+  ---
