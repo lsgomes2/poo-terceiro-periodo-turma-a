@@ -8,6 +8,7 @@ public class trabalho3flores {
 
         float Vetor[] = new float[50000];
         float Calendario[][] = new float[12][30];
+        float HistoMes[] = new float [12];
 
         int i = -1;
 
@@ -79,6 +80,8 @@ public class trabalho3flores {
                             System.out.println("digita o mes da compra(em números)");
                             Mes = scanner.nextInt();
                             Mes = Mes - 1;
+
+                            HistoMes[Mes]= HistoMes[Mes] + Valortotal;
 
                             Calendario[Mes][Dia] = Calendario[Mes][Dia] + Valortotal;
 
@@ -166,9 +169,12 @@ public class trabalho3flores {
                     if (Calendario[Mes2][Dia2] == 0.0) {
 
                         System.out.println("Sem vendas no dia");
+                        System.out.println("Total de vendas no mês:" + HistoMes[Mes2]);
+                    
 
                     } else {
                         System.out.println("Total de vendas no dia:" + Calendario[Mes2][Dia2]);
+                        System.out.println("Total de vendas no mês:" + HistoMes[Mes2]);
                     }
 
                     break;
