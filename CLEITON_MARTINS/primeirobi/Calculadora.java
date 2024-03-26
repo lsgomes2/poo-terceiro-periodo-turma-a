@@ -4,19 +4,38 @@ import java.time.LocalDate;
 
 import java.util.Scanner;
 
+import java.util.ArrayList;
+
+import java.util.List;
+
+import java.util.Arrays;
+
+import java.util.stream.Collectors;
+
+import java.util.stream.Stream;
+
 public class Calculadora 
 {
     public static void main(String[] args) 
     {
         Scanner scanner = new Scanner(System.in);
         
+        List <String> listaDeFlores = new ArrayList<>();
+        
+        listaDeFlores.add("1 - Violeta");
+        listaDeFlores.add("2 - Flor de Liz");
+        listaDeFlores.add("3 - Gira Sol");
+        listaDeFlores.add("4 - Rosa");
+        listaDeFlores.add("5 - Margarida");
+
         System.out.println("Olá, seja bem vindo!");
         System.out.println("Conheça nossos produtos:");
-        System.out.println("1 - Violeta");
-        System.out.println("2 - Flor de Liz");
-        System.out.println("3 - Gira Sol");
-        System.out.println("4 - Rosa");
-        System.out.println("5 - Margarida");
+
+        for (String flores : listaDeFlores)
+        {
+            System.out.println(flores);
+        }
+
         System.out.println("Selecione um produto para prosseguir...");
 
         double violeta = 1.50;
@@ -148,6 +167,16 @@ public class Calculadora
 		        System.out.println("Insira uma alternativa válida!");
             break;
         }
+
+        List<String> nomeFlores = Arrays.asList("Violeta", "Flor de Liz", "Gira Sol", "Rosa", "Margarida");
+
+        List<String> filtroFlores = nomeFlores.stream()
+            .filter(flor -> flor.startsWith("V"))
+            .sorted()
+            .collect(Collectors.toList());
+
+        filtroFlores.forEach(System.out::println);
+
         scanner.close();
     }   
 }

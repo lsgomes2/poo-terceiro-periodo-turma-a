@@ -13,7 +13,7 @@ Lista:
 * Item 1
 * Item 2
 
-Click{aqui}("https://github.com/Sandrolaxx/poo-terceiro-periodo-turma-a/pull/104")
+Click [aqui]("https://github.com/Sandrolaxx/poo-terceiro-periodo-turma-a/pull/104")
 
 ![alt text](image.png)
 
