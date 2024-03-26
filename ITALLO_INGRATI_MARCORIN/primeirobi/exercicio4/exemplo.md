@@ -60,7 +60,7 @@
     - Organização e coesão de código: Ao adotar o POO, o código se torna mais organizado e coeso, atravez da encapsulação e abstração, a lógica de programação é estruturada de maneira clara e compreensível.
 
 ---
-## Java
+## Java2
 
 - Paradigmas Imperativos:
   - Foco em **como** executar, define o fluxo de controle que altera o estado do programa.
