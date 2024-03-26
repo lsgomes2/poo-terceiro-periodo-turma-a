@@ -71,6 +71,7 @@ public class calculadora3 {
         } else {
             matrizVenda[dia][mes] = valorTotal;
         }
+        input.close();
     }
 
     public static void solicitaProduto(float[][] matriz, int linhaAtual, float[][] matrizVenda) {
@@ -98,6 +99,7 @@ public class calculadora3 {
         marcarVendaCalendario(matrizVenda, valorTotal);
 
         adicionarNaLista(matriz, linhaAtual, qtdProduto, (float)valorTotal, (float)desconto, (float)valorPago);
+        input.close();
     }
 
     public static void main(String[] args) throws InterruptedException, IOException {
@@ -171,6 +173,7 @@ public class calculadora3 {
                     System.out.println("Opção inválida!");
                     break;
             }
+            input.close();
         } while (true);
     }
 }
