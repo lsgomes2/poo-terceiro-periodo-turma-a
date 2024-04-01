@@ -56,7 +56,6 @@ public class calculadora2Desafio {
         boolean continua = true;
 
         do {
-            limparTerminal();
             System.out.println("--------------------------------");
             System.out.println("Menu: \n[1] - Calcular preço total\n[2] - Calcular troco\n[3] - Adicionar a sacola\n[4] - Verificar sacola\n[5] - Sair" );
             System.out.println("--------------------------------");

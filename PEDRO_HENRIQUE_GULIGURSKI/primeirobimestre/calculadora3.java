@@ -3,11 +3,7 @@ package primeirobimestre;
 import java.util.Scanner;
 import java.io.IOException;
 
-
 public class calculadora3 {
-
-    int[][] listaCompras = new int[50][4];
-
 
     public static void limparTerminal() {
         try {
@@ -35,7 +31,7 @@ public class calculadora3 {
     public static void exibirLista(float[][] matriz) {
         limparTerminal(); 
         for (int l = 0; l < matriz.length; l++) {
-            if (matriz[l][l] == 0.0) {
+            if (matriz[l][0] == 0.0) {
                 break;
             }
             System.out.println("--------------------------------");
@@ -45,7 +41,7 @@ public class calculadora3 {
                 if (c == 0) { // QtdProduto
                     System.out.println("Quantidade de Produtos: " + (int)matriz[l][c]);
                 } else if (c == 1) { // Valor Total
-                    System.out.println("O valor total foi: R$" + (float)matriz[l][c]);
+                    System.out.println("O valor total foi: R$" + matriz[l][c]);
                 } else if (c == 2) { // Desconto
                     System.out.println("O desconto foi: R$" + matriz[l][c]);
                 }
@@ -59,33 +55,33 @@ public class calculadora3 {
         int dia = input.nextInt();
         System.out.println("E em que mês?");
         int mes = input.nextInt();
-
-        if (dia >= 0) {
-            dia = 1;
-        } else if (mes >= 0) {
-            mes = 1;
+    
+        if (dia < 1 || dia > 31 || mes < 1 || mes > 12) {
+            System.out.println("Data inválida!");
+            return;
         }
-
+    
         if (matrizVenda[dia][mes] != 0.0f) {
+            
             matrizVenda[dia][mes] += valorTotal;
         } else {
             matrizVenda[dia][mes] = valorTotal;
         }
-        input.close();
     }
+    
 
     public static void solicitaProduto(float[][] matriz, int linhaAtual, float[][] matrizVenda) {
 
         Scanner input = new Scanner(System.in);
         System.out.println("Digite o valor unitário do produto: ");
-        float valorProduto = input.nextInt();
+        float valorProduto = input.nextFloat();
 
         System.out.println("Digite a quantidade de produtos: ");
         int qtdProduto = input.nextInt();
         float valorTotal = valorProduto * qtdProduto;
         float desconto = 0;
         if (qtdProduto > 10){
-            desconto = (float) (valorTotal * 0.05);
+            desconto = valorTotal * 0.05f;
             valorTotal = valorTotal - desconto;
             System.out.println("O valor total foi de R$" + valorTotal);
         } else {
@@ -94,21 +90,20 @@ public class calculadora3 {
         
 
         System.out.println("Qual foi o valor pago?");
-        float valorPago = input.nextInt();
+        float valorPago = input.nextFloat();
 
         marcarVendaCalendario(matrizVenda, valorTotal);
 
-        adicionarNaLista(matriz, linhaAtual, qtdProduto, (float)valorTotal, (float)desconto, (float)valorPago);
-        input.close();
+        adicionarNaLista(matriz, linhaAtual, qtdProduto, valorTotal, desconto, valorPago);
     }
 
     public static void main(String[] args) throws InterruptedException, IOException {
         Scanner input = new Scanner(System.in);
-        float[][] listaCompras = new float[50][5];
-        float[][] calendarioCompras = new float[31][13];
+        float[][] listaCompras = new float[50][4];
+        float[][] calendarioCompras = new float[32][13  ];
         int linhaAtual = 0;
         solicitaProduto(listaCompras, linhaAtual, calendarioCompras);
-        do {
+        while (true) {
             System.out.println("--------------------------------");
             System.out.println("Menu: \n[1] - Calcular preço total\n[2] - Calcular troco\n[3] - Adicionar a sacola\n[4] - Verificar sacola\n[5] - Verificar Venda por Dia\n[6] - Sair" );
             System.out.println("--------------------------------");
@@ -152,28 +147,37 @@ public class calculadora3 {
                     limparTerminal();
                     exibirLista(listaCompras);
                     break;
-                case 5:
+                    case 5:
                     System.out.println("De qual dia deseja ver a compra?");
+                    if (!input.hasNextInt()) {
+                        System.out.println("Entrada inválida para o dia.");
+                        break;
+                    }
                     int dia = input.nextInt();
                     System.out.println("E em que mês?");
+                    if (!input.hasNextInt()) {
+                        System.out.println("Entrada inválida para o mês.");
+                        break;
+                    }
                     int mes = input.nextInt();
-                    if (dia >= 0) {
-                        dia = 1;
-                    } else if (mes >= 0) {
-                        mes = 1;
+                    if (dia < 1 || dia > 31 || mes < 1 || mes > 12) {
+                        System.out.println("Data inválida!");
+                        break;
                     }
                     float valorDia = calendarioCompras[dia][mes];
                     System.out.println("--------------------------------");
                     System.out.println("No dia " + dia + "/" + mes + " o valor da compra foi " + valorDia);
                     break;
+                
                 case 6:
+                    input.close();
+
                     System.exit(0);
                     break;
                 default:
                     System.out.println("Opção inválida!");
                     break;
             }
-            input.close();
-        } while (true);
+        }
     }
 }
