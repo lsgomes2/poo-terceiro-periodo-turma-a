@@ -1,4 +1,4 @@
-package KAUA_MATHEUS.primeiro_bimestre;
+package KAUA_MATHEUS.primeiro_bimestre.Arq_antigos;
 import java.util.Scanner;
 import java.lang.Thread;
 
