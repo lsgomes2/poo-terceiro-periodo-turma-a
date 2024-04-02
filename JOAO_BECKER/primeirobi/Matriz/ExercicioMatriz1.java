@@ -1,4 +1,4 @@
-package JOAO_BECKER.primeirobi.Matriz;
+package primeirobi.Matriz;
 
 public class ExercicioMatriz1 {
     public static void main(String[] args){

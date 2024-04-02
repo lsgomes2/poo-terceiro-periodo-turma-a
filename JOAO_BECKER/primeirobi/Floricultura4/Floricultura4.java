@@ -1,9 +1,9 @@
-package primeirobi.Floricultura3;
+package primeirobi.Floricultura4;
 
 import java.util.Scanner;
 
-public class Floricultura3 {
-       public static void main(String[] args){
+public class Floricultura4 {
+    public static void main(String[] args){
         try (Scanner leitor = new Scanner(System.in)) {
             boolean loja=false;
             float [][] vendasMes = new float [13][32];
@@ -90,4 +90,5 @@ public class Floricultura3 {
             }
         }
     }
+    
 }
