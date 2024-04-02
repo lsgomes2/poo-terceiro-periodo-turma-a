@@ -2,12 +2,14 @@ package PRIMEIRO_BIMESTRE;
 
 import java.util.Scanner;
 
-public class Lista2 {
+public class Lista3 {
     public static void main(String[] args) {
         int line = 0;
+        int controller = 0;
         double finalDiscount = 0;
         Scanner sc = new Scanner(System.in);
         int storage = getStorage(sc);
+        float[][] dayAndMonth = new float[12][30];
         int[] differentPlantsRegister = new int[100];
         float[] priceRegister = new float[100];
         double[] discountRegister = new double[100];
@@ -17,7 +19,7 @@ public class Lista2 {
         initializeArrays(sc, storage, plants, price);
 
         int choosenOption = 0;
-        while (choosenOption != 4) {
+        while (choosenOption != 6) {
             choosenOption = showOptions(sc, choosenOption);
             switch (choosenOption) {
                 case 1:
@@ -30,13 +32,24 @@ public class Lista2 {
                 case 3:
                     if (line == 0) {
                         System.out.println("Não há registro de venda\nRedirecionando...");
-                        
                         break;
                     } else {
                         registerSale(differentPlantsRegister, priceRegister, discountRegister, qttTotaleRegister);
                     }
                     break;
                 case 4:
+                    dayAndMonth = chooseDay(sc, dayAndMonth);
+                    controller++;
+                    break;
+                case 5:
+                    if (controller == 0) {
+                        System.out.println("Não há registros de venda\nRedirecionando...");
+                        break;
+                    } else {
+                        queryValue(sc, dayAndMonth);
+                    }
+                    break;
+                case 6:
                     System.out.println("Saindo do sistema...");
                     break;
                 default:
@@ -54,8 +67,12 @@ public class Lista2 {
 
     public static int showOptions(Scanner sc, int choosenOption) {
         System.out.println("Digite o número da opção que desejas: ");
-        System.out.println(
-                "[1] - Calcular Preço Total\n[2] - Calcular Troco\n[3] - Registrar venda\n[4] - Sair");
+        System.out.println("[1] - Calcular Preço Total[");
+        System.out.println("[2] - Calcular Troco");
+        System.out.println("[3] - Registrar venda");
+        System.out.println("[4] - Escolha o dia e o mês para salvar o valor total");
+        System.out.println("[5] - Consultar valor vendido em um dia");
+        System.out.println("[6] - Sair");
         return sc.nextInt();
     }
 
@@ -69,7 +86,7 @@ public class Lista2 {
     }
 
     public static int calculateTotalPrice(Scanner sc, int line, int[] differentPlantsRegister, float[] priceRegister,
-            double[] discountRegister, float[] qttTotaleRegister, String[] plants, 
+            double[] discountRegister, float[] qttTotaleRegister, String[] plants,
             float[] price, double finalDiscount) {
         System.out.print("Quantas plantas o cliente comprou ao total? ");
         int qttBought = sc.nextInt();
@@ -166,6 +183,42 @@ public class Lista2 {
                     System.out.println("Não houve desconto");
                 }
             }
+        }
+    }
+
+    public static float[][] chooseDay(Scanner sc, float[][] dayAndMonth) {
+        int day;
+        int month;
+        do {
+            System.out.println("Qual o dia que deseja registrar?");
+            day = sc.nextInt();
+        } while (day < 1 || day > 30);
+        do {
+            System.out.println("E qual o mês em numero deseja registrar?");
+            month = sc.nextInt();
+        } while (month < 1 || month > 12);
+        System.out.println("Qual o valor vendido no dia " + day + " do mês " + month + "?");
+        float value = sc.nextFloat();
+        dayAndMonth[month - 1][day - 1] = value;
+        return dayAndMonth;
+    }
+
+    public static void queryValue(Scanner sc, float[][] dayAndMonth) {
+        int day;
+        int month;
+        do {
+            System.out.println("Qual dia quer consultar?");
+            day = sc.nextInt();
+        } while (day < 1 || day > 30);
+        do {
+            System.out.println("Qual mês em numero?");
+            month = sc.nextInt();
+        } while (month < 1 || month > 12);
+        if (dayAndMonth[month - 1][day - 1] != 0) {
+            String stringFormat = dayAndMonth[month - 1][day - 1] != 1 ? " reais" : " real";
+            System.out.println("Foi vendido " + dayAndMonth[month - 1][day - 1] + stringFormat);
+        } else {
+            System.out.println("Não foi vendido neste dia ou não foi registrado");
         }
     }
 }
