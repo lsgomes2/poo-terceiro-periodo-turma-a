@@ -1,3 +1,5 @@
+package MyyPlant;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,11 +23,29 @@ class Loja {
     }
 
     public void adicionarVendedor(Vendedor vendedor) {
-        vendedores.add(vendedor);
+        if (!vendedores.contains(vendedor)) {
+            vendedores.add(vendedor);
+        } else {
+            System.out.println("Vendedor já registrado.");
+        }
     }
 
     public void adicionarCliente(Cliente cliente) {
-        clientes.add(cliente);
+        if (!clientes.contains(cliente)) {
+            clientes.add(cliente);
+        } else {
+            System.out.println("Cliente já registrado.");
+        }
+    }
+
+    public void listarVendedores() {
+        System.out.println("Vendedores:");
+        vendedores.forEach(vendedor -> System.out.println(vendedor));
+    }
+
+    public void listarClientes() {
+        System.out.println("Clientes:");
+        clientes.forEach(cliente -> System.out.println(cliente));
     }
 
     public void contarClientes() {

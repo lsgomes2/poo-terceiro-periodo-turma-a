@@ -1,3 +1,5 @@
+package MyyPlant;
+
 public class Main {
     public static void main(String[] args) {
         Loja myyPlant = new Loja("Myy Plant", "Myy Plant LTDA", "00.000.000/0001-00", "Cidade Centro", "Bairro Central", "Rua das Flores 100");

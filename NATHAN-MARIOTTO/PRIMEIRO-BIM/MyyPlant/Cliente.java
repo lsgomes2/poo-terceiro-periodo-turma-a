@@ -1,3 +1,5 @@
+package MyyPlant;
+
 class Cliente {
     String nome;
     int idade;
