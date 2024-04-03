@@ -1,24 +1,32 @@
 package KAUA_MATHEUS.primeiro_bimestre;
 
+import java.util.ArrayList;
+
 public class Vendedor {
+
+    /*String cidade,
+    String bairro, String rua, float salarioBase, 
+    
+    this.cidade = cidade;
+    this.bairro = bairro; this.rua = rua; this.salarioBase = salarioBase;
+    */
 
     // Criação de Vars
 
-    private String nome;
-    private int idade;
-    private String cidade;
-    private String bairro;
-    private String rua;
-    private float salarioBase;
-    private float salarioRecebido;
+    String nome;
+    int idade;
+    Loja loja = new Loja();
+    String cidade;
+    String bairro;
+    String rua;
+    float salarioBase;
+    float[] salarioRecebido = new float[3];
 
-    public Vendedor(String nome, int idade, String cidade,
-    String bairro, String rua, float salarioBase, float salarioRecebido) {
+    public Vendedor(String nome, int idade, float[] salarioRecebido) {
 
 
         // Criação de Propriedades
-        this.nome = nome; this.idade = idade; this.cidade = cidade;
-        this.bairro = bairro; this.rua = rua; this.salarioBase = salarioBase;
+        this.nome = nome; this.idade = idade; 
         this.salarioRecebido = salarioRecebido;
 
     }
@@ -31,6 +39,17 @@ public class Vendedor {
         System.out.println("E moro em " + this.cidade);
     }
 
-    //void calcularMedia(){   }
+    void calcularMedia(){   
+        System.out.println(salarioRecebido[1]);
+    }
+
+    void calcularBonus(){   
+        System.out.println(this.salarioBase);
+    }
+
+    int teste(){
+        System.out.println(10);
+        return 10;
+    }
 
 }
