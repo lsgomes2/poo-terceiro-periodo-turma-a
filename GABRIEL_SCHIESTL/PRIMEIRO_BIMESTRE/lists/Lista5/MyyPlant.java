@@ -4,7 +4,7 @@ public class MyyPlant {
     public static void main(String[] args) {
         Vendedor igor = new Vendedor();
         igor.name = "Igor";
-        igor.age = 15;
+        igor.age = 25;
         Loja matriz = new Loja();
         matriz.popularName = "MyyPlant";
         matriz.socialReason = "MyyPlant plantas S.A.";
@@ -16,5 +16,7 @@ public class MyyPlant {
         matriz.customers[0] = "Ingrid";
         igor.store = matriz;
         igor.presentation();
+        matriz.customers[1] = "Gabriel";
+        matriz.countCustomers();
     }
 }
