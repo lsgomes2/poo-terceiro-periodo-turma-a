@@ -11,11 +11,28 @@ public class Loja {
     String[] customers = new String[1000];
 
     public void countCustomers(){
-        System.out.println("A loja tem " + customers.length + " clientes");
+        int x = 0;
+        int qttCustomers = 0;
+        while(x < customers.length){
+            if (customers[x] == null) {
+                break;
+            }
+            qttCustomers++;
+        x++;
+        }
+        System.out.println("A loja tem " + qttCustomers + " clientes");
     }
 
     public void countSellers(){
-        System.out.println("A loja tem " + sellers.length + " vendedores");
+        int x = 0;
+        int qttSellers = 0;
+        while(x < sellers.length){
+            if (sellers[x] == null) {
+                break;
+            }
+            qttSellers++;
+        }
+        System.out.println("A loja tem " + qttSellers + " vendedores");
     }
 
     public void presentation(){
