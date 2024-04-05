@@ -1,12 +1,12 @@
-package primeirobimestre;
+package primeirobimestre.Listas;
+
 import java.util.Scanner;
 
-public class listatres {
+public class listadois {
 
     // Função para calcular o total da compra
     public static int calcularTotal(int[] vetorTotal) {
         int total = 0;
-
         for (int valor : vetorTotal) {
             total += valor;
         }
@@ -29,10 +29,6 @@ public class listatres {
         int[] vetorZ = new int[3];
         int[] vetorTotal = new int[3];
         int menu;
-        
-        // Adicionando arrays para armazenar vendas mensais e diárias
-        
-        int[][] vendasDiarias = new int[30][12]; // Matriz de dias e meses
 
         for (int i = 0; i < 3; i++) {
             System.out.println("Digite a quantidade de compras que você comprou:");
@@ -49,12 +45,6 @@ public class listatres {
             if (vetorX[i] >= 10) {
                 vetorTotal[i] = (int) (vetorTotal[i] * 0.95); // Aplicar desconto de 5%
             }
-
-            // Salvar a venda na matriz de vendas diárias
-            System.out.println("Digite o dia do mês (1 a 30) e o mês (1 a 12):"); 
-            int dia = scanner.nextInt();
-            int mes = scanner.nextInt();
-            vendasDiarias[dia - 1][mes - 1] += vetorTotal[i]; // Subtraindo 1 para ajustar ao índice 0
         }
 
         do {
@@ -62,8 +52,7 @@ public class listatres {
             System.out.println("1 - Calcular o total da compra");
             System.out.println("2 - Calcular seu troco");
             System.out.println("3 - Registrar venda");
-            System.out.println("4 - Buscar quantidade de vendas por mês e dia");
-            System.out.println("5 - Sair");
+            System.out.println("4 - Sair");
 
             menu = scanner.nextInt();
 
@@ -79,21 +68,13 @@ public class listatres {
                     System.out.println("Registrando venda.");
                     break;
                 case 4:
-                    // Buscar quantidade de vendas por mês e dia
-                    System.out.println("Digite o dia do mês (1 a 30) e o mês (1 a 12) para buscar as vendas:"); // Corrigido a ordem de entrada
-                    int diaBusca = scanner.nextInt();
-                    int mesBusca = scanner.nextInt();
-                    System.out.println("Quantidade de vendas para o mês " + mesBusca + ", dia " + diaBusca + ": " +
-                            vendasDiarias[diaBusca - 1][mesBusca - 1]); // Subtraindo 1 para ajustar ao índice 0-based
-                    break;
-                case 5:
                     System.out.println("Saindo do programa.");
                     break;
                 default:
                     System.out.println("Opção inválida.");
                     break;
             }
-        } while (menu != 5);
+        } while (menu != 4);
 
         scanner.close();
     }
