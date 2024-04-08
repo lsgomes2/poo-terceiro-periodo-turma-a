@@ -11,8 +11,11 @@ public class Vendedor {
     Double [] salarioRecebido = new Double[3];
 
     public double calcularMedia(){
-        return 0;
-
+        double media=0;
+        for(int i=0;i<=salarioRecebido.length;i++){
+            media+=salarioRecebido[i];
+        }
+        return media;
     }
 
     public double calcularBonus(){
@@ -21,7 +24,7 @@ public class Vendedor {
     }
 
     public void apresentarse(){
-        
+        System.out.println("O vendedor "+nome+" da loja "+loja+" tem "+idade+" de idade");
     }
 }
 

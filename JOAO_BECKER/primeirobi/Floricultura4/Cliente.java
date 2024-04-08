@@ -6,6 +6,8 @@ public class Cliente {
     String cidade;
     String bairro;
     String rua;
+
+    public void apresentarse(){
+        System.out.println("O cliente "+nome+" tem "+idade+" anos.");
+    }
 }
-/*com os atributos nome, idade, cidade, bairro e rua.
-Método apresentarse deve printar o nome, idade. */
