@@ -22,7 +22,7 @@ public class Loja {
     //função de apresentar
     void apresentarSe(){
         
-        System.out.println("Nome Fantasia: "+Name_Fant+"\nCNPJ: "+CNPJ+"\nCidade: "+City+"\nBairro: "+Neighborhood+"\nRua:"+Street+"\nQuantidade de vendedores: "+contarVendedores()+"Quantidade de Clientes: "+contarClientes());
+        System.out.println("Nome Fantasia: "+Name_Fant+"\nCNPJ: "+CNPJ+"\nCidade: "+City+"\nBairro: "+Neighborhood+"\nRua:"+Street+"\nQuantidade de vendedores: "+contarVendedores()+"\nQuantidade de Clientes: "+contarClientes());
     }
     int contarVendedores(){
         return this.Vendedores.length;

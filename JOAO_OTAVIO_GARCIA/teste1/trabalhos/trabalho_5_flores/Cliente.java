@@ -20,6 +20,6 @@ public class Cliente {
     //apresentar função
     void apresentarSe(){
         
-        System.out.println("Nome: "+Name+"\nIdade: "+Age+"\nCidade: "+City);
+        System.out.println("Nome: "+Name+"\nIdade: "+Age+"\nCidade: "+City+"\n \n");
     }
 }

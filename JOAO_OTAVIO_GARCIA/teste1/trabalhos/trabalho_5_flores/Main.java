@@ -12,12 +12,21 @@ public class Main {
 
         //vendedor
         Vendendor Vendedor_1 = new Vendendor("joao", 19, "Tupãssi", "Pombo", "Janeiro", 
-        1800f, "loja Matriz(my plant)");
+        1800f, "loja Matriz(my plant)",1500,new Float[]{800f,1555f,2000f});
+        Vendendor Vendedor_2 = new Vendendor("Clarencio", 22, "Toledo", "Canarinho", "Ovo",
+         1200f, "loha Matriz(my plant)", 1200,new Float[]{1500f,1800f,1458f});
 
-        Cliente[] Clientes = new Cliente[]{Clientes_1,Clientes_2};
-        Vendendor[] Vendedores = new Vendendor[]{Vendedor_1};
+       
+        Cliente[] Cliente = new Cliente[]{Clientes_1,Clientes_2};
+        Vendendor[] Vendedores = new Vendendor[]{Vendedor_1,Vendedor_2};
+
+        Loja_principal.Clientes = Cliente;
+        Loja_principal.Vendedores = Vendedores;
 
         Vendedor_1.apresentarSe();
+        Vendedor_2.apresentarSe();
+        Clientes_1.apresentarSe();
+        Clientes_2.apresentarSe();
         Loja_principal.apresentarSe();
     }
     
