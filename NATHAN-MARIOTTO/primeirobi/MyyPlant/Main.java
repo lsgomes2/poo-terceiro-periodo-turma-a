@@ -1,4 +1,4 @@
-package MyyPlant;
+package primeirobi.myyplant;
 
 public class Main {
     public static void main(String[] args) {

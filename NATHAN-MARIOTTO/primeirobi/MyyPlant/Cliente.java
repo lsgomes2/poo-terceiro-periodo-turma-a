@@ -1,4 +1,4 @@
-package MyyPlant;
+package primeirobi.myyplant;
 
 class Cliente {
     String nome;

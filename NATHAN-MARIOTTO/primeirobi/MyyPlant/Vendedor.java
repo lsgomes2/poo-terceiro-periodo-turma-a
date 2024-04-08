@@ -1,4 +1,4 @@
-package MyyPlant;
+package primeirobi.myyplant;
 
 import java.util.Arrays;
 
