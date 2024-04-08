@@ -1,95 +1,14 @@
-package primeirobimestre.Listas;
+package primeirobimestre.Myyplants;
 
 import java.util.Scanner;
 
-class Vendedor {
-    String nome, cidade, bairro, rua, loja;
-    int idade;
-    double salarioBase;
-    double[] salarioRecebido = new double[3]; // Armazena três valores 
 
-    //Apresentar o vendedor
-    public void apresentarse() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Idade: " + idade);
-        System.out.println("Loja: " + loja);
-    }
 
-    // Calcula a média dos salários
-    public double calcularMedia() {
-        double soma = 0;
-        for (double salario : salarioRecebido) {
-            soma += salario;
-        }
-        return soma / salarioRecebido.length;
-    }
-
-    // Calcula o bônus
-    public double calcularBonus() {
-        return salarioBase * 0.2;
-    }
-}
-
-class Cliente {
-    String nome, cidade, bairro, rua;
-    int idade;
-
-    // Apresenta o cliente
-    public void apresentarse() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Idade: " + idade);
-    }
-}
-
-class Loja {
-    String nomeFantasia, razaoSocial, cnpj, cidade, bairro, rua;
-    Vendedor[] vendedores;
-    Cliente[] clientes;
-    int[][] vendasDiarias = new int[30][12]; // Matriz de dias e meses
-
-    // Conta clientes
-    public int contarClientes() {
-        return clientes.length;
-    }
-
-    // Conta vendedores
-    public int contarVendedores() {
-        return vendedores.length;
-    }
-
-    // Apresenta a loja
-    public void apresentarse() {
-        System.out.println("Nome Fantasia: " + nomeFantasia);
-        System.out.println("CNPJ: " + cnpj);
-        System.out.println("Endereço: " + rua + ", " + bairro + ", " + cidade);
-    }
-
-    // Registrar venda na loja
-    public void registrarVenda(int dia, int mes, int valor) {
-        vendasDiarias[dia - 1][mes - 1] += valor; // Subtraindo 1 para ajustar ao índice 0
-    }
-
-    // Calcular total de vendas para um determinado dia e mês
-    public int calcularTotalVendas(int dia, int mes) {
-        return vendasDiarias[dia - 1][mes - 1];
-    }
-
-    // Calcular salário do vendedor
-    public double calcularSalarioVendedor(Vendedor vendedor) {
-        // Calcula a média dos salários recebidos
-        double mediaSalarios = vendedor.calcularMedia();
-        // Calcula o bônus
-        double bonus = vendedor.calcularBonus();
-        // Retorna o salário total (média dos salários + bônus)
-        return mediaSalarios + bonus;
-    }
-}
-
-public class listaquatro {
+public class Listaquatro {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Criando objeto e preenchendo atributos
+        
         Vendedor vendedor1 = new Vendedor();
         vendedor1.nome = "Sandrolax";
         vendedor1.idade = 26;
@@ -100,7 +19,7 @@ public class listaquatro {
         // Apresenta o vendedor
         System.out.println("Vendedor:");
         vendedor1.apresentarse();
-        System.out.println(); // Adiciona uma linha em branco para separar a apresentação do vendedor do menu de opções
+        System.out.println(); 
 
         Cliente cliente1 = new Cliente();
         cliente1.nome = "Maria";
@@ -108,6 +27,10 @@ public class listaquatro {
         cliente1.cidade = "Cascavel";
         cliente1.bairro = "Centro";
         cliente1.rua = "Rua da FAG";
+
+        System.out.println("Cliente:");
+        cliente1.apresentarse();
+        System.out.println(); 
 
         Loja loja1 = new Loja();
         loja1.nomeFantasia = "Myy Plants";
