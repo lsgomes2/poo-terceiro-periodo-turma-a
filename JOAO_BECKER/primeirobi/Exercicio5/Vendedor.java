@@ -19,7 +19,7 @@ public class Vendedor {
     }
 
     public double calcularBonus(){
-        return salarioBase+(salarioBase*0.2);
+        return salarioBase*0.2;
 
     }
 
