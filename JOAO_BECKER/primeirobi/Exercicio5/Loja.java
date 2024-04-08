@@ -1,4 +1,4 @@
-package primeirobi.Floricultura4;
+package primeirobi.Exercicio5;
 
 public class Loja {
     String nomeFantasia;
@@ -33,7 +33,3 @@ public class Loja {
         System.out.println("A loja "+nomeFantasia+" esta localizada na rua "+rua+", "+bairro+", "+cidade+".");
     }
 }
-/*Atributos, nome fantasia, razão social, cpnj, cidade, bairro, rua, array vendedores, array de clientes.
-contarClientes, mosta a quantidade de clientes
-contarVendedores, mosta a quantidade de vendedores.
-Método apresentarse, printa nomeFantasia, cnpj e endereco.*/

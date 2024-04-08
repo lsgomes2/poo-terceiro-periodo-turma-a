@@ -1,4 +1,4 @@
-package primeirobi.Matriz;
+package primeirobi.Exemplos;
 
 public class ExercicioMatriz1 {
     public static void main(String[] args){

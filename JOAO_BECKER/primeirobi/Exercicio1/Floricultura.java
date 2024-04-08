@@ -1,4 +1,4 @@
-package primeirobi.Floricultura1;
+package primeirobi.Exercicio1;
 import java.util.Scanner;
 
 public class Floricultura {
