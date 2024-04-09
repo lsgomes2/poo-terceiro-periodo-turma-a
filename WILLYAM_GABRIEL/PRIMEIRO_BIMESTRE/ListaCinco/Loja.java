@@ -1,7 +1,5 @@
 package ListaCinco;
-
 import java.util.ArrayList;
-
 class Loja {
     String nomeFantasia;
     String razaoSocial;
@@ -26,19 +24,15 @@ class Loja {
     public void adicionarVendedor(Vendedor vendedor) {
         vendedores.add(vendedor);
     }
-
     public void adicionarCliente(Cliente cliente) {
         clientes.add(cliente);
     }
-
     public int contarClientes() {
         return clientes.size();
     }
-
     public int contarVendedores() {
         return vendedores.size();
     }
-
     public void apresentarSe() {
         System.out.println("NOME FANTASIA: " + nomeFantasia);
         System.out.println("CNPJ: " + cnpj);

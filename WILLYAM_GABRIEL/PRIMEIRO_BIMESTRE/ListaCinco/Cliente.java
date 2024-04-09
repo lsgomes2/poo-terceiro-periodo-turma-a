@@ -1,5 +1,4 @@
 package ListaCinco;
-
 class Cliente {
     String nome;
     int idade;

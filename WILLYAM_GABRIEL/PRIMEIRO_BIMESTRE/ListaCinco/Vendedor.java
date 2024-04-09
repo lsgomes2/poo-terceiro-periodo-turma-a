@@ -1,7 +1,5 @@
 package ListaCinco;
-
 import java.util.ArrayList;
-
 class Vendedor {
     String nome;
     int idade;
@@ -25,13 +23,11 @@ class Vendedor {
         this.salarioRecebido.add(2200.70);
         this.salarioRecebido.add(3000.80);
     }
-
     public void apresentarSe() {
         System.out.println("NOME: " + nome);
         System.out.println("IDADE: " + idade);
         System.out.println("LOJA: " + loja);
     }
-
     public double calcularMedia() {
         double soma = 0;
         for (double salario : salarioRecebido) {
@@ -39,7 +35,6 @@ class Vendedor {
         }
         return soma / salarioRecebido.size();
     }
-
     public double calcularBonus() {
         return salarioBase * 0.2;
     }
