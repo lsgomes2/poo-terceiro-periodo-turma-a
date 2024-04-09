@@ -17,11 +17,9 @@ public class Vendendor {
         this.Name=Name;
         this.Neighborhood=Neighborhood;
         this.Salario_bas=Salario_bas;
-        this.Salario_rec= Salario_bas+Bonus;
+        this.Salario_rec= Salario_bas*0.2f;
         this.Street=Street;
-        this.Bonus=Bonus;
         this.Hist_Pag=Hist_Pag;
-        this.Media=Media;
     }
 
     void apresentarSe(){
@@ -31,8 +29,8 @@ public class Vendendor {
     }
 
     float calcularBonus(){
-        this.Bonus=Salario_bas*0.2f;
-        return this.Bonus;
+        return (Salario_bas*0.2f);
+        
     }
     float calcularMedia(){
         float Total=0;
