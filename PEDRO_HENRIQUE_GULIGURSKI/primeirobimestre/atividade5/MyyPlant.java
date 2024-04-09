@@ -36,6 +36,7 @@ public class MyyPlant {
                 vendedor.calcularMedia(); 
                 vendedor.calcularBonus();
             }
+            System.out.println();
         }
         System.out.println();
 

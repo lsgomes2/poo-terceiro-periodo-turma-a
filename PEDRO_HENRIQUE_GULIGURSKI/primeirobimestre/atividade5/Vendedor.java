@@ -42,8 +42,8 @@ public class Vendedor {
 
 
     public float calcularBonus() {
-        System.out.println("Meu bonus é "+(salarioBase * 2));
-        return salarioBase * 2;
+        System.out.println("Meu bonus é "+(salarioBase * 0.2));
+        return (float) (salarioBase * 0.2);
     }
     }
 
