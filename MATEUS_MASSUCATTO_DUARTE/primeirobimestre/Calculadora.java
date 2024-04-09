@@ -1,13 +1,11 @@
 package primeirobimestre;
 
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Calculadora 
 {
-    private static ArrayList<Integer> listaQuantidade = new ArrayList<>();
-    private static ArrayList<Double> listaPreco = new ArrayList<>();
-    private static ArrayList<Integer> listaDesconto = new ArrayList<>();
+    private static int[][] quantidadeVendasDiaEMes = new int [12][31];
+    private static double[][] precoTotalDiaEMes = new double[12][31];
     public static void main(String[] args) 
     {
         Scanner scanner = new Scanner(System.in);
@@ -30,11 +28,7 @@ public class Calculadora
                     System.out.println("Obrigado por usar a calculadora!");
                     break;
                 case 4:
-                    System.out.println("Histórico de vendas: \n");
-                    for (int i = 0; i < listaQuantidade.size(); i++)
-                    {
-                        System.out.println("\n Quantidade: " + listaQuantidade.get(i) + "\n Preço: " + listaPreco.get(i) + "\n Desconto: " + listaDesconto.get(i) + "%");
-                    } 
+                    buscarVendasPorDiaEMes(scanner);
                     break;   
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
@@ -47,7 +41,7 @@ public class Calculadora
         System.out.print("1 - Calcular preço total \n");
         System.out.print("2 - Calcular troco \n");
         System.out.print("3 - Sair \n");
-        System.out.println("4 - Ver histórico de vendas \n");
+        System.out.println("4 - Buscar histórico de vendas \n");
         System.out.print("Digite a opção desejada: ");
     }
 
@@ -63,10 +57,21 @@ public class Calculadora
             precoTotal = precoTotal - (precoTotal * 0.05);
             System.out.printf("o preço total com desconto é: %.2f\n", precoTotal);
         }
-        
-        listaQuantidade.add(quantidade);
-        listaPreco.add(precoTotal);
-        listaDesconto.add(quantidade >=10 ? 5 : 0);
+
+        int mes, dia;
+        do {
+            System.out.println("Digite o número do mês(1 a 12): ");
+            mes = scanner.nextInt();
+        } while (mes < 1 || mes > 12);
+
+        do {
+            System.out.println("Digite o número do dia (1 a 31): ");
+            dia = scanner.nextInt();
+        } while (dia < 1 || dia > 31); 
+
+        quantidadeVendasDiaEMes[mes - 1][dia - 1] += quantidade;
+        precoTotalDiaEMes[mes - 1][dia - 1] +=  precoTotal;
+            
     }
 
     private static void calcularTroco(Scanner scanner) 
@@ -80,5 +85,19 @@ public class Calculadora
         int troco = valorPago - valorTotal;
 
         System.out.printf("O troco é: R$ %d\n", troco);
+    }
+
+    private static void buscarVendasPorDiaEMes(Scanner scanner)
+    {
+        System.out.println("Digite o número do mês (1 a 12): ");
+        int mes = scanner.nextInt();
+        System.out.println("Digite o número do dia(1 a 31): ");
+        int dia = scanner.nextInt();
+
+        int quantidade = quantidadeVendasDiaEMes[mes - 1][dia - 1];
+        double precoTotal = precoTotalDiaEMes[mes - 1][dia - 1];
+
+        System.out.println("Quantidade de vendas: " + quantidade);
+        System.out.println("Preço total das vendas: " + precoTotal);
     }
 }
