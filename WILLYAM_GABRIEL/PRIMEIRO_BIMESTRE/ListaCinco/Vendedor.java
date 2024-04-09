@@ -1,4 +1,4 @@
-package ListaCinco;
+package WILLYAM_GABRIEL.PRIMEIRO_BIMESTRE.ATIVIDADES.ListaCinco;
 import java.util.ArrayList;
 class Vendedor {
     String nome;

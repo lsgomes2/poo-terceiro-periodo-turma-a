@@ -1,4 +1,4 @@
-package ListaCinco;
+package WILLYAM_GABRIEL.PRIMEIRO_BIMESTRE.ATIVIDADES.ListaCinco;
 public class MyyPlant {
     public static void main(String[] args) {
         Vendedor vendedor1 = new Vendedor("CLEBER", 25, "MY PALNT'S", "CASCAVEL", "CASCAVEL VELHO", "RUA ROMA", 1200.0);

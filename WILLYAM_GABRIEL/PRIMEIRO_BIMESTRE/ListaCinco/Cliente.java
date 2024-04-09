@@ -1,4 +1,4 @@
-package ListaCinco;
+package WILLYAM_GABRIEL.PRIMEIRO_BIMESTRE.ATIVIDADES.ListaCinco;
 class Cliente {
     String nome;
     int idade;
