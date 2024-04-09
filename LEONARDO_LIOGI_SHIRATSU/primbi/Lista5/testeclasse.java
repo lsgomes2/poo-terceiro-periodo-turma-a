@@ -1,4 +1,4 @@
-package primbi;
+package primbi.Lista5;
 
 public class testeclasse {
 

@@ -1,4 +1,4 @@
-package primbi;
+package primbi.Lista5;
 
 public class loja {
     //Atributos, nome fantasia, razão social, cpnj, cidade, bairro, rua, array vendedores, array de clientes.
@@ -13,12 +13,12 @@ public class loja {
     double quantClientes[] = {2,3,3,3,3};
 
 
-    public void apresentarSe() {
+    void apresentarSe() {
         System.out.println("\nNome Fantasia: " + nome + "\nCNPJ: " + cnpj +
                 "\nEndereço: " + cidade + ", " + bairro + ", " + rua);
     }
 
-    public void contarClientes() {
+    void contarClientes() {
         System.out.println("Quantidade de clientes: " + quantClientes.length);
     }
 
