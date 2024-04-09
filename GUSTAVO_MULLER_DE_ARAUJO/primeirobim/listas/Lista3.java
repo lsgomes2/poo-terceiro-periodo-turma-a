@@ -1,4 +1,4 @@
-package primeiro_bimestre.listas;
+package primeirobim.listas; //cd .. para poder commitar aí fica apenas primeirobim/
 
 import java.util.Scanner;
 
