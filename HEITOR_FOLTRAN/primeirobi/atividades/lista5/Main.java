@@ -1,4 +1,4 @@
-package HEITOR_FOLTRAN.primeirobi.atividades.lista5;
+package primeirobi.atividades.lista5;
 
 public class Main {
     public static void main(String[] args) {

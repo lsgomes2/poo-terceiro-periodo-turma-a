@@ -1,4 +1,4 @@
-package HEITOR_FOLTRAN.primeirobi.exemplos;
+package primeirobi.exemplos;
 import java.util.Scanner;
 
 public class Hello {

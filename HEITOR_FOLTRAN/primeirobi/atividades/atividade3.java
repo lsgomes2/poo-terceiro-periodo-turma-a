@@ -1,4 +1,4 @@
-package HEITOR_FOLTRAN.primeirobi.atividades;
+package primeirobi.atividades;
 import java.util.Scanner;
 
 public class atividade3 {
