@@ -4,9 +4,9 @@ public class Vendedor {
     
     String nome, loja, cidade, bairro, rua;
     int salarioBase, idade;
-    int[] salarioRecebido = new int[3];
+    double [] salarioRecebido = new double[3];
 
-    public Vendedor (String nome, String loja, String cidade, String bairro, String rua, int salarioBase, int idade, int[] salarioRecebido){
+    public Vendedor (String nome, String loja, String cidade, String bairro, String rua, int salarioBase, int idade, double[] salarioRecebido){
         this.nome = nome;
         this.loja = loja;
         this.idade = idade;
@@ -18,19 +18,20 @@ public class Vendedor {
     }
 
     public void apresentarSe() {
-        System.out.println("Nome do vendedor: " + this.nome + "\nIdade: " + this.idade);
-        System.out.println("Loja: " + this.loja);
+        System.out.println("Nome do vendedor: " + this.nome + "\nIdade: " + this.idade + "\nLoja: " + this.loja);
     }
 
-    public double calcularMedia() {
+    public void calcularMedia() {
         double soma = 0;
-        for (int salario : this.salarioRecebido) {
+        for (double salario : this.salarioRecebido) {
             soma += salario;
         }
-        return soma / this.salarioRecebido.length;
+        double media = soma / this.salarioRecebido.length;
+        System.out.println("Média salarial: " + media);
     }
 
-    public double calcularBonus() {
-        return this.salarioBase * 0.2;
+    public void calcularBonus() {
+        double bonus = this.salarioBase * 0.2;
+        System.out.println("Bônus: " + bonus);
     }
 }
