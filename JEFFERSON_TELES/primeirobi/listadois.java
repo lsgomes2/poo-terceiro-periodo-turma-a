@@ -71,7 +71,7 @@ public class listadois {
         System.out.println("QUANTO QUE O CLIENTE PAGOU:");
         double valorpg = scanner.nextDouble();
 
-        System.out.println("QUANTO DEU A COMPRA:?");
+        System.out.println("QUANTO DEU A COMPRA?");
         double valortotal = scanner.nextDouble();
 
         double troco = valorpg - valortotal;
