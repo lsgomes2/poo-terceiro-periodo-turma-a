@@ -34,10 +34,10 @@ public class Vendendor {
     }
     float calcularMedia(){
         float Total=0;
-        for(int i=0;i<2;i++){
+        for(int i=0;i<3;i++){
             Total= Total + Hist_Pag[i];
         }
-        return this.Media = (Total/3);
+        return(Total/3);
     }
 
 
