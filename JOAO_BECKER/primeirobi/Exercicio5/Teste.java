@@ -9,6 +9,7 @@ public class Teste {
         lojaUm.rua="1";
         lojaUm.bairro="centro";
         lojaUm.cidade="cascavel";
+        lojaUm.cnpj="548.762.565/6666-60";
         lojaUm.apresentarse();
         lojaUm.clientes[2]="jose";
         lojaUm.clientes[9]="Carlos";

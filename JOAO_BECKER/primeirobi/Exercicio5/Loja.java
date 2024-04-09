@@ -3,7 +3,7 @@ package primeirobi.Exercicio5;
 public class Loja {
     String nomeFantasia;
     String razaoSocial;
-    Integer cnpj;
+    String cnpj;
     String cidade;
     String bairro;
     String rua;
@@ -30,6 +30,6 @@ public class Loja {
     }
 
     public void apresentarse(){
-        System.out.println("A loja "+nomeFantasia+" esta localizada na rua "+rua+", "+bairro+", "+cidade+".");
+        System.out.println("A loja "+nomeFantasia+" esta localizada na rua "+rua+", "+bairro+", "+cidade+" e possui o cnpj "+cnpj+".");
     }
 }
