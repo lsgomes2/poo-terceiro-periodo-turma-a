@@ -32,12 +32,12 @@ public class Vendedor {
     }
 
     public float calcularMedia() {
-        Float mediaSalario = salarioBase;
+        Float mediaSalario = 0.0f;
         for (int i = 0; i < 3; i++) {
             mediaSalario += salarioRecebido[i];
         }
-        System.out.println("A média de meu salário é "+(mediaSalario / 4));
-        return mediaSalario / 4;
+        System.out.println("A média de meu salário é "+(mediaSalario / 3));
+        return mediaSalario / 3;
     }
 
 

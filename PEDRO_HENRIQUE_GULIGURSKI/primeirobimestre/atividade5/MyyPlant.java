@@ -15,8 +15,8 @@ public class MyyPlant {
         Float[] salarioRecebidoVend1 = {2400.00f, 1800.00f, 1904.99f};
         String[] enderecoVendedor2 = {"Quedas do Iguaçu", "Talita", "Rua Mamata"};
         Float[] salarioRecebidoVend2 = {1150.50f, 1500.00f, 2000.50f};
-        Vendedor vendedor1 = new Vendedor("Pedro Henrique", 19, "MyyPlant",enderecoVendedor1, 2300.00f, salarioRecebidoVend1);
-        Vendedor vendedor2 = new Vendedor("Gabriel Toledo", 32, "MyyPlant", enderecoVendedor2, 2300.00f, salarioRecebidoVend2);
+        Vendedor vendedor1 = new Vendedor("Pedro Henrique", 19, "MyyPlant",enderecoVendedor1, 1550.00f, salarioRecebidoVend1);
+        Vendedor vendedor2 = new Vendedor("Gabriel Toledo", 32, "MyyPlant", enderecoVendedor2, 1500.00f, salarioRecebidoVend2);
 
         // Criando loja
         String[] enderecoLoja = {"Cascavel", "Santa Felicidade", "Rua Macacos me Mordam"};
