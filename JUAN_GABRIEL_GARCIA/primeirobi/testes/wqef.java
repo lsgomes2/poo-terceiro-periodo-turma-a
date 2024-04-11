@@ -1,8 +1,8 @@
-package primeirobi.listas; // cd .. para usar os comandos do git
+package primeirobi.testes; // cd .. para usar os comandos do git
 
 import java.util.Scanner;
 
-public class Lista3 {
+public class wqef {
 
     /*
      * Dona Gabrielinha ficou muito feliz com o software desenvolvido, porém, na
@@ -125,7 +125,7 @@ public class Lista3 {
                     System.out.println("Qual o valor total das vendas? \n");
                     vendas_dia = scan.nextFloat();
 
-                    
+
                     System.out.println("Que mês voce deseja salvar?");
                     mes = scan.nextInt();
 
@@ -133,15 +133,21 @@ public class Lista3 {
 
                         System.out.println("Que dia voce deseja salvar?");
                         dia = scan.nextInt();
+                        
+                        while (dia > 0 && dia < 31) {
+
+                            System.out.println("Escreva um dia valido");
 
                         if (dia > 0 && dia < 31) {
 
                             matriz_vendas[mes][dia] = vendas_dia;
-
                         }
+
                         else {
                             System.out.println("DIA INVÁLIDO");
                         }
+                        }
+                        
                     }
                     else {
                         System.out.println("MÊS INVÁLIDO");
