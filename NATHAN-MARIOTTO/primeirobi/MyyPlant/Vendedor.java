@@ -10,7 +10,7 @@ class Vendedor {
     String bairro;
     String rua;
     double salarioBase;
-    double[] salarioRecebido = new double[3]; // Exemplo: {1000.0, 1100.0, 1050.0}
+    double[] salarioRecebido = new double[3]; 
 
     public Vendedor(String nome, int idade, String loja, String cidade, String bairro, String rua, double salarioBase, double[] salarioRecebido) {
         this.nome = nome;
