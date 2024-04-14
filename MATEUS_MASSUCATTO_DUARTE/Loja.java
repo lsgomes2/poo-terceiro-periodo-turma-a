@@ -6,8 +6,11 @@ public class Loja
     String cidadeL;
     String bairroL;
     String ruaL;
+    int numeroL;
+    String complementoL;
     Vendedor[] vendedores;
     Cliente[] clientes;
+    Gerente[] gerentes;
 
     public int contarClientes()
     {
@@ -17,6 +20,11 @@ public class Loja
     public int contarVendedores()
     {
         return vendedores.length;
+    }
+
+    public int contarGerentes()
+    {
+        return gerentes.length;
     }
 
     void apresentarseL()
