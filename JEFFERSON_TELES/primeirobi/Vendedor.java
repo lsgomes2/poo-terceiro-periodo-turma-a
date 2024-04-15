@@ -25,7 +25,7 @@ public class Vendedor {
     }
 
     public Vendedor(String string) {
-        //TODO Auto-generated constructor stub
+
     }
 
     public void apresentarse() {

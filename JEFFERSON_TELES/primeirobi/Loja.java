@@ -44,8 +44,8 @@ public class Loja {
     }
 
     public String getNome() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'getNome'");
+        return bairro;
+
     }
 }
 

@@ -46,9 +46,9 @@ public class processaPedido {
     public static void main(String[] args) {
        
         Date dataCriacao = new Date(System.currentTimeMillis() - 2 * 24 * 60 * 60 * 1000);
-        Cliente cliente = new Cliente("João");
-        Vendedor vendedor = new Vendedor("Maria");
-        Loja loja = new Loja("Loja A", null, null, null, null, null);
+        Cliente cliente = new Cliente("Jeff");
+        Vendedor vendedor = new Vendedor("Altair");
+        Loja loja = new Loja("myy Plant", null, null, null, null, null);
         item[] itens = {new item(1, "Produto 1", "Tipo 1", 100.0)};
         processaPedido processador = new processaPedido();
         processador.apresentarSe(1, dataCriacao, cliente, vendedor, loja, itens);

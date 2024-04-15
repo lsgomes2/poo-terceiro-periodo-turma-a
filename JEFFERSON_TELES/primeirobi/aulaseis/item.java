@@ -26,7 +26,7 @@ public class item {
     }
 
     public double getValor() {
-        // TODO Auto-generated method stub
+        
         throw new UnsupportedOperationException("Unimplemented method 'getValor'");
     }
 }
