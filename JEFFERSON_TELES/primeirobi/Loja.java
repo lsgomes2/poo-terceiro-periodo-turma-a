@@ -2,6 +2,8 @@ package primeirobi;
 
 import java.util.ArrayList;
 
+import primeirobi.aulaseis.endereco;
+
 public class Loja {
     String nomeFantasia;
     String razaoSocial;
@@ -23,6 +25,10 @@ public class Loja {
         this.clientes = new ArrayList<>();
     }
 
+    public Loja(String string, endereco enderecoLoja) {
+
+    }
+
     public void contarClientes() {
         System.out.println("Quantidade de clientes: " + clientes.size());
     }
@@ -35,6 +41,11 @@ public class Loja {
         System.out.println("Nome Fantasia: " + nomeFantasia);
         System.out.println("CNPJ: " + cnpj);
         System.out.println("Endereço: " + cidade + ", " + bairro + ", " + rua);
+    }
+
+    public String getNome() {
+        
+        throw new UnsupportedOperationException("Unimplemented method 'getNome'");
     }
 }
 
