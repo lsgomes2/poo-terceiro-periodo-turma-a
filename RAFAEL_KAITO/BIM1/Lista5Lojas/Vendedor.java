@@ -10,23 +10,19 @@ public class Vendedor
         private String nome;
         private int idade;
         private String loja;
-        private String cidade;
-        private String bairro;
-        private String rua;
+        private Endereco endereco;
         private float salarioBase;
         private float[] salarioRecebido;
         private float bonus;
         private float media;
 
 
-        public Vendedor(String nome, int idade, String loja, String cidade, String bairro, String rua, float salarioBase,
+        public Vendedor(String nome, int idade, String loja, Endereco endereco, float salarioBase,
                 float[] salarioRecebido) {
             this.nome = nome;
             this.idade = idade;
             this.loja = loja;
-            this.cidade = cidade;
-            this.bairro = bairro;
-            this.rua = rua;
+            this. endereco = endereco;
             this.salarioBase = salarioBase;
             this.salarioRecebido = salarioRecebido;
             this. bonus=0;

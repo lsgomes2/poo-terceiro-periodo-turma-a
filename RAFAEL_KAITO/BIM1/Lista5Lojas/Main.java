@@ -13,21 +13,29 @@ public class Main {
         ArrayList<Integer> listaClientes = new ArrayList<>();
         ArrayList<Integer> listaVendedores = new ArrayList<>();
 
+        Endereco EnderecoLoja = new Endereco("PR", "Cascavel", "Centro",
+         "Av.Brasil", "222", "Loja");
+        Endereco EnderecoVendedor1 = new Endereco("PR", "Cascavel", "Neva",
+         "Maranhao", "777", "Casa");
+        Endereco EnderecoVendedor2 = new Endereco("PR", "Cascavel", "Pq. Verde",
+         "Marechal Rondon", "333", "Casa");
+        Endereco EnderecoCliente1 = new Endereco("PR", "Cascavel", "Pq.Sao Paulo", 
+        "Rio de Janeiro", "555", "Casa");
+        Endereco EnderecoCliente2 = new Endereco("PR", "Cascavel", "Canada",
+         "Curitiba", "888", "Casa");
+        
+        Loja Loja1 = new Loja("MyyPlant", "MyyPlant S.A", "25.725.571/0001-14"
+        ,EnderecoLoja,listaClientes,listaVendedores);
 
-        Loja Loja1 = new Loja("MyyPlant", "MyyPlant S.A", "25.725.571/0001-14",
-        "Cascavel","Neva","Rua Maranhão",listaClientes,listaVendedores);
 
-
-        Vendedor Vendedor1 = new Vendedor("Sr.Sandrolaxx", 40, "MyyPlant", "Cascavel",
-        "SantaCruz", "Rua. Potiguaras", 2500f, salarioRecebidoVendedor1);
+        Vendedor Vendedor1 = new Vendedor("Sr.Sandrolaxx", 40, "MyyPlant", EnderecoVendedor1, 2500f, salarioRecebidoVendedor1);
         listaVendedores.add(1);
-        Vendedor Vendedor2 = new Vendedor("Sra.Rita", 64, "MyyPlant", "Cascavel",
-        "Pq. Verde", "Rua. Palmeiras", 3000f, salarioRecebidoVendedor2);
+        Vendedor Vendedor2 = new Vendedor("Sra.Rita", 64, "MyyPlant", EnderecoVendedor2, 3000f, salarioRecebidoVendedor2);
         listaVendedores.add(2);
        
-        Cliente Cliente1 = new Cliente("MauroCezar", 27, "Cascavel", "Centro", "Rua. São Paulo");
+        Cliente Cliente1 = new Cliente("MauroCezar", 27, EnderecoCliente1);
         listaClientes.add(1);
-        Cliente Cliente2 =new Cliente("MaestroJunior", 59, "Cascavel", "Vila Tolentino", "Rua. Marechal C. Rondon");
+        Cliente Cliente2 =new Cliente("MaestroJunior", 59, EnderecoCliente2);
         listaClientes.add(2);
 
         System.out.println("\n-------------------");

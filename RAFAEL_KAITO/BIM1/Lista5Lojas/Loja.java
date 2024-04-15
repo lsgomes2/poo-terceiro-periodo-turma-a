@@ -6,21 +6,17 @@ public class Loja {
             private String nomeLoja;
             private String razaoSocial;
             private String cnpj;
-            private String cidade;
-            private String bairro;
-            private String rua;
+            private Endereco endereco;
             private ArrayList <Integer> listaClientes = new ArrayList<>();
             private ArrayList <Integer> listaVendedores = new ArrayList<>();
 
 
-            public Loja(String nomeLoja, String razaoSocial, String cnpj, String cidade, String bairro, String rua,
+            public Loja(String nomeLoja, String razaoSocial, String cnpj, Endereco endereco,
                     ArrayList<Integer> listaClientes, ArrayList<Integer> listaVendedores) {
                 this.nomeLoja = nomeLoja;
                 this.razaoSocial = razaoSocial;
                 this.cnpj = cnpj;
-                this.cidade = cidade;
-                this.bairro = bairro;
-                this.rua = rua;
+                this.endereco = endereco;
                 this.listaClientes = listaClientes;
                 this.listaVendedores = listaVendedores;
             }
@@ -37,6 +33,6 @@ public class Loja {
 
 
             public void apresentarse(){
-                System.out.println("Loja " + nomeLoja + ", de cnpj: " + cnpj + ", localizada na cidade de " + cidade + ", " + bairro + ", " + rua);
+                System.out.println("Loja " + nomeLoja + ", de cnpj: " + cnpj + ", localizada em " + endereco);
             }
 }
