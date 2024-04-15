@@ -1,3 +1,5 @@
+package exseis;
+
 public class ProcessaPedido {
 
     public void processar(Pedido pedido) {

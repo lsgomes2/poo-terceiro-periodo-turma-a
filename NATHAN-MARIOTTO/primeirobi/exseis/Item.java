@@ -1,3 +1,5 @@
+package exseis;
+
 public class Item {
     private int id;
     private String nome;
