@@ -1,4 +1,4 @@
-package primeirobi.listaseis;
+package myyplant;
 
 public class Endereco {
     String estado, cidade, bairro, rua, numero, complemento;

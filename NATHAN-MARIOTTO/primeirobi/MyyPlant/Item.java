@@ -1,4 +1,4 @@
-package primeirobi.listaseis;
+package myyplant;
 
 public class Item {
     private int id;

@@ -1,4 +1,4 @@
-package primeirobi.listaseis;
+package myyplant;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,6 +16,8 @@ public class Pedido {
         this.cliente = cliente;
         this.parceiro = parceiro;
         this.dataCriacao = new Date();
+        // Define a data de vencimento da reserva como 3 dias após a criação do pedido
+        this.dataVencimentoReserva = new Date(dataCriacao.getTime() + 3 * 24 * 60 * 60 * 1000);
     }
 
     public Date getDataVencimentoReserva() {

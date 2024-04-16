@@ -1,4 +1,4 @@
-package primeirobi.listaseis;
+package myyplant;
 
 public class Gerente extends Pessoa {
     public Gerente(String nome, int idade, Endereco endereco, double salarioBase) {

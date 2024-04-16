@@ -1,21 +1,17 @@
-package primeirobi.myyplant;
+package myyplant;
 
-class Cliente {
+public class Cliente {
     String nome;
     int idade;
-    String cidade;
-    String bairro;
-    String rua;
+    Endereco endereco;
 
-    public Cliente(String nome, int idade, String cidade, String bairro, String rua) {
+    public Cliente(String nome, int idade, Endereco endereco) {
         this.nome = nome;
         this.idade = idade;
-        this.cidade = cidade;
-        this.bairro = bairro;
-        this.rua = rua;
+        this.endereco = endereco;
     }
 
-    public void apresentarse() {
-        System.out.println("Nome: " + nome + ", Idade: " + idade);
+    public void apresentarSe() {
+        System.out.printf("Nome: %s, Idade: %d\n", nome, idade);
     }
 }

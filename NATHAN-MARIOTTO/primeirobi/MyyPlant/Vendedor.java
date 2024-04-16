@@ -1,36 +1,11 @@
-package primeirobi.myyplant;
+package myyplant;
 
-import java.util.Arrays;
-
-class Vendedor {
-    String nome;
-    int idade;
-    String loja;
-    String cidade;
-    String bairro;
-    String rua;
-    double salarioBase;
-    double[] salarioRecebido = new double[3]; 
-
-    public Vendedor(String nome, int idade, String loja, String cidade, String bairro, String rua, double salarioBase, double[] salarioRecebido) {
-        this.nome = nome;
-        this.idade = idade;
-        this.loja = loja;
-        this.cidade = cidade;
-        this.bairro = bairro;
-        this.rua = rua;
-        this.salarioBase = salarioBase;
-        this.salarioRecebido = salarioRecebido;
+public class Vendedor extends Pessoa {
+    public Vendedor(String nome, int idade, Endereco endereco, double salarioBase) {
+        super(nome, idade, endereco, salarioBase);
     }
 
-    public void apresentarse() {
-        System.out.println("Nome: " + nome + ", Idade: " + idade + ", Loja: " + loja);
-    }
-
-    public double calcularMedia() {
-        return Arrays.stream(salarioRecebido).average().orElse(0);
-    }
-
+    @Override
     public double calcularBonus() {
         return salarioBase * 0.2;
     }
