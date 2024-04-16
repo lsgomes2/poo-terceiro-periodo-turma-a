@@ -7,7 +7,7 @@ import primeirobi.Cliente;
 import primeirobi.Loja;
 import primeirobi.Vendedor;
 
-public class pedido {
+public class Pedido {
     private int id;
     private Date dataCriacao;
     private Date dataPagamento;
@@ -15,9 +15,9 @@ public class pedido {
     private Cliente cliente;
     private Vendedor vendedor;
     private Loja loja;
-    private List<item> itens;
+    private List<Item> itens;
 
-    public pedido(int id, Date dataCriacao, Cliente cliente, Vendedor vendedor, Loja loja, List<item> itens) {
+    public Pedido(int id, Date dataCriacao, Cliente cliente, Vendedor vendedor, Loja loja, List<Item> itens) {
         this.id = id;
         this.dataCriacao = dataCriacao;
         this.cliente = cliente;
@@ -34,7 +34,7 @@ public class pedido {
 
     public double calcularValorTotal() {
         double total = 0;
-        for (item item : itens) {
+        for (Item item : itens) {
             total += item.getValor();
         }
         return total;
@@ -54,7 +54,7 @@ public class pedido {
         System.out.println("Vendedor: " + vendedor.getNome());
         System.out.println("Loja: " + loja.getNome());
         System.out.println("Itens do Pedido:");
-        for (item item : itens) {
+        for (Item item : itens) {
             item.gerarDescricao();
         }
         System.out.println("Valor Total do Pedido: " + calcularValorTotal());

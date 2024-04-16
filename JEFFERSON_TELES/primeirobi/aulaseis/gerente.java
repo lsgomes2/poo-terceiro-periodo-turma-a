@@ -2,7 +2,7 @@ package primeirobi.aulaseis;
 
 import primeirobi.Loja;
 
-public class gerente {
+public class Gerente {
     String nome;
     int idade;
     Loja loja;
@@ -12,7 +12,7 @@ public class gerente {
     double salarioBase;
     double[] salarioRecebido;
 
-    public gerente(String nome, int idade, Loja loja, String cidade, String bairro, String rua, double salarioBase, double[] salarioRecebido) {
+    public Gerente(String nome, int idade, Loja loja, String cidade, String bairro, String rua, double salarioBase, double[] salarioRecebido) {
         this.nome = nome;
         this.idade = idade;
         this.loja = loja; 
@@ -24,7 +24,7 @@ public class gerente {
     }
 
     
-    public gerente(String nome, int idade, Loja loja, endereco endereco, double salarioBase, double[] salarioRecebido) {
+    public Gerente(String nome, int idade, Loja loja, Endereco endereco, double salarioBase, double[] salarioRecebido) {
         this.nome = nome;
         this.idade = idade;
         this.loja = loja;

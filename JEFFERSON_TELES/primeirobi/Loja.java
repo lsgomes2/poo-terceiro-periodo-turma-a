@@ -2,7 +2,7 @@ package primeirobi;
 
 import java.util.ArrayList;
 
-import primeirobi.aulaseis.endereco;
+import primeirobi.aulaseis.Endereco;
 
 public class Loja {
     String nomeFantasia;
@@ -25,7 +25,7 @@ public class Loja {
         this.clientes = new ArrayList<>();
     }
 
-    public Loja(String string, endereco enderecoLoja) {
+    public Loja(String string, Endereco enderecoLoja) {
 
     }
 

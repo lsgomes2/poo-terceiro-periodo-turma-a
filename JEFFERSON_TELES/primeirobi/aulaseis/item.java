@@ -1,12 +1,12 @@
 package primeirobi.aulaseis;
 
-public class item {
+public class Item {
     int id;
     String nome;
     String tipo;
     double valor;
 
-    public item(int id, String nome, String tipo, double valor) {
+    public Item(int id, String nome, String tipo, double valor) {
         this.id = id;
         this.nome = nome;
         this.tipo = tipo;

@@ -8,8 +8,8 @@ import primeirobi.Loja;
 import primeirobi.Vendedor;
 
 public class processaPedido {
-    public void processar(int idPedido, Date dataCriacao, Cliente cliente, Vendedor vendedor, Loja loja, List<item> itens) {
-        pedido pedido = new pedido(idPedido, dataCriacao, cliente, vendedor, loja, itens);
+    public void processar(int idPedido, Date dataCriacao, Cliente cliente, Vendedor vendedor, Loja loja, List<Item> itens) {
+        Pedido pedido = new Pedido(idPedido, dataCriacao, cliente, vendedor, loja, itens);
         boolean pagamentoConfirmado = confirmarPagamento(pedido);
         if (pagamentoConfirmado) {
             System.out.println("Pedido processado com sucesso!");
@@ -18,7 +18,7 @@ public class processaPedido {
         }
     }
 
-    private boolean confirmarPagamento(pedido pedido) {
+    private boolean confirmarPagamento(Pedido pedido) {
         Date dataAtual = new Date();
         if (dataAtual.before(pedido.calcularDataVencimentoReserva())) {
             
@@ -29,15 +29,15 @@ public class processaPedido {
         }
     }
 
-    public void apresentarSe(int idPedido, Date dataCriacao, Cliente cliente, Vendedor vendedor, Loja loja, List<item> itens) {
-        pedido pedido = new pedido(idPedido, dataCriacao, cliente, vendedor, loja, itens);
+    public void apresentarSe(int idPedido, Date dataCriacao, Cliente cliente, Vendedor vendedor, Loja loja, List<Item> itens) {
+        Pedido pedido = new Pedido(idPedido, dataCriacao, cliente, vendedor, loja, itens);
         System.out.println("Pedido ID: " + idPedido);
         System.out.println("Data de Criação: " + dataCriacao);
         System.out.println("Cliente: " + cliente.getNome());
         System.out.println("Vendedor: " + vendedor.getNome());
         System.out.println("Loja: " + loja.getNome());
         System.out.println("Itens do Pedido:");
-        for (item item : itens) {
+        for (Item item : itens) {
             item.gerarDescricao();
         }
         System.out.println("Valor Total do Pedido: " + pedido.calcularValorTotal());
@@ -49,7 +49,7 @@ public class processaPedido {
         Cliente cliente = new Cliente("Jeff");
         Vendedor vendedor = new Vendedor("Altair");
         Loja loja = new Loja("myy Plant", null, null, null, null, null);
-        item[] itens = {new item(1, "Produto 1", "Tipo 1", 100.0)};
+        Item[] itens = {new Item(1, "Produto 1", "Tipo 1", 100.0)};
         processaPedido processador = new processaPedido();
         processador.apresentarSe(1, dataCriacao, cliente, vendedor, loja, itens);
 
@@ -59,6 +59,6 @@ public class processaPedido {
     }
 
     private void apresentarSe(int idPedido, Date dataCriacao, Cliente cliente, Vendedor vendedor, Loja loja,
-            item[] itens) {
+            Item[] itens) {
     }
 }
