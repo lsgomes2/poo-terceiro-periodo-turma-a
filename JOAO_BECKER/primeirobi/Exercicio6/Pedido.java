@@ -2,6 +2,7 @@ package primeirobi.Exercicio6;
 import java.util.Date;
 
 public class Pedido {
+
     Integer id;
     Date dataCriacao = new Date();
     Date dataPagamento;
@@ -9,7 +10,18 @@ public class Pedido {
     Cliente cliente;
     Vendedor vendedor;
     Loja loja;
-    Item [] items = new Item[20];
+    Item[] items = new Item[20];
+
+    public Pedido(Integer id,Date dataCriacao,Date dataPagamento,Date dataVencimentoReserva,Cliente cliente,Vendedor vendedor,Loja loja,Item[] items){
+        this.id=id;
+        this.dataCriacao = dataCriacao;
+        this.dataPagamento = dataPagamento;
+        this.dataVencimentoReserva = new Date(dataCriacao.getTime()+(86400000*3));
+        this.cliente=cliente;
+        this.vendedor=vendedor;
+        this.loja=loja;
+        this.items = items;    
+    }
 
     public Double calcularValorTotal(){
         double total=0;

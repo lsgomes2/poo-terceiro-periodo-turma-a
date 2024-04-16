@@ -1,11 +1,9 @@
 package primeirobi.Exercicio6;
 
-public class Cliente {
+public class Cliente{
     String nome;
     Integer idade;
-    String cidade;
-    String bairro;
-    String rua;
+    Endereco endereco;
 
     public void apresentarse(){
         System.out.println("O cliente "+nome+" tem "+idade+" anos.");

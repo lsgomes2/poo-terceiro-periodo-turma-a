@@ -1,11 +1,12 @@
 package primeirobi.Exercicio6;
 
-public class Loja extends Endereco{
+public class Loja{
     String nomeFantasia;
     String razaoSocial;
     String cnpj;
     String [] vendedores = new String[20];
     String [] clientes = new String[20];
+    Endereco endereco;
  
     public void contarClientes(){
         int contador=0;
@@ -28,6 +29,6 @@ public class Loja extends Endereco{
 
     public void apresentarse(){
         System.out.println("Loja "+nomeFantasia);
-        apresentarLogradouro();
+        endereco.apresentarLogradouro();
     }
 }

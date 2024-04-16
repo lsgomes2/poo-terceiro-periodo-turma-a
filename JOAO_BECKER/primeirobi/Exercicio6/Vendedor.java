@@ -1,6 +1,6 @@
 package primeirobi.Exercicio6;
 
-public class Vendedor extends Endereco{
+public class Vendedor{
     String nome;
     Integer idade;
     String loja;
@@ -9,6 +9,7 @@ public class Vendedor extends Endereco{
     String rua;
     Double salarioBase;
     Double [] salarioRecebido = new Double[3];
+    Endereco endereco;
 
     public double calcularMedia(){
         double media=0;
