@@ -15,4 +15,9 @@ public class Item {
     public void gerarDescricao() {
         System.out.println("ID: " + id + "\nNome: " + nome + "\nTipo: " + tipo + "\nValor: " + valor);
     }
+
+    public double getValor() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getValor'");
+    }
 }
