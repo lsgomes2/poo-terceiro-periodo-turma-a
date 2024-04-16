@@ -1,4 +1,6 @@
-package primeirobi.exemplos;
+package primeirobi.exemplos.aulaseis;
+
+import primeirobi.exemplos.aulasete.Ave;
 
 public class AulaSeis {
     
