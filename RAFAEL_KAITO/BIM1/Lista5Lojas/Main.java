@@ -96,5 +96,6 @@ public class Main {
         System.out.println("\n--- Pedido 1 ---\n");
         pedido1.gerarDescricaoVenda();
         System.out.println("\n------------------");
+
     }
 }
