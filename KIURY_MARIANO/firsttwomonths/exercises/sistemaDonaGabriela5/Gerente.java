@@ -10,9 +10,9 @@ import java.util.ArrayList;
 
 public class Gerente extends Pessoa {
     
-    Loja Loja = new Loja();
-    double salarioBase;
-    ArrayList<Float> salarioRecebido = new ArrayList<>();
+    private Loja Loja = new Loja();
+    private double salarioBase;
+    private ArrayList<Float> salarioRecebido = new ArrayList<>();
 
     void apresentarse(){
         System.out.println("Cliente: " +getNome()+ ", idade: " +getIdade()+ ". Loja: " +Loja.getNomeFantasia());

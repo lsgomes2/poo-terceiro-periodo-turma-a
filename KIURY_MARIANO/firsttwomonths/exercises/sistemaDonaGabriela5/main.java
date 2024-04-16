@@ -36,8 +36,8 @@ public class main {
         System.out.println();
 
         // Cadastrando clientes da loja1 e apresentando.
-        loja1.setClientes(new Cliente[] {cliente1});
-        loja1.setClientes(new Cliente[] {cliente2});
+        Cliente clientes[] = {cliente1, cliente2};
+        loja1.setClientes(clientes);
         loja1.contarClientes();
         
         System.out.println();
@@ -48,7 +48,11 @@ public class main {
         vendedor1.setNome("Marcos");
         vendedor1.setIdade(56);               
         vendedor1.setEndereco(new Endereco());
-        vendedor1.apresentarse();
+        vendedor1.setSalarioBase(2500);
+        vendedor1.setLoja(loja1);
+
+        double[] salarios = {4000.0, 2000};
+        vendedor1.setSalarioRecebido(salarios);
     
         System.out.println();
 
@@ -57,7 +61,25 @@ public class main {
         vendedor1.calcularBonus();
         vendedor1.calcularMedia();
 
+        System.out.println();
 
         Item item = new Item();
+
+        item.setId(1);
+        item.setNome("Rosa do Deserto");
+        item.setTipo("Rosa");
+        item.setValor(35.0);
+
+        ProcessaPedido processaPedido = new ProcessaPedido();
+
+        Item[] itens = new Item[] {item};
+
+        Pedido pedidocriado = processaPedido.processar(itens, "35");
+
+        pedidocriado = processaPedido.confirmarPagamento(pedidocriado);
+
+        System.out.println(pedidocriado.getDataPagamento());
+        System.out.println(pedidocriado.getDataVencimentoReserva());
+
     }    
 }

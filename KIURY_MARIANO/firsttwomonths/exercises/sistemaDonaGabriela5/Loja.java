@@ -4,8 +4,6 @@
 // contarVendedores, mosta a quantidade de vendedores.
 // Método apresentarse, printa nomeFantasia, cnpj e endereco.
 
-import java.util.ArrayList;
-
 public class Loja extends Endereco{
 
     private String nomeFantasia;
@@ -16,13 +14,11 @@ public class Loja extends Endereco{
     
     void contarClientes(){
         System.out.println("Total clientes: " +clientes.length);
-        System.out.println(clientes);
     
     }
 
     void contarVendedores(){
         System.out.println("Total vendedores: " +vendedores.length);
-        System.out.println(vendedores);
     }
 
     void apresentarse(){

@@ -11,29 +11,53 @@ import java.util.ArrayList;
 public class Vendedor extends Pessoa{
 
     private float salarioBase;
-    private ArrayList<Float> salarioRecebido = new ArrayList<>();
+    private double[] salarioRecebido;
 
     private Loja Loja = new Loja();
 
     void apresentarse(){
-        System.out.println("Cliente: " +getNome()+ ", idade: " +getIdade()+ ". Loja: " +Loja.getNomeFantasia());
+        System.out.println("Vendedor: " +getNome()+ ", idade: " +getIdade()+ ". Loja: " +Loja.getNomeFantasia());
     }
 
     void calcularMedia(){
         
         float media = 0;
 
-        for (int i = 0; i < salarioRecebido.size(); i++) {
-            media += salarioRecebido.get(i);
+        for (int i = 0; i < salarioRecebido.length; i++) {
+            media += salarioRecebido[i];
         }
 
-        media = media/salarioRecebido.size();
+        media = media/salarioRecebido.length;
         System.out.println("Media: " + media);
     }
 
     void calcularBonus(){
 
         System.out.println("Bonus: " +salarioBase*0.2); 
+    }
+
+    public float getSalarioBase() {
+        return salarioBase;
+    }
+
+    public void setSalarioBase(float salarioBase) {
+        this.salarioBase = salarioBase;
+    }
+
+    public Loja getLoja() {
+        return Loja;
+    }
+
+    public void setLoja(Loja loja) {
+        Loja = loja;
+    }
+
+    public double[] getSalarioRecebido() {
+        return salarioRecebido;
+    }
+
+    public void setSalarioRecebido(double[] salarioRecebido) {
+        this.salarioRecebido = salarioRecebido;
     }
 
 }

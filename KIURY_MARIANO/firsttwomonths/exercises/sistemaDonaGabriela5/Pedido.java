@@ -21,7 +21,7 @@ public class Pedido {
         Long tresdias = new Date().getTime() + (3*msDia);
 
         this.dataCriacao = new Date();
-        this.dataVencimentoReserva = new Date();
+        this.dataVencimentoReserva = new Date(tresdias);
         this.itens = itens;
     }
 
