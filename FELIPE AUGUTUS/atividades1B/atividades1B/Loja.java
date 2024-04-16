@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Loja {
-    private String nomeFantasia;
-    private String razaoSocial;
-    private String cnpj;
-    private String cidade;
-    private String bairro;
-    private String rua;
-    private List<Vendedor> vendedores = new ArrayList<>();
+     String nomeFantasia;
+    String razaoSocial;
+     String cnpj;
+     String cidade;
+     String bairro;
+     String rua;
+     List<Vendedor> vendedores = new ArrayList<>();
 
     public Loja(String nomeFantasia, String razaoSocial, String cnpj, String cidade, String bairro, String rua) {
         this.nomeFantasia = nomeFantasia;

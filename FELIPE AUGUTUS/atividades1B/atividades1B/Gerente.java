@@ -1,6 +1,6 @@
 package atividades1B;
 
-public class Vendedor {
+public class Gerente {
     private String nome;
     private int idade;
     private Loja loja;
@@ -11,7 +11,7 @@ public class Vendedor {
     private double salarioBase;
      double salarioRecebido;
 
-    public Vendedor(String nome, int idade, Loja loja, String cidade, String bairro, String rua, double[] salarioLancamentos, double salarioBase) {
+    public Gerente(String nome, int idade, Loja loja, String cidade, String bairro, String rua, double[] salarioLancamentos, double salarioBase) {
         this.nome = nome;
         this.idade = idade;
         this.loja = loja;
@@ -21,7 +21,6 @@ public class Vendedor {
         this.salarioLancamentos = salarioLancamentos;
         this.salarioBase = salarioBase;
         this.salarioRecebido = 0;
-        this.loja.adicionarVendedor(this);
     }
 
     public void apresentarSe() {
@@ -39,6 +38,6 @@ public class Vendedor {
     }
 
     public double calcularBonus() {
-        return salarioBase * 0.2;
+        return salarioBase * 0.35;
     }
 }
