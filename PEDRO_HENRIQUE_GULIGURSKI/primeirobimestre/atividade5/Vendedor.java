@@ -1,19 +1,20 @@
 package primeirobimestre.atividade5;
 
+import primeirobimestre.atividade6.Endereco;
+
 public class Vendedor {
 
     private String nome;
     private Integer idade;
     private String loja;
     @SuppressWarnings("unused")
-    private String[] endereco = new String[3]; //0 - cidade, 1 - bairro, 2 - rua
+    private Endereco endereco;
     private Float salarioBase;
-    @SuppressWarnings("unused")
     private Float[] salarioRecebido = new Float[3];
 
     
 
-    public Vendedor(String nome, Integer idade, String loja,String[] endereco, Float salarioBase, Float[] salarioRecebido) {
+    public Vendedor(String nome, Integer idade, String loja,Endereco endereco, Float salarioBase, Float[] salarioRecebido) {
         this.nome = nome;
         this.idade = idade;
         this.loja = loja;
