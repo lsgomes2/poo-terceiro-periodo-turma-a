@@ -2,8 +2,8 @@ package MyyPlant;
 public class Main {
     public static void main(String[] args) {
         
-        Vendedor vendedor1 = new Vendedor("João", 30, "Myy Plant", "Cidade A", "Bairro X", "Rua 123", 2000.0);
-        Vendedor vendedor2 = new Vendedor("Maria", 25, "Myy Plant", "Cidade A", "Bairro Y", "Rua 456", 1800.0);
+        Vendedor vendedor1 = new Vendedor("João", 13, "Myy Plant", "Cidade A", "Bairro X", "Rua 123", 2000.0);
+        Vendedor vendedor2 = new Vendedor("Maria", 10, "Myy Plant", "Cidade A", "Bairro Y", "Rua 456", 1800.0);
         vendedor1.receberSalario(2200.0);
         vendedor1.receberSalario(2400.0);
         vendedor2.receberSalario(2000.0);
@@ -18,8 +18,8 @@ public class Main {
         System.out.println("Bônus: " + vendedor2.calcularBonus());
 
         
-        Cliente cliente1 = new Cliente("Ana", 35, "Cidade B", "Bairro Z", "Rua 789");
-        Cliente cliente2 = new Cliente("Carlos", 40, "Cidade A", "Bairro X", "Rua 321");
+        Cliente cliente1 = new Cliente("Ana", 11, "Cidade B", "Bairro Z", "Rua 789");
+        Cliente cliente2 = new Cliente("Carlos", 14, "Cidade A", "Bairro X", "Rua 321");
 
         
         System.out.println("\nCliente 1:"); cliente1.apresentarSe();
