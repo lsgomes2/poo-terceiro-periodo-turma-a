@@ -9,12 +9,17 @@ public class Pedido {
     private String parceiro;
     private Cliente cliente;
     private ArrayList<Item> itens = new ArrayList<>();
+    private Date dataVencimentoReserva;
 
     public Pedido(int id, Cliente cliente, String parceiro) {
         this.id = id;
         this.cliente = cliente;
         this.parceiro = parceiro;
         this.dataCriacao = new Date();
+    }
+
+    public Date getDataVencimentoReserva() {
+        return dataVencimentoReserva;
     }
 
     public void adicionarItem(Item item) {
