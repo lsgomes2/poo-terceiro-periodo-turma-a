@@ -6,7 +6,7 @@ public class Vendedor extends Cidadao {
     private double[] salarioRecebido;
 
     public Vendedor(String nome, String loja, String cidade, String bairro, String rua, int salarioBase, int idade, double[] salarioRecebido) {
-        super(nome, cidade, bairro, rua, idade);
+        super(nome, cidade, bairro, rua, rua, idade);
         this.loja = loja;
         this.salarioBase = salarioBase;
         this.salarioRecebido = salarioRecebido;

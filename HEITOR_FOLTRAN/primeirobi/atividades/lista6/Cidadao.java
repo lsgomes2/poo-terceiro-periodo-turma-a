@@ -18,7 +18,4 @@ public class Cidadao {
         this.idade = idade;
     }
 
-    public Cidadao(String nome2, String cidade2, String bairro2, String rua2, int idade2) {
-        //TODO Auto-generated constructor stub
-    }
 }
