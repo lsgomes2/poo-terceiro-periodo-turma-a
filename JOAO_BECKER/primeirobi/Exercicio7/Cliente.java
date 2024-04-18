@@ -1,9 +1,9 @@
 package primeirobi.Exercicio7;
 
 public class Cliente {
-    Endereco endereco;
-    String nome;
-    Integer idade;
+    private Endereco endereco;
+    private String nome;
+    private Integer idade;
 
     public Cliente(Endereco endereco, String nome, Integer idade) {
         this.endereco = endereco;

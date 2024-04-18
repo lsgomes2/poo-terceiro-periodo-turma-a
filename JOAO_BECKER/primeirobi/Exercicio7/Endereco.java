@@ -1,7 +1,7 @@
 package primeirobi.Exercicio7;
 
 public class Endereco {
-    public String estado;
+    private String estado;
     private String cidade;
     private String bairro;
     private Integer numero;

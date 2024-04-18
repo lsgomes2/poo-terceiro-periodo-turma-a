@@ -1,5 +1,6 @@
 package primeirobi.Exercicio7;
 import java.util.Date;
+import java.util.ArrayList;
 
 public class Pedido {
     
@@ -10,10 +11,10 @@ public class Pedido {
     private Cliente cliente;
     private Vendedor vendedor;
     private Loja loja;
-    private Item[] items = new Item[20];
+    private ArrayList<Item> items = new ArrayList<Item>();
     
     public Pedido(Integer id, Date dataCriacao, Date dataPagamento, Date dataVencimentoReserva, Cliente cliente,
-            Vendedor vendedor, Loja loja, Item[] items) {
+            Vendedor vendedor, Loja loja, ArrayList<Item> items) {
         this.id = id;
         this.dataCriacao = dataCriacao;
         this.dataPagamento = dataPagamento;
@@ -80,11 +81,11 @@ public class Pedido {
         this.loja = loja;
     }
 
-    public Item[] getItems() {
+    public ArrayList<Item> getItems() {
         return items;
     }
 
-    public void setItems(Item[] items) {
+    public void setItems(ArrayList<Item> items) {
         this.items = items;
     }
     

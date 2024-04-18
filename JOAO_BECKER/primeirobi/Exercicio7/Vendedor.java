@@ -1,4 +1,5 @@
 package primeirobi.Exercicio7;
+import java.util.ArrayList;
 
 public class Vendedor {
     
@@ -9,10 +10,10 @@ public class Vendedor {
     private String bairro;
     private String rua;
     private Double salarioBase;
-    private Double [] salarioRecebido = new Double[3];
+    private ArrayList<Double> salarioRecebido = new ArrayList<Double>();
     private Endereco endereco;
 
-    public Vendedor(String nome, Integer idade, String loja, String cidade, String bairro, String rua,Double salarioBase, Double[] salarioRecebido, Endereco endereco) {
+    public Vendedor(String nome, Integer idade, String loja, String cidade, String bairro, String rua,Double salarioBase, ArrayList<Double> salarioRecebido, Endereco endereco) {
         this.nome = nome;
         this.idade = idade;
         this.loja = loja;
@@ -80,11 +81,11 @@ public class Vendedor {
         this.salarioBase = salarioBase;
     }
 
-    public Double[] getSalarioRecebido() {
+    public ArrayList<Double> getSalarioRecebido() {
         return salarioRecebido;
     }
 
-    public void setSalarioRecebido(Double[] salarioRecebido) {
+    public void setSalarioRecebido(ArrayList<Double> salarioRecebido) {
         this.salarioRecebido = salarioRecebido;
     }
 

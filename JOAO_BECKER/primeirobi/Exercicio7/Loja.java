@@ -1,12 +1,14 @@
 package primeirobi.Exercicio7;
+import java.util.ArrayList;
+
 
 public class Loja {
     
     private String nomeFantasia;
     private String razaoSocial;
     private String cnpj;
-    private String [] vendedores = new String[5];
-    private String [] clientes = new String[20];
+    private ArrayList<String> vendedores = new ArrayList<String>();
+    private ArrayList<String> clientes = new ArrayList<String>();
     private Endereco endereco;
 
     public String getNomeFantasia() {
@@ -33,19 +35,19 @@ public class Loja {
         this.cnpj = cnpj;
     }
 
-    public String[] getVendedores() {
+    public ArrayList<String> getVendedores() {
         return vendedores;
     }
 
-    public void setVendedores(String[] vendedores) {
+    public void setVendedores(ArrayList<String> vendedores) {
         this.vendedores = vendedores;
     }
 
-    public String[] getClientes() {
+    public ArrayList<String> getClientes() {
         return clientes;
     }
 
-    public void setClientes(String[] clientes) {
+    public void setClientes(ArrayList<String> clientes) {
         this.clientes = clientes;
     }
 
