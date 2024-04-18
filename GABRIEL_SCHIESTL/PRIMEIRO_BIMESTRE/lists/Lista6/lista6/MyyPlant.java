@@ -5,12 +5,14 @@ import java.util.Date;
 
 public class MyyPlant {
 
-    static Scanner sc = new Scanner(System.in);
-    static Date date = new Date();
-    static Loja l1;
-    static Vendedor v1;
-    static Cliente c1;
-    static Gerente g1;
+    private static Scanner sc = new Scanner(System.in);
+    private static Date date = new Date();
+    private static Loja l1;
+    private static Vendedor v1;
+    private static Cliente c1;
+    private static Gerente g1;
+    private static Item[] items = new Item[10];
+    private static Item[] order = new Item[10];
 
     public static void main(String[] args) {
 
@@ -22,6 +24,7 @@ public class MyyPlant {
             System.out.println("4 - Inserir loja");
             System.out.println("5 - Inserir item");
             System.out.println("6 - Criar pedido");
+            System.out.println("7 - Listar itens");
             System.out.println("Qualquer numero - sair do sistema");
 
             option = sc.nextInt();
@@ -48,7 +51,11 @@ public class MyyPlant {
                     break;
 
                 case 6:
-                    createOrder(c1, l1, v1);
+                    createOrder(c1, l1, v1, items);
+                    break;
+
+                case 7:
+                    listItems();
                     break;
 
                 default:
@@ -99,7 +106,12 @@ public class MyyPlant {
         String id = sc.next();
         System.out.println("Digite o preco do produto");
         float price = sc.nextFloat();
-        Item p1 = new Item(name, type, id, price);
+        for (int i = 0; i <= items.length; i++) {
+            if (items[i] == null) {
+                items[i] = new Item(name, type, id, price);
+                break;
+            }
+        }
     }
 
     static Loja insertStore() {
@@ -113,13 +125,38 @@ public class MyyPlant {
         return l1;
     }
 
-    static void createOrder(Cliente c1, Loja l1, Vendedor v1) {
-        System.out.println("Digite o nome do produto");
-        String name = sc.next();
-        System.out.println("Digite o ID do produto");
-        String id = sc.next();
-        System.out.println("Digite o preco do produto");
-        float price = sc.nextFloat();
-        ProcessaPedido o1 = new ProcessaPedido(name, id, price, c1, v1, l1, date, 0, 0);
+    static void createOrder(Cliente c1, Loja l1, Vendedor v1, Item[] items) {
+        int y = 0;
+        int i = 0;
+        boolean confirm = true;
+        do {
+            System.out.println("Escolha um item conforme a numeracao: ");
+            for (y = 0; y <= items.length; y++) {
+                if (items[y] == null) {
+                    break;
+                }
+                System.out.println((y + 1) + " - " + items[y].getName());
+            }
+            order[i] = items[(sc.nextInt() - 1)];
+            System.out.println("Inserir mais um item no pedido?");
+            i++;
+            confirm = sc.next().toLowerCase() == "sim" ? true : false;
+        } while (confirm);
+        ProcessaPedido o1 = new ProcessaPedido(order, c1, v1, l1, date, 0, 0);
+        System.out.println("Pedido realizado com sucesso!");
+        System.out.println("R$" + o1.getTotalPrice());
+    }
+
+    static void listItems() {
+        if (items[0] == null) {
+            System.out.println("Nao ha itens cadastrados.");
+        } else {
+            for (int i = 0; i < items.length; i++) {
+                if (items[i] == null) {
+                    break;
+                }
+                System.out.println((i + 1) + " - " + items[i].getName());
+            }
+        }
     }
 }

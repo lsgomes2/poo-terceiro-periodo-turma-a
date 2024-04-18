@@ -3,26 +3,34 @@ package PRIMEIRO_BIMESTRE.lists.Lista6.lista6;
 import java.util.Date;
 
 public class ProcessaPedido extends Pedido {
+    private Item[] order;
+    private float total = 0;
 
     @SuppressWarnings({ "deprecation" })
-    public ProcessaPedido(String name, String id, float price,
+    public ProcessaPedido(Item[] order,
             Cliente customer, Vendedor seller, Loja store, Date creation,
             int paymentDay, int paymentMonth) {
+        this.order = order;
 
-        for (int i = 0; i < prices.length; i++) {
-            if (prices[i] == 0.0f) {
-                prices[i] = price;
+        for (int i = 0; i < order.length; i++) {
+            if (order[i] == null) {
+                break;
             }
+            total += order[i].getPrice();
         }
-        this.id = id;
-        this.customer = customer;
-        this.seller = seller;
-        this.store = store;
-        this.creation = creation;
-        this.paymentDay = paymentDay;
-        this.paymentMonth = paymentMonth;
-        this.paymentDate = new Date(124, paymentMonth - 1, paymentDay);
-        this.limitDate = new Date(this.creation.getTime() + (5 * 86400000));
+        setTotalPrice(total);
+        setCustomer(customer);
+        ;
+        setSeller(seller);
+        ;
+        setStore(store);
+        ;
+        setCreation(creation);
+        ;
+        setPaymentDay(paymentDay);
+        setPaymentMonth(paymentMonth);
+        setPaymentDate(new Date(124, paymentMonth - 1, paymentDay));
+        setLimitDate(new Date(this.getCreation().getTime() + (5 * 86400000)));
 
     }
 
@@ -30,7 +38,7 @@ public class ProcessaPedido extends Pedido {
 
         Date now = new Date();
 
-        if (now.getTime() > limitDate.getTime()) {
+        if (now.getTime() > getLimitDate().getTime()) {
             return false;
         }
 
