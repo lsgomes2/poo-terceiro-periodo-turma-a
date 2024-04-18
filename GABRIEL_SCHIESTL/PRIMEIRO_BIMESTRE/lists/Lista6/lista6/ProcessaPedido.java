@@ -7,7 +7,7 @@ public class ProcessaPedido extends Pedido {
     private float total = 0;
 
     @SuppressWarnings({ "deprecation" })
-    public ProcessaPedido(Item[] order,
+    public ProcessaPedido(int[] qtt, Item[] order,
             Cliente customer, Vendedor seller, Loja store, Date creation,
             int paymentDay, int paymentMonth) {
         this.order = order;
@@ -16,7 +16,7 @@ public class ProcessaPedido extends Pedido {
             if (order[i] == null) {
                 break;
             }
-            total += order[i].getPrice();
+            total += order[i].getPrice() * qtt[i];
         }
         setTotalPrice(total);
         setCustomer(customer);

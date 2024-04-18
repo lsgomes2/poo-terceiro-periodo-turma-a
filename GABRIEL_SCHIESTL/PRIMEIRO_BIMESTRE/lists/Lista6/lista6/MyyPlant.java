@@ -62,7 +62,7 @@ public class MyyPlant {
                     System.out.println("Saindo do sistema...");
                     break;
             }
-        } while (option < 7 && option > 0);
+        } while (option < 8 && option > 0);
     }
 
     static Cliente insertCustomer() {
@@ -128,7 +128,11 @@ public class MyyPlant {
     static void createOrder(Cliente c1, Loja l1, Vendedor v1, Item[] items) {
         int y = 0;
         int i = 0;
+        int[] quantity = new int[100];
         boolean confirm = true;
+        if (items[y] == null) {
+            return;
+        }
         do {
             System.out.println("Escolha um item conforme a numeracao: ");
             for (y = 0; y <= items.length; y++) {
@@ -138,11 +142,13 @@ public class MyyPlant {
                 System.out.println((y + 1) + " - " + items[y].getName());
             }
             order[i] = items[(sc.nextInt() - 1)];
-            System.out.println("Inserir mais um item no pedido?");
+            System.out.println("Qual a quantidade deste item?");
+            quantity[i] = sc.nextInt();
+            System.out.println("Inserir mais um item no pedido?\n1 - sim\n2 - nao");
+            confirm = sc.nextInt() == 1 ? true : false;
             i++;
-            confirm = sc.next().toLowerCase() == "sim" ? true : false;
         } while (confirm);
-        ProcessaPedido o1 = new ProcessaPedido(order, c1, v1, l1, date, 0, 0);
+        ProcessaPedido o1 = new ProcessaPedido(quantity, order, c1, v1, l1, date, 0, 0);
         System.out.println("Pedido realizado com sucesso!");
         System.out.println("R$" + o1.getTotalPrice());
     }
@@ -155,7 +161,7 @@ public class MyyPlant {
                 if (items[i] == null) {
                     break;
                 }
-                System.out.println((i + 1) + " - " + items[i].getName());
+                System.out.println(items[i].getId() + " - " + items[i].getName() + " - R$" + items[i].getPrice());
             }
         }
     }
