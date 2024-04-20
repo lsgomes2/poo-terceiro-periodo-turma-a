@@ -1,4 +1,4 @@
-package primeirobi.listas.Lista5;
+package primeirobi.listas.Lista6;
 
 public class Vendedor {
     
@@ -22,7 +22,7 @@ public class Vendedor {
 
         String msg = ("\n Me chamo "
         .concat(nome)
-        .concat(" e tenho ")
+        .concat(", tenho ")
         .concat(idade)
         .concat(" anos e trabalho na ")
         .concat((loja.nomeFantasia) + "\n"));
@@ -46,18 +46,18 @@ public class Vendedor {
 
         int media = (soma/i);
 
-        System.out.println("A media é: " + media);
+        System.out.println("A media é: dos salarios de " + nome + " é: " + media);
     }
 
     public void calcularBonus() {
         int i;
-        for (i = 0; i < salarioRecebido.length; i++) {
+        for (i = 0; i < salarioBase.length; i++) {
 
-            if (salarioRecebido[i] == 0.0) {
+            if (salarioBase[i] == 0.0) {
                 break;
             }
             else {
-                System.out.println("O salario " + (i+1) + " Recebera um bonus de R$: " + (salarioRecebido[i] * 0.2));
+                System.out.println("O salario de " + nome + " recebera um bonus de R$: " + (salarioBase[i] * 0.2));
                 System.out.println();
             }
         }  
