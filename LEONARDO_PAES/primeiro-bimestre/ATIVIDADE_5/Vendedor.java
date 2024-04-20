@@ -1,4 +1,4 @@
-package ATIVIDADE_4;
+package ATIVIDADE_5;
 
 import java.util.List;
 
@@ -37,6 +37,6 @@ public class Vendedor {
     }
 
     public double calcularBonus() {
-        return salarioBase * 0.35;
+        return salarioBase * 0.2;
     }
 }
