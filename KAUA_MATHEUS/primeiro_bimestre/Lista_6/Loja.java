@@ -1,6 +1,6 @@
-package KAUA_MATHEUS.primeiro_bimestre.Lista_5;
+package KAUA_MATHEUS.primeiro_bimestre.Lista_6;
 
-public class Loja {
+public class Loja extends Endereco{
 
     // Cores
     String red = "\u001B[31m";
@@ -11,11 +11,13 @@ public class Loja {
     
     // Criação de Atributos
 
-    String fantasy_name, social_reason, cnpj, city, neighborhood, street;
+    String fantasy_name, social_reason, cnpj;
     Vendedor[] sellers;
     Cliente[] clients;
 
+
     public Loja(String fantasy_name, String social_reason, String cnpj,
+                String state, String number, String complement,
                 String city, String neighborhood, String street
     ){
         this.fantasy_name = fantasy_name;
@@ -23,20 +25,23 @@ public class Loja {
         this.cnpj = cnpj;
         this.city = city;
         this.neighborhood = neighborhood;
+        this.complement = complement;
         this.street = street;
+        this.number = number;
+        this.state = state;
     }
 
-    public void apresentarSe(){
+    void apresentarSe(){
         System.out.printf("Nome: %s%s%s\n", green, this.fantasy_name, standart);
         System.out.printf("CNPJ: %s%s%s\n", green, this.cnpj, standart);
         System.out.printf("Endereço: Rua %s%s, %s - %s%s\n", green, this.street, this.neighborhood, this.city, standart);
     }
 
-    public int contarClientes(){
+    int contarClientes(){
         return this.clients.length;
     }
 
-    public int contarVendedores(){
+    int contarVendedores(){
         return this.sellers.length;
     }
 

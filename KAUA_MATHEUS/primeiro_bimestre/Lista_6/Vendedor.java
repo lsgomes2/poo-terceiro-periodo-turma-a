@@ -1,11 +1,11 @@
-package KAUA_MATHEUS.primeiro_bimestre.Lista_5;
+package KAUA_MATHEUS.primeiro_bimestre.Lista_6;
 
 import java.util.ArrayList;
 
-public class Vendedor {
+public class Vendedor extends Endereco{
 
     // Criação de Atributos
-    String name, city, neighborhood, street;
+    String name;
     int age;
     Loja Store;
     float base_wage, average, bonus;
@@ -13,7 +13,8 @@ public class Vendedor {
 
     // Criação do acesso de Vendedor
     public Vendedor(String name, int age, Loja Store,
-                    String city, String neighborhood, String street, 
+    String state, String number, String complement,
+    String city, String neighborhood, String street,
                     float[] wage_received, float base_wage) 
     {
         // Criação de Propriedades
@@ -23,6 +24,9 @@ public class Vendedor {
         this.city = city; 
         this.neighborhood = neighborhood;
         this.street = street;
+        this.complement = complement;
+        this.state = state;
+        this.number = number;
         this.wage_received = wage_received; 
         this.base_wage = base_wage;
         this.bonus = 0;
@@ -30,14 +34,14 @@ public class Vendedor {
     }
 
     // Criação do método "apresentarSe"
-    public void apresentarSe() {
+    void apresentarSe() {
         System.out.printf("Olá eu me chamo \u001B[32m%s!\u001B[m e tenho \u001B[32m%d\u001B[m anos!\n", this.name, this.age);
         System.out.printf("Trabalho na loja \u001B[32m%s\u001B[m\n", this.Store.fantasy_name);
 
         return;
     }
 
-    public float calcularMedia(){   
+    float calcularMedia(){   
         for (int i = 0; i < this.wage_received.length; i++) {
             this.average += this.wage_received[i];   
         }
@@ -45,7 +49,7 @@ public class Vendedor {
         return this.average;
     }
 
-    public float calcularBonus(){   
+    float calcularBonus(){   
         this.bonus = this.base_wage * 0.2f;
         return this.bonus;
     }
