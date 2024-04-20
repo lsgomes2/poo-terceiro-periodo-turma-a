@@ -6,6 +6,8 @@ public class Vendedor
     String cidadeV;
     String bairroV;
     String ruaV; 
+    int numeroV;
+    String complementoV;
     double SalarioBase;
     double SalarioRecebido;
 
