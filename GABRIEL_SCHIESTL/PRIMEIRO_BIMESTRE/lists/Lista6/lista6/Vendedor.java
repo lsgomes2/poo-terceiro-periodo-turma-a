@@ -1,11 +1,11 @@
 package PRIMEIRO_BIMESTRE.lists.Lista6.lista6;
 
 public class Vendedor extends Endereco {
-    String name;
-    Integer age;
-    Loja store;
-    double baseSalary;
-    double[] receivedSalary = new double[3];
+    private String name;
+    private Integer age;
+    private Loja store;
+    private double baseSalary;
+    private double[] receivedSalary = new double[3];
 
     public Vendedor(String name, int age, float salary) {
         this.name = name;
@@ -15,7 +15,7 @@ public class Vendedor extends Endereco {
 
     public void presentation() {
         System.out.println("Ola, sou o(a) vendedor(a) ".concat(name)
-                .concat(" tenho " + age + " anos e trabalho na loja " + this.store.popularName));
+                .concat(" tenho " + age + " anos e trabalho na loja " + this.store.getPopularName()));
     }
 
     public void calculateAverage() {
