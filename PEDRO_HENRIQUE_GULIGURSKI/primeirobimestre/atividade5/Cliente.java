@@ -1,13 +1,15 @@
 package primeirobimestre.atividade5;
 
-public class Cliente {
+import primeirobimestre.atividade6.Endereco;
+
+public class Cliente{
     
     private String nome;
     private Integer idade;
     @SuppressWarnings("unused")
-    private String[] endereco = new String[3]; //0 - cidade, 1 - bairro, 2 - rua
-
-    public Cliente(String nome, Integer idade, String[] endereco) {
+    private Endereco endereco;
+    
+    public Cliente(String nome, Integer idade, Endereco endereco) {
         this.nome = nome;
         this.idade = idade;
         this.endereco = endereco;
