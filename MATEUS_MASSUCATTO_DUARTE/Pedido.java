@@ -6,10 +6,10 @@ public class Pedido
     Date dataCriacao;
     Date dataPagamento;
     Date dataVencimentoReserva;
-    Cliente cliente; //
-    Vendedor vendedor; //
-    Loja loja; //
-    Item[] itens; //
+    Cliente cliente; // um pedido tem um cliente nele chamado cliente
+    Vendedor vendedor; 
+    Loja loja; 
+    Item[] itens; 
 
     //Metodo para calcular o valor total do pedido
     // : faz com que seja passado por todos os itens do array
