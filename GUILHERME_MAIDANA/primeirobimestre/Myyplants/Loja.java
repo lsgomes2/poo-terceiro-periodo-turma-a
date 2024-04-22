@@ -1,5 +1,7 @@
 package primeirobimestre.Myyplants;
 
+
+
 class Loja {
     String nomeFantasia, razaoSocial, cnpj, cidade, bairro, rua;
     Vendedor[] vendedores;

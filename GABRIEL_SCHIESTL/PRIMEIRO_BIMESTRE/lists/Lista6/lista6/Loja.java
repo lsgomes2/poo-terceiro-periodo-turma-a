@@ -1,11 +1,11 @@
 package PRIMEIRO_BIMESTRE.lists.Lista6.lista6;
 
 public class Loja extends Endereco {
-    String popularName;
-    String socialReason;
-    String cnpj;
-    String[] sellers = new String[100];
-    String[] customers = new String[1000];
+    private String popularName;
+    private String socialReason;
+    private String cnpj;
+    private String[] sellers = new String[100];
+    private String[] customers = new String[1000];
 
     public Loja(String popularName, String socialReason, String cnpj) {
         this.popularName = popularName;
@@ -26,6 +26,46 @@ public class Loja extends Endereco {
         System.out.println("A loja tem " + qttCustomers + " clientes");
     }
 
+    public String getPopularName() {
+        return popularName;
+    }
+
+    public void setPopularName(String popularName) {
+        this.popularName = popularName;
+    }
+
+    public String getSocialReason() {
+        return socialReason;
+    }
+
+    public void setSocialReason(String socialReason) {
+        this.socialReason = socialReason;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public String[] getSellers() {
+        return sellers;
+    }
+
+    public void setSellers(String[] sellers) {
+        this.sellers = sellers;
+    }
+
+    public String[] getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(String[] customers) {
+        this.customers = customers;
+    }
+
     public void countSellers() {
         int x = 0;
         int qttSellers = 0;
@@ -41,7 +81,7 @@ public class Loja extends Endereco {
     public void presentation() {
         System.out.println("Nome fantasia: ".concat(popularName));
         System.out.println("CNPJ: ".concat(cnpj));
-        System.out.println("Rua ".concat(street).concat(", bairro: ")
-                .concat(block).concat(", ".concat(city)));
+        System.out.println("Rua ".concat(getStreet()).concat(", bairro: ")
+                .concat(getBlock()).concat(", ".concat(getCity())));
     }
 }

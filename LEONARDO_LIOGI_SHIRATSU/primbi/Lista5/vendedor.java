@@ -1,20 +1,39 @@
 package primbi.Lista5;
 
-public class vendedor {
+public class vendedor extends Endereco {
+
+    public vendedor(String estado, String cidade, String bairro, int numero, String complemento, String nome, int idade, String loja
+    , double salarioBase) {
+        super(estado, cidade, bairro, numero, complemento);
+
+
+    }
 
     String nome;
     int idade;
     String loja;
-    String cidade;
-    String bairro;
-    String Rua;
     double salarioBase;
     double[] salarioRecebido = {150,300,150};
+
+
+    public double[] getSalarioRecebido() {
+        return this.salarioRecebido;
+    }
+
+
+    public String getNome() {
+        return this.nome;
+    }
+
 
   
 
     void apresentarse(){
         System.out.println("Olá meu nome é " + nome + ", tenho " + idade + " anos e trabalho na " + loja);
+    }
+
+    public void apresentarLogradouro() {
+        System.out.println(this.getNumero() + ", " + this.getComplemento() + ", " + this.getBairro() + ", " + this.getCidade() + " - " + this.getEstado());
     }
     
     void calcularMedia(){
