@@ -1,4 +1,4 @@
-package primeirobi.atividades.lista6;
+package primeirobi.atividades.lista7;
 
 public class Cliente extends Cidadao {
 
