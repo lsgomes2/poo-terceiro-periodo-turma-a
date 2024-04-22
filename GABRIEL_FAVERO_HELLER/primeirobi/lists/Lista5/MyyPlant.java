@@ -10,7 +10,7 @@ class MyyPlant {
     public MyyPlant(String nomeFantasia, String razaoSocial, String cpnj, String cidade, String bairro, String rua) {
         this.loja = new Loja(nomeFantasia, razaoSocial, cpnj, cidade, bairro, rua);
     }
-
+       
     public static void main(String[] args) {
         MyyPlant myyPlant = new MyyPlant("Myy Plant", "Myy Plant Ltda", "123.456.789/0001-00", "Cascavel", "Centro",
                 "Rua dos Bobos");

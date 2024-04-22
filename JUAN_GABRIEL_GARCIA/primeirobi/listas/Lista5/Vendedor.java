@@ -14,9 +14,9 @@ public class Vendedor {
 
     String rua;
 
-    float[] salarioBase = new float[3];
+    float[] salarioBase = new float[100];
 
-    float[] salarioRecebido = new float [3];
+    float[] salarioRecebido = new float [100];
 
     public void apresentarse() {
 
@@ -35,7 +35,13 @@ public class Vendedor {
         int i;
         for (i = 0; i < salarioRecebido.length; i++) {
             
-            soma += salarioRecebido[i];
+            if (salarioRecebido[i] == 0.0) {
+                break;
+            }
+            else {
+                soma += salarioRecebido[i];
+            }
+            
         }
 
         int media = (soma/i);
@@ -46,9 +52,14 @@ public class Vendedor {
     public void calcularBonus() {
         int i;
         for (i = 0; i < salarioRecebido.length; i++) {
-            
-            System.out.println("O salario " + (i+1) + " Recebera um bonus de R$: " + (salarioRecebido[i] * 0.2));
-            System.out.println();
+
+            if (salarioRecebido[i] == 0.0) {
+                break;
+            }
+            else {
+                System.out.println("O salario " + (i+1) + " Recebera um bonus de R$: " + (salarioRecebido[i] * 0.2));
+                System.out.println();
+            }
         }  
     }
 }

@@ -3,9 +3,9 @@ package atividades1B;
 public class Cliente {
     private String nome;
     private int idade;
-    private String cidade;
-    private String bairro;
-    private String rua;
+     String cidade;
+     String bairro;
+     String rua;
 
     public Cliente(String nome, int idade, String cidade, String bairro, String rua) {
         this.nome = nome;
