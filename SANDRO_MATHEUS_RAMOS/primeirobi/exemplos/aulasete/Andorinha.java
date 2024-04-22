@@ -4,13 +4,18 @@ public class Andorinha extends Ave {
     
     String cor;
 
-    public void apresentarse() {
-        System.out.println("Apresentando...");
-    }
-
     @Override
     public void bicar() {
         System.out.println("Não estou bicando.");
     }
+
+    public void apresentarse(String nome) {
+        System.out.println(nome);
+    }
+
+    public void apresentarse() {
+        System.out.println("Apresentando...");
+    }
+
 
 }
