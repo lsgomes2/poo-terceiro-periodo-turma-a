@@ -3,16 +3,17 @@ package ATIVIDADE_4;
 import java.util.List;
 
 public class Vendedor {
-      String nome;
-      int idade;
-      String loja;
-      String cidade;
-      String bairro;
-      String rua;
-      double salarioBase;
-      List<Double> salarioRecebido;
+    String nome;
+    int idade;
+    String loja;
+    String cidade;
+    String bairro;
+    String rua;
+    double salarioBase;
+    List<Double> salarioRecebido;
 
- Vendedor(String nome, int idade, String loja, String cidade, String bairro, String rua, double salarioBase, List<Double> salarioRecebido) {
+    Vendedor(String nome, int idade, String loja, String cidade, String bairro, String rua, double salarioBase,
+            List<Double> salarioRecebido) {
         this.nome = nome;
         this.idade = idade;
         this.loja = loja;
@@ -36,6 +37,6 @@ public class Vendedor {
     }
 
     public double calcularBonus() {
-        return salarioBase * 0.2;
+        return salarioBase * 0.35;
     }
 }
