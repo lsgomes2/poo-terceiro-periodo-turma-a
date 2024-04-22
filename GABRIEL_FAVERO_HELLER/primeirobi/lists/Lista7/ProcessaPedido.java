@@ -7,7 +7,7 @@ public class ProcessaPedido extends Pedido {
     private double total = 0;
 
     @SuppressWarnings({ "deprecation" })
-    public ProcessaPedido(int[] quantidade, Item[] pedido, Cliente cliente, Vendedor vendedor1, Loja loja, Date dataCriacao, int diaPagamento, int mesPagamento) {
+    public ProcessaPedido(int[] quantidade, Item[] pedido, Cliente cliente, Vendedor vendedor, Loja loja, Date dataCriacao, int diaPagamento, int mesPagamento) {
         this.pedido = pedido;
 
         for (int i = 0; i < pedido.length; i++) {
@@ -18,7 +18,7 @@ public class ProcessaPedido extends Pedido {
         }
         setValorTotal(total);
         setCliente(cliente);
-        setVendedor(null);
+        setVendedor(vendedor);
         setLoja(loja);
         setDataCriacao(dataCriacao);
         setDiaPagamento(diaPagamento);
