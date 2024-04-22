@@ -1,4 +1,4 @@
-package primeirobi.exemplos.aulasete;
+package primeirobi.exemplos.aula7;
 
 import java.util.Date;
 
