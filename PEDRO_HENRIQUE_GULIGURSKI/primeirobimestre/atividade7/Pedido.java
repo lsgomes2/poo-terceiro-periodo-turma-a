@@ -26,17 +26,17 @@ public class Pedido {
 
     public float calcularValorTotal(){
         float valorTotalPedido = 0.0f;
-        for(int i = 0; i <= itensPedido.length;){
+        for(int i = 0; i < itensPedido.length; i++){
             valorTotalPedido = itensPedido[i].getValor();
         }
-        return valorTotalPedido%.2f;
+        return valorTotalPedido;
     }
 
     public String gerarDescricaoVenda(){
         String formCriacao = new SimpleDateFormat("dd/MM/yyyy").format(dataCriacao);
         String desc = "Descrição do Pedido: "
             .concat("Data de criação do pedido: "+formCriacao+".")
-            .concat("Valor do pedido: "+calcularValorTotal()+".");
+            .concat("Valor do pedido: R$"+"calcularValorTotal()"+".");
         System.out.println(desc);
         return desc;
     }
