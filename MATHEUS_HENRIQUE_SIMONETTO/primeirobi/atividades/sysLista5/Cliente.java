@@ -1,4 +1,4 @@
-package primeirobi.atividades.myyplant;
+package primeirobi.atividades.sysLista5;
 
 public class Cliente {
     private String nome;

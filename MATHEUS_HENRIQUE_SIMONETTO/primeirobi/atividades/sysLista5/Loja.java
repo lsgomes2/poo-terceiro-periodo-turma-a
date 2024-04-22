@@ -1,4 +1,4 @@
-package primeirobi.atividades.myyplant;
+package primeirobi.atividades.sysLista5;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,8 +10,8 @@ public class Loja {
     private String cidade;
     private String bairro;
     private String rua;
-    private List<Vendedor> vendedores;
-    private List<Cliente> clientes;
+    List<Vendedor> vendedores;
+    List<Cliente> clientes;
 
     public Loja(String nomeFantasia, String razaoSocial, String cnpj, String cidade, String bairro, String rua) {
         this.nomeFantasia = nomeFantasia;
