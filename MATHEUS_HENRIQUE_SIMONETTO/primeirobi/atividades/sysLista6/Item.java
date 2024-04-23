@@ -1,4 +1,4 @@
-package primeirobi.atividades.myplant;
+package primeirobi.atividades.sysLista6;
 
 public class Item {
     private int id;
@@ -14,7 +14,7 @@ public class Item {
     }
 
     public void gerarDescricao() {
-        System.out.println("ID: " + id + ", Nome: " + nome + ", Tipo: " + tipo + ", Valor: " + valor);
+        System.out.println("ID: " + id + ", Nome: " + nome + ", Tipo: " + tipo + ", Valor: R$" + valor);
     }
 
     public double getValor() {
