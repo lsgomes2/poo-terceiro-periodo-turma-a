@@ -4,12 +4,12 @@ public class Vendedor {
     private String nome;
     private int idade;
     private Loja loja;
-    private String cidade;
-    private String bairro;
-    private String rua;
+     String cidade;
+     String bairro;
+     String rua;
     private double[] salarioLancamentos;
     private double salarioBase;
-    private double salarioRecebido;
+     double salarioRecebido;
 
     public Vendedor(String nome, int idade, Loja loja, String cidade, String bairro, String rua, double[] salarioLancamentos, double salarioBase) {
         this.nome = nome;
