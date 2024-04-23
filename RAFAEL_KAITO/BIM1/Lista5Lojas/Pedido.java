@@ -13,17 +13,19 @@ public class Pedido {
     private Loja loja;
     private Item item;
     private ArrayList <Item> listaItens;
+    private ArrayList<Item> listaItensPedido;
 
     public Pedido(String id, Date dataCriacao, Date dataPagamento, Cliente cliente,
-            Vendedor vendedor, Loja loja, ArrayList<Item> listaItens) {
+            Vendedor vendedor, Loja loja, ArrayList<Item> listaItensPedido) {
         this.id = id;
         this.dataCriacao = dataCriacao;
         this.dataPagamento = dataPagamento;
         this.cliente = cliente;
         this.vendedor = vendedor;
         this.loja = loja;
-        this.listaItens = listaItens;
-
+        this.listaItensPedido = listaItensPedido;
+        
+        this.listaItens = new ArrayList<>();
         long tresDias = 3 * 86400000l; 
         this.dataVencimento = new Date(dataCriacao.getTime() + tresDias);
     }
@@ -102,8 +104,8 @@ public class Pedido {
     }
 
     public float calcularValorTotal(){
-        int valTot= 0;
-        for (Item item : listaItens ){
+        float valTot= 0.0f;
+        for (Item item : listaItensPedido ){
             valTot += item.getValor();
         }
         return valTot;
@@ -129,10 +131,20 @@ public class Pedido {
         System.out.println("Vendedor: " + vendedor.getNome());
         System.out.println("Loja: " + loja.getNomeLoja());
         System.out.println("Itens do Pedido:");
-        for (Item item : listaItens) {
+        for (Item item : listaItensPedido) {
             System.out.println("- " + item.getNome() + ", " + item.getTipo() + ", R$ " + item.getValor());
         }
         System.out.println("Valor total: " + calcularValorTotal());
+    }
+
+
+    public ArrayList<Item> getListaItensPedido() {
+        return listaItensPedido;
+    }
+
+
+    public void setListaItensPedido(ArrayList<Item> listaItensPedido) {
+        this.listaItensPedido = listaItensPedido;
     }
 
 }

@@ -28,6 +28,7 @@ public class Main {
          ArrayList<Integer> listaClientes = new ArrayList<>();
          ArrayList<Integer> listaVendedores = new ArrayList<>();
          ArrayList<Item> listaItens = new ArrayList<>();
+         ArrayList<Item> listaItensPedido = new ArrayList<>();
         
         Loja Loja1 = new Loja("MyyPlant", "MyyPlant S.A", "25.725.571/0001-14"
         ,enderecoLoja,listaClientes,listaVendedores);
@@ -91,7 +92,7 @@ public class Main {
         long tresDias = 3 * 86400000L; 
         Date dataVencimento = new Date(dataCriacao.getTime() + tresDias);
 
-        Pedido pedido1 = new Pedido(idPedido, dataCriacao, dataPagamento, Cliente1, Vendedor1, Loja1, listaItens);
+        Pedido pedido1 = new Pedido(idPedido, dataCriacao, dataPagamento, Cliente1, Vendedor1, Loja1, listaItensPedido);
         ProcessaPedido processadorPedido1 = new ProcessaPedido(pedido1);
         processadorPedido1.processar(); 
 
@@ -142,7 +143,8 @@ public class Main {
 
                 if (selecaoItem > 0 && selecaoItem <= listaItens.size()) {
                     Item itemEscolhido = listaItens.get(selecaoItem - 1);
-                    pedido1.getListaItens().add(itemEscolhido);
+                    pedido1.getListaItensPedido().add(itemEscolhido);
+            
                     System.out.println(itemEscolhido.getNome() + " foi adicionado ao pedido com sucesso!");
                 } else {
                     System.out.println("Número de item inválido. Tente novamente.");
