@@ -1,5 +1,7 @@
 package primeirobimestre.atividade7;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.text.SimpleDateFormat;
 
 public class Pedido {
@@ -10,9 +12,9 @@ public class Pedido {
     private Cliente clientePedido;
     private Vendedor vendedorPedido;
     private Loja lojaPedido;
-    private Item[] itensPedido = new Item[30];
+    private List<Item> itensPedido = new ArrayList<>();
 
-    public Pedido(Integer id, Cliente clientePedido, Vendedor vendedorPedido, Loja lojaPedido , Item[] itensPedido){
+    public Pedido(Integer id, Cliente clientePedido, Vendedor vendedorPedido, Loja lojaPedido, List<Item> sacola){
         long umDia = 86400000l;
         long dataTresDias = dataCriacao.getTime() + (umDia*3);
         this.id = id;
@@ -21,38 +23,25 @@ public class Pedido {
         this.lojaPedido = lojaPedido;
         this.clientePedido = clientePedido;
         this.vendedorPedido = vendedorPedido;
-        this.itensPedido = itensPedido;
+        this.itensPedido = sacola;
     }
 
     public float calcularValorTotal(){
         float valorTotalPedido = 0.0f;
-        for(int i = 0; i < itensPedido.length; i++){
-            valorTotalPedido = itensPedido[i].getValor();
+        for(Item item : itensPedido){
+            valorTotalPedido += item.getValor();
         }
         return valorTotalPedido;
     }
 
     public String gerarDescricaoVenda(){
         String formCriacao = new SimpleDateFormat("dd/MM/yyyy").format(dataCriacao);
-        String desc = "Descrição do Pedido: "
-            .concat("Data de criação do pedido: "+formCriacao+".")
-            .concat("Valor do pedido: R$"+"calcularValorTotal()"+".");
+        String desc = "Descrição do Pedido: \n"
+            .concat("Data de criação do pedido: "+formCriacao+".\n")
+            .concat("Valor do pedido: R$"+ calcularValorTotal() +".\n")
+            .concat("Em parceria com BioTechnica, Arasaka e Militech");
         System.out.println(desc);
         return desc;
-    }
-
-    public String listaPedidos(Item sacola[]){
-        String msg = "";
-        for (int i = 0; i < sacola.length; i++){
-            msg = msg + "\n----------------------------------\n"
-            .concat("   ID do item: "+sacola[i].getId()+"\n")
-            .concat("   Nome do item: "+sacola[i].getNome()+"\n")
-            .concat("   Tipo do item: "+sacola[i].getTipo()+"\n")
-            .concat("   Preço do itme: R$"+sacola[i].getValor()+"\n")
-            .concat("-----------------------------------");
-        }
-
-        return msg;
     }
 
     public Date getDataPagamento(){

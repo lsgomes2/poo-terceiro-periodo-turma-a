@@ -1,11 +1,12 @@
 package primeirobimestre.atividade7;
 
 import java.util.Date;
+import java.util.List;
 
 public class ProcessaPedido{
     
     private int idPedido = 1;
-    public Pedido processar(Cliente cliente, Vendedor vendedor, Loja loja,Item[] itens){
+    public Pedido processar(Cliente cliente, Vendedor vendedor, Loja loja,List<Item> itens){
         Pedido pedido = new Pedido(idPedido, cliente, vendedor, loja, itens);
         idPedido++;
         System.out.println(pedido.gerarDescricaoVenda());
