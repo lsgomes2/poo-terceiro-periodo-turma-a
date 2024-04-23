@@ -41,6 +41,20 @@ public class Pedido {
         return desc;
     }
 
+    public String listaPedidos(Item sacola[]){
+        String msg = "";
+        for (int i = 0; i < sacola.length; i++){
+            msg = msg + "\n----------------------------------\n"
+            .concat("   ID do item: "+sacola[i].getId()+"\n")
+            .concat("   Nome do item: "+sacola[i].getNome()+"\n")
+            .concat("   Tipo do item: "+sacola[i].getTipo()+"\n")
+            .concat("   Preço do itme: R$"+sacola[i].getValor()+"\n")
+            .concat("-----------------------------------");
+        }
+
+        return msg;
+    }
+
     public Date getDataPagamento(){
         return dataPagamento;
     }

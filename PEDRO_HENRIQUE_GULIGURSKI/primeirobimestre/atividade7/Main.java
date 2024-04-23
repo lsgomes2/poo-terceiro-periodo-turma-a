@@ -25,8 +25,8 @@ public class Main {
             .concat("[3] - Finalizar Compra\n") // Deve solicitar o pagamento e mostrar o preço do troco (se houver)
             .concat("[4] - Sair"); // Deve encerrar a aplicação
 
-        String menuItens = "[1] - Listar Itens\n" // Dá a opção de digitar o ID para adicionar a sacola, ou X para voltar
-            .concat("[2] - Cadastrar Itens\n") // Ao cadastrar, da a opção: Adicionar a sacola? [S] - sim [N] - não
+        String menuItens = "[1] - Listar Itens\n" // Dá a opção de digitar o ID para adicionar a sacola, ou 0 para voltar
+            .concat("[2] - Cadastrar Itens\n") // Ao cadastrar, da a opção: Adicionar a sacola? [1] - sim [0] - não
             .concat("[3] - Voltar");
 
         String divisoria = "----------------------------------";
@@ -36,10 +36,11 @@ public class Main {
             switch (input.nextInt()) {
                 case 1:
                     limparTerminal();
-                    System.out.println(divisoria+"\n"+menuItens+"\n"+divisoria);
-                    int resposta = input.nextInt();
+                    System.out.println(divisoria+"\n"+menuItens+"\n"+divisoria); // exibe menuItens
+                    int resposta = input.nextInt();// Dá a opção de digitar o ID para adicionar a sacola, ou 0 para voltar
                     if (resposta == 1){
-                        
+                       System.out.println(""); 
+                    //    if (input.nextInt() ==)
                     } else if (resposta == 2) {
 
                     } else if (resposta == 3) {
