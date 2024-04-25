@@ -1,10 +1,10 @@
-package primeirobi.atividades.lista6;
+package primeirobi.atividades.lista7;
 
-import java.util.Date;
-
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.text.SimpleDateFormat;
+import java.util.List;
 
 public class Pedido {
     private int id;
@@ -14,18 +14,32 @@ public class Pedido {
     private Cliente cliente;
     private Vendedor vendedor;
     private Loja loja;
-    private Item[] itens;
+    private List<Item> itens;
 
-    public Pedido(int id, Date dataCriacao, Date dataPagamento, Cliente cliente, Vendedor vendedor, Loja loja, Item[] itens) {
+    public Pedido(int id, Date dataCriacao, Date dataPagamento, Cliente cliente, Vendedor vendedor, Loja loja) {
         this.id = id;
         this.dataCriacao = dataCriacao;
         this.dataPagamento = dataPagamento;
         this.cliente = cliente;
         this.vendedor = vendedor;
         this.loja = loja;
-        this.itens = itens;
-        calcularDataVencimentoReserva();
+        this.itens = new ArrayList<>();
     }
+
+    public void adicionarItem(Item item) { 
+        itens.add(item);
+    }
+
+
+    public void removerItem(Item item) {
+        itens.remove(item);
+    }
+
+
+    public List<Item> getItens() { 
+        return itens;
+    }
+
 
     public int getId() {
         return id;
@@ -83,13 +97,6 @@ public class Pedido {
     }
 
 
-    public Item[] getItens() {
-        return itens;
-    }
-    public void setItens(Item[] itens) {
-        this.itens = itens;
-    }
-
 
     private void calcularDataVencimentoReserva() {
         Calendar calendar = Calendar.getInstance();
@@ -112,3 +119,4 @@ public class Pedido {
         return "Data do pedido: " + dataFormatada + "\nValor total: " + calcularValorTotal();
     }
 }
+

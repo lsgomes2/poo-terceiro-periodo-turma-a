@@ -1,4 +1,4 @@
-package primeirobi.atividades.lista6;
+package primeirobi.atividades.lista7;
 
 public class Item {
     private int id;
@@ -45,7 +45,8 @@ public class Item {
     }
 
 
-    public void gerarDescricao() {
-        System.out.println("ID: " + id + "\nNome: " + nome + "\nTipo: " + tipo + "\nValor: " + valor);
+    @Override
+    public String toString() {
+        return "Nome: " + nome + ", Tipo: " + tipo + ", Valor: " + valor;
     }
 }
