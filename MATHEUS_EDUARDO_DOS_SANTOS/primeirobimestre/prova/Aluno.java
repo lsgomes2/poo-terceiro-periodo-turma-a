@@ -1,6 +1,7 @@
-package FELIPE_AUGUTUS.atividades1B.ProvaB1;
+package MATHEUS_EDUARDO_DOS_SANTOS.primeirobimestre.prova;
 
 public class Aluno {
+
     private int matricula;
     private String nome;
 

@@ -1,3 +1,5 @@
+package KIURY_MARIANO.firsttwomonths.prova;
+
 public class Aluno {
     
     private String nome;
